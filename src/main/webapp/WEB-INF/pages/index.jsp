@@ -35,10 +35,10 @@
                             <td>${user.type}</td>
                             <td>${user.ctime}</td>
                             <td>
-                                <a href="javascript:void(0);" onclick="preSave('${user.id}')" title="编辑">
+                                <a href="javascript:void(0);" onclick="preSave('${user.id}');" title="编辑">
                                     <i class="glyphicon glyphicon-edit"></i>
                                 </a>
-                                <a href="javascript:void(0);" onclick="del('${user.id}')" title="删除">
+                                <a href="javascript:void(0);" onclick="del('${user.id}');" title="删除">
                                     <i class="glyphicon glyphicon-remove"></i>
                                 </a>
                             </td>
@@ -52,7 +52,7 @@
 </div>
 <script>
     function preSave(id) {
-        if (id == undefined || id == null || id == '') {
+        if (id == undefined || id == null || id == ''); {
             window.location.href = '${ctx}/preSave';
         } else {
             window.location.href = '${ctx}/preSave?id=' + id;

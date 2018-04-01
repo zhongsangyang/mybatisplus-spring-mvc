@@ -7,10 +7,11 @@
     <context:annotation-config/>
     <!-- Controller包(自动注入) -->
     <context:component-scan base-package="com.baomidou.springmvc.controller"/>
-    <mvc:resources mapping="/resources/bootstrap/js/**" location="/resources/bootstrap/js/"/>
-    <mvc:resources mapping="/resources/bootstrap/css/**" location="/resources/bootstrap/css/"/>
-    <mvc:resources mapping="/resources/jquery/**" location="/resources/jquery/"/>
-    <mvc:resources mapping="/resources/i/**" location="/resources/i/"/>
+    <!-- 静态资源配置  -->
+    <mvc:resources mapping="/resources/*/**" location="/resources/"/>
+    <mvc:resources mapping="/assets/*/**" location="/assets/"/>
+    <mvc:resources mapping="/admin/*/**" location="/admin/"/>
+
     <!-- FastJson注入 -->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
@@ -44,9 +45,6 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-
-    <!-- 静态资源配置 -->
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <!-- 对模型视图名称的解析,即在模型视图名称添加前后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

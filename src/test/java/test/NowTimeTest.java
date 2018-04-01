@@ -9,7 +9,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class NowTimeTest {
-    private final static Logger logger =  LoggerFactory.getLogger(NowTimeTest.class);
     @Test
     public void testNowTTime(){
         String s1="";
@@ -66,11 +65,5 @@ public class NowTimeTest {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(df.format(System.currentTimeMillis()));
 
-    }
-
-    @Test
-    public void logbackDataBaseInfoTest() {
-        logger.info("logbackDataBaseInfoTest函数运行了","请到数据库里面查看数据吧");
-        System.out.println("运行结束了");
     }
 }

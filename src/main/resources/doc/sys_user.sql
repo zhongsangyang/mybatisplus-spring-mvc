@@ -34,8 +34,8 @@ CREATE TABLE `sys_user` (
 --  Records of `sys_user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_user` VALUES ('784972358981328902', 'Tom', '24', '2017-06-25 20:53:33', '1');
-INSERT INTO `sys_user` VALUES ('784972358981328903', 'Jammy', '21', '2017-06-25 20:53:37', '1');
+INSERT INTO `sys_user` VALUES ('784972358981328902', 'Tom', '24', '2017-06-25 20:53:33', '1');;
+INSERT INTO `sys_user` VALUES ('784972358981328903', 'Jammy', '21', '2017-06-25 20:53:37', '1');;
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

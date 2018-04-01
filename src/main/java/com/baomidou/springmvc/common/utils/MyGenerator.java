@@ -12,9 +12,9 @@ import org.junit.jupiter.api.Test;
 public class MyGenerator {
     @Test
     public void generateCode() {
-        String packageName = "studyPackage";
-        boolean serviceNameStartWithI = false;//user -> UserService, 设置成true: user -> IUserService
-        generateByTables(serviceNameStartWithI, packageName, "user", "shop");
+        String packageName = "com.baomidou.springmvc";
+        boolean serviceNameStartWithI = true;//true user -> UserService, 设置成false: user -> IUserService
+        generateByTables(serviceNameStartWithI, packageName, "shop");
     }
 
     private void generateByTables(boolean serviceNameStartWithI, String packageName, String... tableNames) {
@@ -39,7 +39,7 @@ public class MyGenerator {
                 .setFileOverride(true);
         if (!serviceNameStartWithI) {
             config.setServiceName("%sService");
-            config.setMapperName("%sDao");
+            config.setMapperName("%sMapper");
             config.setEnableCache(false);
             config.setBaseResultMap(true);
         }
@@ -50,11 +50,11 @@ public class MyGenerator {
                         new PackageConfig()
                                 .setParent(packageName)
                                 .setController("controller")
-                                .setEntity("entity")
-                                .setModuleName("test")
-                                .setMapper("UserMapper")
-                                .setService("UserService")
-                                .setServiceImpl("UserServiceImpl")
+                                .setEntity("model.system")
+//                                .setModuleName("test")
+                                .setMapper("mapper.system")
+                                .setService("service.system")
+                                .setServiceImpl("service.system.impl")
                 ).execute();
     }
 

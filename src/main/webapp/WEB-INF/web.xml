@@ -7,7 +7,7 @@
     <!-- 加载Spring配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/spring.xml</param-value>
+        <param-value>classpath:spring/spring.xml,classpath:spring/quartz.xml</param-value>
     </context-param>
 
     <!-- 字符集 过滤器 -->

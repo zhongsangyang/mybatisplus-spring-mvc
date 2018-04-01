@@ -31,7 +31,7 @@
         $.ajax({
             type: 'POST',
             url: '${ctx}/save',
-            data: $('#form').serialize(),
+            data: $('#form');.serialize(),
             dataType: 'json',
             success: function (data) {
                 alert(data.msg);

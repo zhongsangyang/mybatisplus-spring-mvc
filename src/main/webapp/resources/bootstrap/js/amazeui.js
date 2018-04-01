@@ -1,10 +1,10 @@
 /*! Amaze UI v2.7.2 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-08-17T16:17:24+0800 */ 
 (function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
+	if(typeof exports === 'object' && typeof module === 'object');
 		module.exports = factory(require("jquery"));
 	else if(typeof define === 'function' && define.amd)
 		define(["jquery"], factory);
-	else if(typeof exports === 'object')
+	else if(typeof exports === 'object');
 		exports["AMUI"] = factory(require("jquery"));
 	else
 		root["AMUI"] = factory(root["jQuery"]);
@@ -127,16 +127,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var $ = __webpack_require__(1);
 
-	if (typeof $ === 'undefined') {
+	if (typeof $ === 'undefined'); {
 	  throw new Error('Amaze UI 2.x requires jQuery :-(\n' +
 	  '\u7231\u4e0a\u4e00\u5339\u91ce\u9a6c\uff0c\u53ef\u4f60' +
-	  '\u7684\u5bb6\u91cc\u6ca1\u6709\u8349\u539f\u2026');
+	  '\u7684\u5bb6\u91cc\u6ca1\u6709\u8349\u539f\u2026');;
 	}
 
 	var UI = $.AMUI || {};
 	var $win = $(window);
 	var doc = window.document;
-	var $html = $('html');
+	var $html = $('html');;
 
 	UI.VERSION = '2.7.2';
 
@@ -200,8 +200,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	window.WebKitMutationObserver || null);
 
 	// https://github.com/Modernizr/Modernizr/blob/924c7611c170ef2dc502582e5079507aff61e388/feature-detects/forms/validation.js#L20
-	UI.support.formValidation = (typeof document.createElement('form').
-	  checkValidity === 'function');
+	UI.support.formValidation = (typeof document.createElement('form');.
+	  checkValidity === 'function');;
 
 	UI.utils = {};
 
@@ -241,7 +241,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	UI.utils.isInView = function(element, options) {
 	  var $element = $(element);
 	  var visible = !!($element.width() || $element.height()) &&
-	    $element.css('display') !== 'none';
+	    $element.css('display'); !== 'none';
 
 	  if (!visible) {
 	    return false;
@@ -266,14 +266,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return string;
 	  }
 
-	  var start = (string ? string.indexOf('{') : -1);
+	  var start = (string ? string.indexOf('{'); : -1);
 	  var options = {};
 
 	  if (start != -1) {
 	    try {
 	      options = (new Function('',
 	        'var json = ' + string.substr(start) +
-	        '; return JSON.parse(JSON.stringify(json));'))();
+	        '; return JSON.parse(JSON.stringify(json));');)();
 	    } catch (e) {
 	    }
 	  }
@@ -297,7 +297,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  return function(url) {
 	    if (!a) {
-	      a = document.createElement('a');
+	      a = document.createElement('a');;
 	    }
 
 	    a.href = url;
@@ -335,7 +335,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        UI.utils.parseOptions($this.attr(dataOptionsName)),
 	        typeof option === 'object' && option);
 
-	      if (!instance && option === 'destroy') {
+	      if (!instance && option === 'destroy'); {
 	        return;
 	      }
 
@@ -351,7 +351,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        pluginOption.before &&
 	        pluginOption.before.call($this, allArgs, instance);
 
-	        if (typeof option === 'string') {
+	        if (typeof option === 'string'); {
 	          propReturn = typeof instance[option] === 'function' ?
 	            instance[option].apply(instance, args) : instance[option];
 	        }
@@ -420,14 +420,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	$.fn.removeClassRegEx = function() {
 	  return this.each(function(regex) {
-	    var classes = $(this).attr('class');
+	    var classes = $(this).attr('class');;
 
 	    if (!classes || !regex) {
 	      return false;
 	    }
 
 	    var classArray = [];
-	    classes = classes.split(' ');
+	    classes = classes.split(' ');;
 
 	    for (var i = 0, len = classes.length; i < len; i++) {
 	      if (!classes[i].match(regex)) {
@@ -435,7 +435,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 
-	    $(this).attr('class', classArray.join(' '));
+	    $(this).attr('class', classArray.join(' '););
 	  });
 	};
 
@@ -443,7 +443,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	$.fn.alterClass = function(removals, additions) {
 	  var self = this;
 
-	  if (removals.indexOf('*') === -1) {
+	  if (removals.indexOf('*'); === -1) {
 	    // Use native jQuery methods if there is no wildcard matching
 	    self.removeClass(removals);
 	    return !additions ? self : self.addClass(additions);
@@ -451,15 +451,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  var classPattern = new RegExp('\\s' +
 	  removals.
-	    replace(/\*/g, '[A-Za-z0-9-_]+').
-	    split(' ').
-	    join('\\s|\\s') +
-	  '\\s', 'g');
+	    replace(/\*/g, '[A-Za-z0-9-_]+');.
+	    split(' ');.
+	    join('\\s|\\s'); +
+	  '\\s', 'g');;
 
 	  self.each(function(i, it) {
 	    var cn = ' ' + it.className + ' ';
 	    while (classPattern.test(cn)) {
-	      cn = cn.replace(classPattern, ' ');
+	      cn = cn.replace(classPattern, ' ');;
 	    }
 	    it.className = $.trim(cn);
 	  });
@@ -502,7 +502,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // var scrollbarWidth = window.innerWidth - $html.width();
 	  var $measure = $('<div ' +
 	  'style="width: 100px;height: 100px;overflow: scroll;' +
-	  'position: absolute;top: -9999px;"></div>');
+	  'position: absolute;top: -9999px;"></div>');;
 
 	  $(document.body).append($measure);
 
@@ -521,7 +521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function bindLoad() {
 	    this.one('load', loaded);
 	    if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
-	      var src = this.attr('src');
+	      var src = this.attr('src');;
 	      var param = src.match(/\?/) ? '&' : '?';
 
 	      param += 'random=' + (new Date()).getTime();
@@ -529,7 +529,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 
-	  if (!$image.attr('src')) {
+	  if (!$image.attr('src');) {
 	    loaded();
 	    return;
 	  }
@@ -557,12 +557,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var line = 1;
 	      /* eslint-disable max-len, quotes */
 	      var body = ('try { ' + (me.variable ?
-	      'var ' + me.variable + ' = this.stash;' : 'with (this.stash) { ') +
+	      'var ' + me.variable + ' = this.stash;' : 'with (this.stash) { '); +
 	      "this.ret += '" +
 	      string.
-	        replace(/<%/g, '\x11').replace(/%>/g, '\x13'). // if you want other tag, just edit this line
-	        replace(/'(?![^\x11\x13]+?\x13)/g, '\\x27').
-	        replace(/^\s*|\s*$/g, '').
+	        replace(/<%/g, '\x11');.replace(/%>/g, '\x13');. // if you want other tag, just edit this line
+	        replace(/'(?![^\x11\x13]+?\x13)/g, '\\x27');.
+	        replace(/^\s*|\s*$/g, '');.
 	        replace(/\n/g, function() {
 	          return "';\nthis.line = " + (++line) + "; this.ret += '\\n";
 	        }).
@@ -571,9 +571,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        replace(/\x11(.+?)\x13/g, "'; $1; this.ret += '") +
 	      "'; " + (me.variable ? "" : "}") + "return this.ret;" +
 	      "} catch (e) { throw 'TemplateError: ' + e + ' (on " + name +
-	      "' + ' line ' + this.line + ')'; } " +
+	      "' + ' line ' + this.line + ');'; } " +
 	      "//@ sourceURL=" + name + "\n" // source map
-	      ).replace(/this\.ret \+= '';/g, '');
+	      ).replace(/this\.ret \+= '';/g, '');;
 	      /* eslint-enable max-len, quotes */
 	      var func = new Function(body);
 	      var map = {
@@ -618,7 +618,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	UI.ready = function(callback) {
 	  UI.DOMWatchers.push(callback);
 	  if (UI.DOMReady) {
-	    // console.log('Ready call');
+	    // console.log('Ready call');;
 	    callback(document);
 	  }
 	};
@@ -639,7 +639,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var element = this;
 	    var $element = $(element);
 
-	    if ($element.data('am.observer')) {
+	    if ($element.data('am.observer');) {
 	      return;
 	    }
 
@@ -648,7 +648,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        function(mutations, instance) {
 	          callback.call(element, mutations, instance);
 	          // trigger this event manually if MutationObserver not supported
-	          $element.trigger('changed.dom.amui');
+	          $element.trigger('changed.dom.amui');;
 	        }, 50));
 
 	      observer.observe(element, options);
@@ -668,7 +668,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	if (UI.support.touch) {
-	  $html.addClass('am-touch');
+	  $html.addClass('am-touch');;
 	}
 
 	$(document).on('changed.dom.amui', function(e) {
@@ -677,7 +677,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // TODO: just call changed element's watcher
 	  //       every watcher callback should have a key
 	  //       use like this: <div data-am-observe='key1, key2'>
-	  //       get keys via $(element).data('amObserve')
+	  //       get keys via $(element).data('amObserve');
 	  //       call functions store with these keys
 	  $.each(UI.DOMWatchers, function(i, watcher) {
 	    watcher(element);
@@ -696,35 +696,35 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  // watches DOM
 	  /* eslint-disable new-cap */
-	  UI.DOMObserve('[data-am-observe]');
+	  UI.DOMObserve('[data-am-observe]');;
 	  /* eslint-enable */
 
-	  $html.removeClass('no-js').addClass('js');
+	  $html.removeClass('no-js');.addClass('js');;
 
-	  UI.support.animation && $html.addClass('cssanimations');
+	  UI.support.animation && $html.addClass('cssanimations');;
 
 	  // iOS standalone mode
 	  if (window.navigator.standalone) {
-	    $html.addClass('am-standalone');
+	    $html.addClass('am-standalone');;
 	  }
 
-	  $('.am-topbar-fixed-top').length &&
-	  $body.addClass('am-with-topbar-fixed-top');
+	  $('.am-topbar-fixed-top');.length &&
+	  $body.addClass('am-with-topbar-fixed-top');;
 
-	  $('.am-topbar-fixed-bottom').length &&
-	  $body.addClass('am-with-topbar-fixed-bottom');
+	  $('.am-topbar-fixed-bottom');.length &&
+	  $body.addClass('am-with-topbar-fixed-bottom');;
 
 	  // Remove responsive classes in .am-layout
-	  var $layout = $('.am-layout');
-	  $layout.find('[class*="md-block-grid"]').alterClass('md-block-grid-*');
-	  $layout.find('[class*="lg-block-grid"]').alterClass('lg-block-grid');
+	  var $layout = $('.am-layout');;
+	  $layout.find('[class*="md-block-grid"]');.alterClass('md-block-grid-*');;
+	  $layout.find('[class*="lg-block-grid"]');.alterClass('lg-block-grid');;
 
 	  // widgets not in .am-layout
-	  $('[data-am-widget]').each(function() {
+	  $('[data-am-widget]');.each(function() {
 	    var $widget = $(this);
-	    // console.log($widget.parents('.am-layout').length)
-	    if ($widget.parents('.am-layout').length === 0) {
-	      $widget.addClass('am-no-layout');
+	    // console.log($widget.parents('.am-layout');.length)
+	    if ($widget.parents('.am-layout');.length === 0) {
+	      $widget.addClass('am-no-layout');;
 	    }
 	  });
 	});
@@ -748,7 +748,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var UI = __webpack_require__(2);
 
 	var VENDOR_PREFIXES = ['', 'webkit', 'Moz', 'MS', 'ms', 'o'];
-	var TEST_ELEMENT = document.createElement('div');
+	var TEST_ELEMENT = document.createElement('div');;
 
 	var TYPE_FUNCTION = 'function';
 
@@ -822,10 +822,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	function deprecate(method, name, message) {
 	  var deprecationMessage = 'DEPRECATED METHOD: ' + name + '\n' + message + ' AT \n';
 	  return function() {
-	    var e = new Error('get-stack-trace');
-	    var stack = e && e.stack ? e.stack.replace(/^[^\(]+?[\n$]/gm, '')
-	      .replace(/^\s+at\s+/gm, '')
-	      .replace(/^Object.<anonymous>\s*\(/gm, '{anonymous}()@') : 'Unknown Stack Trace';
+	    var e = new Error('get-stack-trace');;
+	    var stack = e && e.stack ? e.stack.replace(/^[^\(]+?[\n$]/gm, '');
+	      .replace(/^\s+at\s+/gm, '');
+	      .replace(/^Object.<anonymous>\s*\(/gm, '{anonymous}()@'); : 'Unknown Stack Trace';
 
 	    var log = window.console && (window.console.warn || window.console.log);
 	    if (log) {
@@ -843,10 +843,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @returns {Object} target
 	 */
 	var assign;
-	if (typeof Object.assign !== 'function') {
+	if (typeof Object.assign !== 'function'); {
 	  assign = function assign(target) {
 	    if (target === undefined || target === null) {
-	      throw new TypeError('Cannot convert undefined or null to object');
+	      throw new TypeError('Cannot convert undefined or null to object');;
 	    }
 
 	    var output = Object(target);
@@ -884,7 +884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    i++;
 	  }
 	  return dest;
-	}, 'extend', 'Use `assign`.');
+	}, 'extend', 'Use `assign`.');;
 
 	/**
 	 * merge the values from src in the dest.
@@ -895,7 +895,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	var merge = deprecate(function merge(dest, src) {
 	  return extend(dest, src, true);
-	}, 'merge', 'Use `assign`.');
+	}, 'merge', 'Use `assign`.');;
 
 	/**
 	 * simple class inheritance
@@ -1044,7 +1044,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * unique array with objects based on a key (like 'id') or just by the array's value
+	 * unique array with objects based on a key (like 'id'); or just by the array's value
 	 * @param {Array} src [{id:1},{id:2},{id:1}]
 	 * @param {String} [key]
 	 * @param {Boolean} [sort=False]
@@ -1122,7 +1122,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var MOBILE_REGEX = /mobile|tablet|ip(ad|hone|od)|android/i;
 
 	var SUPPORT_TOUCH = ('ontouchstart' in window);
-	var SUPPORT_POINTER_EVENTS = prefixed(window, 'PointerEvent') !== undefined;
+	var SUPPORT_POINTER_EVENTS = prefixed(window, 'PointerEvent'); !== undefined;
 	var SUPPORT_ONLY_TOUCH = SUPPORT_TOUCH && MOBILE_REGEX.test(navigator.userAgent);
 
 	var INPUT_TYPE_TOUCH = 'touch';
@@ -1620,14 +1620,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var store = this.store;
 	    var removePointer = false;
 
-	    var eventTypeNormalized = ev.type.toLowerCase().replace('ms', '');
+	    var eventTypeNormalized = ev.type.toLowerCase().replace('ms', '');;
 	    var eventType = POINTER_INPUT_MAP[eventTypeNormalized];
 	    var pointerType = IE10_POINTER_TYPE_ENUM[ev.pointerType] || ev.pointerType;
 
 	    var isTouch = (pointerType == INPUT_TYPE_TOUCH);
 
 	    // get index of the event in the store
-	    var storeIndex = inArray(store, ev.pointerId, 'pointerId');
+	    var storeIndex = inArray(store, ev.pointerId, 'pointerId');;
 
 	    // start and mouse must be down
 	    if (eventType & INPUT_START && (ev.button === 0 || isTouch)) {
@@ -1925,7 +1925,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return false;
 	}
 
-	var PREFIXED_TOUCH_ACTION = prefixed(TEST_ELEMENT.style, 'touchAction');
+	var PREFIXED_TOUCH_ACTION = prefixed(TEST_ELEMENT.style, 'touchAction');;
 	var NATIVE_TOUCH_ACTION = PREFIXED_TOUCH_ACTION !== undefined;
 
 	// magical touchAction value
@@ -1984,7 +1984,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        actions = actions.concat(recognizer.getTouchAction());
 	      }
 	    });
-	    return cleanTouchActions(actions.join(' '));
+	    return cleanTouchActions(actions.join(' '););
 	  },
 
 	  /**
@@ -3307,7 +3307,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @param {Object} data
 	 */
 	function triggerDomEvent(event, data) {
-	  var gestureEvent = document.createEvent('Event');
+	  var gestureEvent = document.createEvent('Event');;
 	  gestureEvent.initEvent(event, true, true);
 	  gestureEvent.gesture = data;
 	  data.target.dispatchEvent(gestureEvent);
@@ -3376,7 +3376,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function($, Hammer) {
 	  function hammerify(el, options) {
 	    var $el = $(el);
-	    if (!$el.data('hammer')) {
+	    if (!$el.data('hammer');) {
 	      $el.data('hammer', new Hammer($el[0], options));
 	    }
 	  }
@@ -3421,7 +3421,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Check if document is loaded, needed by autostart
 	var _DOMReady = false;
-	if (document.readyState === 'complete') {
+	if (document.readyState === 'complete'); {
 	  _DOMReady = true;
 	} else if (_eventListener) {
 	  window.addEventListener('load', loaded, false);
@@ -3490,7 +3490,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  onAdd: null,				// when the application is launched the first time from the homescreen (guesstimate)
 	  onPrivate: null,			// executed if user is in private mode
 	  privateModeOverride: false,	// show the message even in private mode (very rude)
-	  detectHomescreen: false		// try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL')
+	  detectHomescreen: false		// try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL');
 	};
 
 	// browser info and capability
@@ -3501,22 +3501,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	  hasToken: document.location.hash == '#ath' || _reSmartURL.test(document.location.href) || _reQueryString.test(document.location.search),
 	  isRetina: window.devicePixelRatio && window.devicePixelRatio > 1,
 	  isIDevice: (/iphone|ipod|ipad/i).test(_ua),
-	  isMobileChrome: _ua.indexOf('Android') > -1 && (/Chrome\/[.0-9]*/).test(_ua) && _ua.indexOf("Version") == -1,
-	  isMobileIE: _ua.indexOf('Windows Phone') > -1,
-	  language: _nav.language && _nav.language.toLowerCase().replace('-', '_') || ''
+	  isMobileChrome: _ua.indexOf('Android'); > -1 && (/Chrome\/[.0-9]*/).test(_ua) && _ua.indexOf("Version") == -1,
+	  isMobileIE: _ua.indexOf('Windows Phone'); > -1,
+	  language: _nav.language && _nav.language.toLowerCase().replace('-', '_'); || ''
 	});
 
 	// falls back to en_us if language is unsupported
 	ath.language = ath.language && ath.language in ath.intl ? ath.language : 'en_us';
 
-	ath.isMobileSafari = ath.isIDevice && _ua.indexOf('Safari') > -1 && _ua.indexOf('CriOS') < 0;
+	ath.isMobileSafari = ath.isIDevice && _ua.indexOf('Safari'); > -1 && _ua.indexOf('CriOS'); < 0;
 	ath.OS = ath.isIDevice ? 'ios' : ath.isMobileChrome ? 'android' : ath.isMobileIE ? 'windows' : 'unsupported';
 
 	ath.OSVersion = _ua.match(/(OS|Android) (\d+[_\.]\d+)/);
-	ath.OSVersion = ath.OSVersion && ath.OSVersion[2] ? +ath.OSVersion[2].replace('_', '.') : 0;
+	ath.OSVersion = ath.OSVersion && ath.OSVersion[2] ? +ath.OSVersion[2].replace('_', '.'); : 0;
 
 	ath.isStandalone = 'standalone' in window.navigator && window.navigator.standalone;
-	ath.isTablet = (ath.isMobileSafari && _ua.indexOf('iPad') > -1) || (ath.isMobileChrome && _ua.indexOf('Mobile') < 0);
+	ath.isTablet = (ath.isMobileSafari && _ua.indexOf('iPad'); > -1) || (ath.isMobileChrome && _ua.indexOf('Mobile'); < 0);
 
 	ath.isCompatible = (ath.isMobileSafari && ath.OSVersion >= 6) || ath.isMobileChrome;	// TODO: add winphone
 
@@ -3531,7 +3531,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	ath.removeSession = function(appID) {
 	  try {
 	    if (!localStorage) {
-	      throw new Error('localStorage is not defined');
+	      throw new Error('localStorage is not defined');;
 	    }
 
 	    localStorage.removeItem(appID || ath.defaults.appID);
@@ -3602,7 +3602,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // check if we can use the local storage
 	  try {
 	    if (!localStorage) {
-	      throw new Error('localStorage is not defined');
+	      throw new Error('localStorage is not defined');;
 	    }
 
 	    localStorage.setItem(this.options.appID, JSON.stringify(this.session));
@@ -3626,7 +3626,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  // check compatibility with old versions of add to homescreen. Opt-out if an old session is found
-	  if (this.getItem('addToHome')) {
+	  if (this.getItem('addToHome');) {
 	    this.optOut();
 	  }
 
@@ -3681,12 +3681,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    // URL doesn't have the token, so add it
-	    if (this.options.detectHomescreen == 'hash') {
-	      history.replaceState('', window.document.title, document.location.href + '#ath');
-	    } else if (this.options.detectHomescreen == 'smartURL') {
-	      history.replaceState('', window.document.title, document.location.href.replace(/(\/)?$/, '/ath$1'));
+	    if (this.options.detectHomescreen == 'hash'); {
+	      history.replaceState('', window.document.title, document.location.href + '#ath');;
+	    } else if (this.options.detectHomescreen == 'smartURL'); {
+	      history.replaceState('', window.document.title, document.location.href.replace(/(\/)?$/, '/ath$1'););
 	    } else {
-	      history.replaceState('', window.document.title, document.location.href + (document.location.search ? '&' : '?' ) + 'ath=');
+	      history.replaceState('', window.document.title, document.location.href + (document.location.search ? '&' : '?' ) + 'ath=');;
 	    }
 	  }
 
@@ -3790,10 +3790,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // try to get the highest resolution application icon
 	    if (!this.applicationIcon) {
-	      if (ath.OS == 'ios') {
-	        this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][sizes="152x152"],head link[rel^=apple-touch-icon][sizes="144x144"],head link[rel^=apple-touch-icon][sizes="120x120"],head link[rel^=apple-touch-icon][sizes="114x114"],head link[rel^=apple-touch-icon]');
+	      if (ath.OS == 'ios'); {
+	        this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][sizes="152x152"],head link[rel^=apple-touch-icon][sizes="144x144"],head link[rel^=apple-touch-icon][sizes="120x120"],head link[rel^=apple-touch-icon][sizes="114x114"],head link[rel^=apple-touch-icon]');;
 	      } else {
-	        this.applicationIcon = document.querySelector('head link[rel^="shortcut icon"][sizes="196x196"],head link[rel^=apple-touch-icon]');
+	        this.applicationIcon = document.querySelector('head link[rel^="shortcut icon"][sizes="196x196"],head link[rel^=apple-touch-icon]');;
 	      }
 	    }
 
@@ -3805,17 +3805,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	      message = this.options.message[ath.OS];
 	    } else if (this.options.message in ath.intl) {				// you can force the locale
 	      message = ath.intl[this.options.message][ath.OS];
-	    } else if (this.options.message !== '') {						// use a custom message
+	    } else if (this.options.message !== ''); {						// use a custom message
 	      message = this.options.message;
 	    } else if (ath.OS in ath.intl[ath.language]) {				// otherwise we use our message
 	      message = ath.intl[ath.language][ath.OS];
 	    }
 
 	    // add the action icon
-	    message = '<p>' + message.replace('%icon', '<span class="ath-action-icon">icon</span>') + '</p>';
+	    message = '<p>' + message.replace('%icon', '<span class="ath-action-icon">icon</span>'); + '</p>';
 
 	    // create the message container
-	    this.viewport = document.createElement('div');
+	    this.viewport = document.createElement('div');;
 	    this.viewport.className = 'ath-viewport';
 	    if (this.options.modal) {
 	      this.viewport.className += ' ath-modal';
@@ -3826,8 +3826,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.viewport.style.position = 'absolute';
 
 	    // create the actual message element
-	    this.element = document.createElement('div');
-	    this.element.className = 'ath-container ath-' + ath.OS + ' ath-' + ath.OS + (ath.OSVersion + '').substr(0, 1) + ' ath-' + (ath.isTablet ? 'tablet' : 'phone');
+	    this.element = document.createElement('div');;
+	    this.element.className = 'ath-container ath-' + ath.OS + ' ath-' + ath.OS + (ath.OSVersion + '');.substr(0, 1) + ' ath-' + (ath.isTablet ? 'tablet' : 'phone');;
 	    this.element.style.cssText = '-webkit-transition-property:-webkit-transform,opacity;-webkit-transition-duration:0s;-webkit-transition-timing-function:ease-out;transition-property:transform,opacity;transition-duration:0s;transition-timing-function:ease-out;';
 	    this.element.style.webkitTransform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
 	    this.element.style.transform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
@@ -3835,7 +3835,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // add the application icon
 	    if (this.options.icon && this.applicationIcon) {
 	      this.element.className += ' ath-icon';
-	      this.img = document.createElement('img');
+	      this.img = document.createElement('img');;
 	      this.img.className = 'ath-application-icon';
 	      this.img.addEventListener('load', this, false);
 	      this.img.addEventListener('error', this, false);
@@ -3991,7 +3991,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  getItem: function(item) {
 	    try {
 	      if (!localStorage) {
-	        throw new Error('localStorage is not defined');
+	        throw new Error('localStorage is not defined');;
 	      }
 
 	      return localStorage.getItem(item);
@@ -4032,16 +4032,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function _removeToken() {
-	  if (document.location.hash == '#ath') {
-	    history.replaceState('', window.document.title, document.location.href.split('#')[0]);
+	  if (document.location.hash == '#ath'); {
+	    history.replaceState('', window.document.title, document.location.href.split('#');[0]);
 	  }
 
 	  if (_reSmartURL.test(document.location.href)) {
-	    history.replaceState('', window.document.title, document.location.href.replace(_reSmartURL, '$1'));
+	    history.replaceState('', window.document.title, document.location.href.replace(_reSmartURL, '$1'););
 	  }
 
 	  if (_reQueryString.test(document.location.search)) {
-	    history.replaceState('', window.document.title, document.location.href.replace(_reQueryString, '$2'));
+	    history.replaceState('', window.document.title, document.location.href.replace(_reQueryString, '$2'););
 	  }
 	}
 
@@ -4075,7 +4075,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$element = $(element);
 
 	  this.$element
-	    .addClass('am-fade am-in')
+	    .addClass('am-fade am-in');
 	    .on('click.alert.amui', '.am-close', function() {
 	      _this.close();
 	    });
@@ -4088,13 +4088,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	Alert.prototype.close = function() {
 	  var $element = this.$element;
 
-	  $element.trigger('close.alert.amui').removeClass('am-in');
+	  $element.trigger('close.alert.amui');.removeClass('am-in');;
 
 	  function processAlert() {
-	    $element.trigger('closed.alert.amui').remove();
+	    $element.trigger('closed.alert.amui');.remove();
 	  }
 
-	  UI.support.transition && $element.hasClass('am-fade') ?
+	  UI.support.transition && $element.hasClass('am-fade'); ?
 	    $element
 	      .one(UI.support.transition.end, processAlert)
 	      .emulateTransitionEnd(200) :
@@ -4107,7 +4107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// Init code
 	$(document).on('click.alert.amui.data-api', '[data-am-alert]', function(e) {
 	  var $target = $(e.target);
-	  $target.is('.am-close') && $(this).alert('close');
+	  $target.is('.am-close'); && $(this).alert('close');;
 	});
 
 	module.exports = Alert;
@@ -4147,7 +4147,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var disabled = 'disabled';
 	  var data = $element.data();
 	  var options = this.options;
-	  var val = $element.is('input') ? 'val' : 'html';
+	  var val = $element.is('input'); ? 'val' : 'html';
 	  var stateClassName = 'am-btn-' + state + ' ' + options.disabledClassName;
 
 	  state += 'Text';
@@ -4173,7 +4173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // push to event loop to allow forms to submit
 	  setTimeout($.proxy(function() {
 	    // TODO: add stateClass for other states
-	    if (state === 'loadingText') {
+	    if (state === 'loadingText'); {
 	      $element.addClass(stateClassName).attr(disabled, disabled);
 	      this.isLoading = true;
 	    } else if (this.isLoading) {
@@ -4186,14 +4186,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	Button.prototype.toggle = function() {
 	  var changed = true;
 	  var $element = this.$element;
-	  var $parent = this.$element.parent('[class*="am-btn-group"]');
+	  var $parent = this.$element.parent('[class*="am-btn-group"]');;
 	  var activeClassName = Button.DEFAULTS.activeClassName;
 
 	  if ($parent.length) {
-	    var $input = this.$element.find('input');
+	    var $input = this.$element.find('input');;
 
-	    if ($input.prop('type') == 'radio') {
-	      if ($input.prop('checked') && $element.hasClass(activeClassName)) {
+	    if ($input.prop('type'); == 'radio'); {
+	      if ($input.prop('checked'); && $element.hasClass(activeClassName)) {
 	        changed = false;
 	      } else {
 	        $parent.find('.' + activeClassName).removeClass(activeClassName);
@@ -4202,7 +4202,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (changed) {
 	      $input.prop('checked',
-	        !$element.hasClass(activeClassName)).trigger('change');
+	        !$element.hasClass(activeClassName)).trigger('change');;
 	    }
 	  }
 
@@ -4217,9 +4217,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	UI.plugin('button', Button, {
 	  dataOptions: 'data-am-loading',
 	  methodCall: function(args, instance) {
-	    if (args[0] === 'toggle') {
+	    if (args[0] === 'toggle'); {
 	      instance.toggle();
-	    } else if (typeof args[0] === 'string') {
+	    } else if (typeof args[0] === 'string'); {
 	      instance.setState.apply(instance, args);
 	    }
 	  }
@@ -4230,19 +4230,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  e.preventDefault();
 	  var $btn = $(e.target);
 
-	  if (!$btn.hasClass('am-btn')) {
-	    $btn = $btn.closest('.am-btn');
+	  if (!$btn.hasClass('am-btn');) {
+	    $btn = $btn.closest('.am-btn');;
 	  }
 
-	  $btn.button('toggle');
+	  $btn.button('toggle');;
 	});
 
 	UI.ready(function(context) {
 	  $('[data-am-loading]', context).button();
 
 	  // resolves #866
-	  $('[data-am-button]', context).find('input:checked').each(function() {
-	    $(this).parent('label').addClass(Button.DEFAULTS.activeClassName);
+	  $('[data-am-button]', context).find('input:checked');.each(function() {
+	    $(this).parent('label');.addClass(Button.DEFAULTS.activeClassName);
 	  });
 	});
 
@@ -4283,43 +4283,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Collapse.prototype.open = function() {
-	  if (this.transitioning || this.$element.hasClass('am-in')) {
+	  if (this.transitioning || this.$element.hasClass('am-in');) {
 	    return;
 	  }
 
-	  var startEvent = $.Event('open.collapse.amui');
+	  var startEvent = $.Event('open.collapse.amui');;
 	  this.$element.trigger(startEvent);
 
 	  if (startEvent.isDefaultPrevented()) {
 	    return;
 	  }
 
-	  var actives = this.$parent && this.$parent.find('> .am-panel > .am-in');
+	  var actives = this.$parent && this.$parent.find('> .am-panel > .am-in');;
 
 	  if (actives && actives.length) {
-	    var hasData = actives.data('amui.collapse');
+	    var hasData = actives.data('amui.collapse');;
 
 	    if (hasData && hasData.transitioning) {
 	      return;
 	    }
 
-	    Plugin.call(actives, 'close');
+	    Plugin.call(actives, 'close');;
 
 	    hasData || actives.data('amui.collapse', null);
 	  }
 
 	  this.$element
-	    .removeClass('am-collapse')
-	    .addClass('am-collapsing').height(0);
+	    .removeClass('am-collapse');
+	    .addClass('am-collapsing');.height(0);
 
 	  this.transitioning = 1;
 
 	  var complete = function() {
 	    this.$element
-	      .removeClass('am-collapsing')
-	      .addClass('am-collapse am-in')
-	      .height('')
-	      .trigger('opened.collapse.amui');
+	      .removeClass('am-collapsing');
+	      .addClass('am-collapse am-in');
+	      .height('');
+	      .trigger('opened.collapse.amui');;
 	    this.transitioning = 0;
 	  };
 
@@ -4336,11 +4336,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Collapse.prototype.close = function() {
-	  if (this.transitioning || !this.$element.hasClass('am-in')) {
+	  if (this.transitioning || !this.$element.hasClass('am-in');) {
 	    return;
 	  }
 
-	  var startEvent = $.Event('close.collapse.amui');
+	  var startEvent = $.Event('close.collapse.amui');;
 	  this.$element.trigger(startEvent);
 
 	  if (startEvent.isDefaultPrevented()) {
@@ -4349,17 +4349,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.$element.height(this.$element.height()).redraw();
 
-	  this.$element.addClass('am-collapsing').
-	    removeClass('am-collapse am-in');
+	  this.$element.addClass('am-collapsing');.
+	    removeClass('am-collapse am-in');;
 
 	  this.transitioning = 1;
 
 	  var complete = function() {
 	    this.transitioning = 0;
 	    this.$element
-	      .trigger('closed.collapse.amui')
-	      .removeClass('am-collapsing')
-	      .addClass('am-collapse');
+	      .trigger('closed.collapse.amui');
+	      .removeClass('am-collapsing');
+	      .addClass('am-collapse');;
 	    // css({height: '0'});
 	  };
 
@@ -4373,19 +4373,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Collapse.prototype.toggle = function() {
-	  this[this.$element.hasClass('am-in') ? 'close' : 'open']();
+	  this[this.$element.hasClass('am-in'); ? 'close' : 'open']();
 	};
 
 	// Collapse Plugin
 	function Plugin(option) {
 	  return this.each(function() {
 	    var $this = $(this);
-	    var data = $this.data('amui.collapse');
+	    var data = $this.data('amui.collapse');;
 	    var options = $.extend({}, Collapse.DEFAULTS,
-	      UI.utils.options($this.attr('data-am-collapse')),
+	      UI.utils.options($this.attr('data-am-collapse');),
 	      typeof option == 'object' && option);
 
-	    if (!data && options.toggle && option === 'open') {
+	    if (!data && options.toggle && option === 'open'); {
 	      option = !option;
 	    }
 
@@ -4393,7 +4393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      $this.data('amui.collapse', (data = new Collapse(this, options)));
 	    }
 
-	    if (typeof option == 'string') {
+	    if (typeof option == 'string'); {
 	      data[option]();
 	    }
 	  });
@@ -4406,13 +4406,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function(e) {
 	    var href;
 	    var $this = $(this);
-	    var options = UI.utils.options($this.attr('data-am-collapse'));
+	    var options = UI.utils.options($this.attr('data-am-collapse'););
 	    var target = options.target ||
 	      e.preventDefault() ||
-	      (href = $this.attr('href')) &&
-	      href.replace(/.*(?=#[^\s]+$)/, '');
+	      (href = $this.attr('href');) &&
+	      href.replace(/.*(?=#[^\s]+$)/, '');;
 	    var $target = $(target);
-	    var data = $target.data('amui.collapse');
+	    var data = $target.data('amui.collapse');;
 	    var option = data ? 'toggle' : options;
 	    var parent = options.parent;
 	    var $parent = parent && $(parent);
@@ -4420,11 +4420,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (!data || !data.transitioning) {
 	      if ($parent) {
 	        // '[data-am-collapse*="{parent: \'' + parent + '"]
-	        $parent.find('[data-am-collapse]').not($this).addClass('am-collapsed');
+	        $parent.find('[data-am-collapse]');.not($this).addClass('am-collapsed');;
 	      }
 
-	      $this[$target.hasClass('am-in') ?
-	        'addClass' : 'removeClass']('am-collapsed');
+	      $this[$target.hasClass('am-in'); ?
+	        'addClass' : 'removeClass']('am-collapsed');;
 	    }
 
 	    Plugin.call($target, option);
@@ -4460,14 +4460,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$element.data('date', this.options.date);
 	  this.language = this.getLocale(this.options.locale);
 	  this.theme = this.options.theme;
-	  this.$picker = $(DPGlobal.template).appendTo('body').on({
+	  this.$picker = $(DPGlobal.template).appendTo('body');.on({
 	    click: $.proxy(this.click, this)
 	    // mousedown: $.proxy(this.mousedown, this)
 	  });
 
-	  this.isInput = this.$element.is('input');
-	  this.component = this.$element.is('.am-datepicker-date') ?
-	    this.$element.find('.am-datepicker-add-on') : false;
+	  this.isInput = this.$element.is('input');;
+	  this.component = this.$element.is('.am-datepicker-date'); ?
+	    this.$element.find('.am-datepicker-add-on'); : false;
 
 	  if (this.isInput) {
 	    this.$element.on({
@@ -4485,7 +4485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.minViewMode = this.options.minViewMode;
 
-	  if (typeof this.minViewMode === 'string') {
+	  if (typeof this.minViewMode === 'string'); {
 	    switch (this.minViewMode) {
 	      case 'months':
 	        this.minViewMode = 1;
@@ -4501,7 +4501,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.viewMode = this.options.viewMode;
 
-	  if (typeof this.viewMode === 'string') {
+	  if (typeof this.viewMode === 'string'); {
 	    switch (this.viewMode) {
 	      case 'months':
 	        this.viewMode = 1;
@@ -4555,7 +4555,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  var that = this;
 	  $doc.on('mousedown.datapicker.amui touchstart.datepicker.amui', function(ev) {
-	    if ($(ev.target).closest('.am-datepicker').length === 0) {
+	    if ($(ev.target).closest('.am-datepicker');.length === 0) {
 	      that.close();
 	    }
 	  });
@@ -4587,7 +4587,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (!this.isInput) {
 	    if (this.component) {
-	      $input = this.$element.find('input').attr('value', formatted);
+	      $input = this.$element.find('input');.attr('value', formatted);
 	    }
 
 	    this.$element.data('date', formatted);
@@ -4596,11 +4596,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  // fixes https://github.com/amazeui/amazeui/issues/711
-	  $input && $input.trigger('change');
+	  $input && $input.trigger('change');;
 	};
 
 	Datepicker.prototype.setValue = function(newDate) {
-	  if (typeof newDate === 'string') {
+	  if (typeof newDate === 'string'); {
 	    this.date = DPGlobal.parseDate(newDate, this.format);
 	  } else {
 	    this.date = new Date(newDate);
@@ -4623,12 +4623,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var right = $doc.width() - offset.left - $width;
 	  var isOutView = this.isOutView();
 
-	  this.$picker.removeClass('am-datepicker-right');
-	  this.$picker.removeClass('am-datepicker-up');
+	  this.$picker.removeClass('am-datepicker-right');;
+	  this.$picker.removeClass('am-datepicker-up');;
 
 	  if ($doc.width() > 640) {
 	    if (isOutView.outRight) {
-	      this.$picker.addClass('am-datepicker-right');
+	      this.$picker.addClass('am-datepicker-right');;
 	      this.$picker.css({
 	        top: top,
 	        left: 'auto',
@@ -4637,7 +4637,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return;
 	    }
 	    if (isOutView.outBottom) {
-	      this.$picker.addClass('am-datepicker-up');
+	      this.$picker.addClass('am-datepicker-up');;
 	      top = offset.top - this.$picker.outerHeight(true);
 	    }
 	  } else {
@@ -4653,7 +4653,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Datepicker.prototype.update = function(newDate) {
 	  this.date = DPGlobal.parseDate(
 	    typeof newDate === 'string' ? newDate : (this.isInput ?
-	      this.$element.prop('value') : this.$element.data('date')),
+	      this.$element.prop('value'); : this.$element.data('date');),
 	    this.format
 	  );
 	  this.viewDate = new Date(this.date.getFullYear(),
@@ -4673,7 +4673,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  html += '</tr>';
 
-	  this.$picker.find('.am-datepicker-days thead').append(html);
+	  this.$picker.find('.am-datepicker-days thead');.append(html);
 	};
 
 	Datepicker.prototype.fillMonths = function() {
@@ -4683,7 +4683,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    html += '<span class="am-datepicker-month">' +
 	    Datepicker.locales[this.language].monthsShort[i++] + '</span>';
 	  }
-	  this.$picker.find('.am-datepicker-months td').append(html);
+	  this.$picker.find('.am-datepicker-months td');.append(html);
 	};
 
 	Datepicker.prototype.fill = function() {
@@ -4697,9 +4697,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    .getDaysInMonth(prevMonth.getFullYear(), prevMonth.getMonth());
 
 	  var daysSelect = this.$picker
-	    .find('.am-datepicker-days .am-datepicker-select');
+	    .find('.am-datepicker-days .am-datepicker-select');;
 
-	  if (this.language === 'zh_CN') {
+	  if (this.language === 'zh_CN'); {
 	    daysSelect.text(year + Datepicker.locales[this.language].year[0] +
 	    ' ' + Datepicker.locales[this.language].months[month]);
 	  } else {
@@ -4721,7 +4721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  while (prevMonth.valueOf() < nextMonth) {
 	    if (prevMonth.getDay() === this.weekStart) {
-	      html.push('<tr>');
+	      html.push('<tr>');;
 	    }
 
 	    className = this.onRender(prevMonth, 0);
@@ -4738,48 +4738,48 @@ return /******/ (function(modules) { // webpackBootstrap
 	      className += ' am-active';
 	    }
 	    html.push('<td class="am-datepicker-day ' +
-	    className + '">' + prevMonth.getDate() + '</td>');
+	    className + '">' + prevMonth.getDate() + '</td>');;
 
 	    if (prevMonth.getDay() === this.weekEnd) {
-	      html.push('</tr>');
+	      html.push('</tr>');;
 	    }
 
 	    prevMonth.setDate(prevMonth.getDate() + 1);
 	  }
 
-	  this.$picker.find('.am-datepicker-days tbody')
-	    .empty().append(html.join(''));
+	  this.$picker.find('.am-datepicker-days tbody');
+	    .empty().append(html.join(''););
 
 	  var currentYear = this.date.getFullYear();
-	  var months = this.$picker.find('.am-datepicker-months')
-	    .find('.am-datepicker-select')
+	  var months = this.$picker.find('.am-datepicker-months');
+	    .find('.am-datepicker-select');
 	    .text(year);
 	  months = months.end()
-	    .find('span').removeClass('am-active').removeClass('am-disabled');
+	    .find('span');.removeClass('am-active');.removeClass('am-disabled');;
 
 	  var monthLen = 0;
 
 	  while (monthLen < 12) {
 	    if (this.onRender(d.setFullYear(year, monthLen), 1)) {
-	      months.eq(monthLen).addClass('am-disabled');
+	      months.eq(monthLen).addClass('am-disabled');;
 	    }
 	    monthLen++;
 	  }
 
 	  if (currentYear === year) {
 	    months.eq(this.date.getMonth())
-	        .removeClass('am-disabled')
-	        .addClass('am-active');
+	        .removeClass('am-disabled');
+	        .addClass('am-active');;
 	  }
 
 	  html = '';
 	  year = parseInt(year / 10, 10) * 10;
 	  var yearCont = this.$picker
-	    .find('.am-datepicker-years')
-	    .find('.am-datepicker-select')
+	    .find('.am-datepicker-years');
+	    .find('.am-datepicker-select');
 	    .text(year + '-' + (year + 9))
 	    .end()
-	    .find('td');
+	    .find('td');;
 	  var yearClassName;
 	  // fixes https://github.com/amazeui/amazeui/issues/770
 	  // maybe not need now
@@ -4790,8 +4790,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  for (var i = -1; i < 11; i++) {
 	    yearClassName = this.onRender(viewDate.setFullYear(year), 2);
 	    html += '<span class="' + yearClassName + '' +
-	    (i === -1 || i === 10 ? ' am-datepicker-old' : '') +
-	    (currentYear === year ? ' am-active' : '') + '">' + year + '</span>';
+	    (i === -1 || i === 10 ? ' am-datepicker-old' : ''); +
+	    (currentYear === year ? ' am-active' : ''); + '">' + year + '</span>';
 	    year += 1;
 	  }
 	  yearCont.html(html);
@@ -4802,11 +4802,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  event.preventDefault();
 	  var month;
 	  var year;
-	  var $dayActive = this.$picker.find('.am-datepicker-days').find('.am-active');
-	  var $months = this.$picker.find('.am-datepicker-months');
-	  var $monthIndex = $months.find('.am-active').index();
+	  var $dayActive = this.$picker.find('.am-datepicker-days');.find('.am-active');;
+	  var $months = this.$picker.find('.am-datepicker-months');;
+	  var $monthIndex = $months.find('.am-active');.index();
 
-	  var $target = $(event.target).closest('span, td, th');
+	  var $target = $(event.target).closest('span, td, th');;
 	  if ($target.length === 1) {
 	    switch ($target[0].nodeName.toLowerCase()) {
 	      case 'th':
@@ -4830,14 +4830,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        break;
 	      case 'span':
-	        if ($target.is('.am-disabled')) {
+	        if ($target.is('.am-disabled');) {
 	          return;
 	        }
 
-	        if ($target.is('.am-datepicker-month')) {
-	          month = $target.parent().find('span').index($target);
+	        if ($target.is('.am-datepicker-month');) {
+	          month = $target.parent().find('span');.index($target);
 
-	          if ($target.is('.am-active')) {
+	          if ($target.is('.am-active');) {
 	            this.viewDate.setMonth(month, $dayActive.text());
 	          } else {
 	            this.viewDate.setMonth(month);
@@ -4845,7 +4845,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        } else {
 	          year = parseInt($target.text(), 10) || 0;
-	          if ($target.is('.am-active')) {
+	          if ($target.is('.am-active');) {
 	            this.viewDate.setFullYear(year, $monthIndex, $dayActive.text());
 	          } else {
 	            this.viewDate.setFullYear(year);
@@ -4867,12 +4867,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.set();
 	        break;
 	      case 'td':
-	        if ($target.is('.am-datepicker-day') && !$target.is('.am-disabled')) {
+	        if ($target.is('.am-datepicker-day'); && !$target.is('.am-disabled');) {
 	          var day = parseInt($target.text(), 10) || 1;
 	          month = this.viewDate.getMonth();
-	          if ($target.is('.am-datepicker-old')) {
+	          if ($target.is('.am-datepicker-old');) {
 	            month -= 1;
-	          } else if ($target.is('.am-datepicker-new')) {
+	          } else if ($target.is('.am-datepicker-new');) {
 	            month += 1;
 	          }
 	          year = this.viewDate.getFullYear();
@@ -4904,7 +4904,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      Math.min(2, this.viewMode + dir));
 	  }
 
-	  this.$picker.find('>div').hide().
+	  this.$picker.find('>div');.hide().
 	    filter('.am-datepicker-' + DPGlobal.modes[this.viewMode].clsName).show();
 	};
 
@@ -4931,9 +4931,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Datepicker.prototype.getLocale = function(locale) {
 	  if (!locale) {
-	    locale = navigator.language && navigator.language.split('-');
+	    locale = navigator.language && navigator.language.split('-');;
 	    locale[1] = locale[1].toUpperCase();
-	    locale = locale.join('_');
+	    locale = locale.join('_');;
 	  }
 
 	  if (!Datepicker.locales[locale]) {
@@ -5007,7 +5007,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var parts = format.split(/\W+/);
 
 	    if (!separator || !parts || parts.length === 0) {
-	      throw new Error('Invalid date format.');
+	      throw new Error('Invalid date format.');;
 	    }
 
 	    return {
@@ -5068,8 +5068,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    var dateArray = [];
 
-	    val.dd = (val.d < 10 ? '0' : '') + val.d;
-	    val.mm = (val.m < 10 ? '0' : '') + val.m;
+	    val.dd = (val.d < 10 ? '0' : ''); + val.d;
+	    val.mm = (val.m < 10 ? '0' : ''); + val.m;
 
 	    for (var i = 0, cnt = format.parts.length; i < cnt; i++) {
 	      dateArray.push(val[format.parts[i]]);
@@ -5116,7 +5116,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Init code
 	UI.ready(function(context) {
-	  $('[data-am-datepicker]').datepicker();
+	  $('[data-am-datepicker]');.datepicker();
 	});
 
 	module.exports = UI.datepicker = Datepicker;
@@ -5137,7 +5137,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var transition = UI.support.transition;
 
 	var Dimmer = function() {
-	  this.id = UI.utils.generateGUID('am-dimmer');
+	  this.id = UI.utils.generateGUID('am-dimmer');;
 	  this.$element = $(Dimmer.DEFAULTS.tpl, {
 	    id: this.id
 	  });
@@ -5155,7 +5155,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!this.inited) {
 	    $(document.body).append(this.$element);
 	    this.inited = true;
-	    $doc.trigger('init.dimmer.amui');
+	    $doc.trigger('init.dimmer.amui');;
 	    this.$element.on('touchmove.dimmer.amui', function(e) {
 	      e.preventDefault();
 	    });
@@ -5178,12 +5178,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.checkScrollbar().setScrollbar();
 
-	  $element.show().trigger('open.dimmer.amui');
+	  $element.show().trigger('open.dimmer.amui');;
 
 	  transition && $element.off(transition.end);
 
 	  setTimeout(function() {
-	    $element.addClass('am-active');
+	    $element.addClass('am-active');;
 	  }, 0);
 
 	  return this;
@@ -5198,7 +5198,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  var $element = this.$element;
 
-	  $element.removeClass('am-active').trigger('close.dimmer.amui');
+	  $element.removeClass('am-active');.trigger('close.dimmer.amui');;
 
 	  function complete() {
 	    $element.hide();
@@ -5219,19 +5219,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Dimmer.prototype.setScrollbar = function() {
 	  var $body = $(document.body);
-	  var bodyPaddingRight = parseInt(($body.css('padding-right') || 0), 10);
+	  var bodyPaddingRight = parseInt(($body.css('padding-right'); || 0), 10);
 
 	  if (this.scrollbarWidth) {
 	    $body.css('padding-right', bodyPaddingRight + this.scrollbarWidth);
 	  }
 
-	  $body.addClass('am-dimmer-active');
+	  $body.addClass('am-dimmer-active');;
 
 	  return this;
 	};
 
 	Dimmer.prototype.resetScrollbar = function() {
-	  $(document.body).css('padding-right', '').removeClass('am-dimmer-active');
+	  $(document.body).css('padding-right', '');.removeClass('am-dimmer-active');;
 
 	  return this;
 	};
@@ -5272,7 +5272,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  !this.$boundary.length && (this.$boundary = $(window));
 
-	  this.active = this.$element.hasClass('am-active') ? true : false;
+	  this.active = this.$element.hasClass('am-active'); ? true : false;
 	  this.animating = null;
 
 	  this.events();
@@ -5304,7 +5304,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $element = this.$element;
 	  var $dropdown = this.$dropdown;
 
-	  if ($toggle.is('.am-disabled, :disabled')) {
+	  if ($toggle.is('.am-disabled, :disabled');) {
 	    return;
 	  }
 
@@ -5312,14 +5312,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return;
 	  }
 
-	  $element.trigger('open.dropdown.amui').addClass('am-active');
+	  $element.trigger('open.dropdown.amui');.addClass('am-active');;
 
-	  $toggle.trigger('focus');
+	  $toggle.trigger('focus');;
 
 	  this.checkDimensions(e);
 
 	  var complete = $.proxy(function() {
-	    $element.trigger('opened.dropdown.amui');
+	    $element.trigger('opened.dropdown.amui');;
 	    this.active = true;
 	    this.animating = 0;
 	  }, this);
@@ -5347,12 +5347,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $element = this.$element;
 	  var $dropdown = this.$dropdown;
 
-	  $element.trigger('close.dropdown.amui');
+	  $element.trigger('close.dropdown.amui');;
 
 	  var complete = $.proxy(function complete() {
 	    $element.
-	      removeClass('am-active').
-	      trigger('closed.dropdown.amui');
+	      removeClass('am-active');.
+	      trigger('closed.dropdown.amui');;
 	    this.active = false;
 	    this.animating = 0;
 	    this.$toggle.blur();
@@ -5400,24 +5400,24 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (this.$justify) {
 	    // jQuery.fn.width() is really...
-	    $dropdown.css({'min-width': this.$justify.css('width')});
+	    $dropdown.css({'min-width': this.$justify.css('width');});
 	  }
 
 	  if ((width + (offset.left - boundaryOffset)) > boundaryWidth) {
-	    this.$element.addClass('am-dropdown-flip');
+	    this.$element.addClass('am-dropdown-flip');;
 	  }
 	};
 
 	Dropdown.prototype.clear = function() {
-	  $('[data-am-dropdown]').not(this.$element).each(function() {
-	    var data = $(this).data('amui.dropdown');
+	  $('[data-am-dropdown]');.not(this.$element).each(function() {
+	    var data = $(this).data('amui.dropdown');;
 	    data && data.close();
 	  });
 	};
 
 	Dropdown.prototype.events = function() {
 	  var eventNS = 'dropdown.amui';
-	  // triggers = this.options.trigger.split(' '),
+	  // triggers = this.options.trigger.split(' ');,
 	  var $toggle = this.$toggle;
 
 	  $toggle.on('click.' + eventNS, $.proxy(function(e) {
@@ -5428,11 +5428,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  /*for (var i = triggers.length; i--;) {
 	   var trigger = triggers[i];
 
-	   if (trigger === 'click') {
+	   if (trigger === 'click'); {
 	   $toggle.on('click.' + eventNS, $.proxy(this.toggle, this))
 	   }
 
-	   if (trigger === 'focus' || trigger === 'hover') {
+	   if (trigger === 'focus' || trigger === 'hover'); {
 	   var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin';
 	   var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout';
 
@@ -5529,7 +5529,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      slider.animatingTo = slider.currentSlide;
 	      slider.atEnd = (slider.currentSlide === 0 || slider.currentSlide === slider.last);
-	      slider.containerSelector = slider.vars.selector.substr(0, slider.vars.selector.search(' '));
+	      slider.containerSelector = slider.vars.selector.substr(0, slider.vars.selector.search(' '););
 	      slider.slides = $(slider.vars.selector, slider);
 	      slider.container = $(slider.containerSelector, slider);
 	      slider.count = slider.slides.length;
@@ -5549,11 +5549,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      slider.startTimeout = null;
 	      // TOUCH/USECSS:
 	      slider.transitions = !slider.vars.video && !fade && slider.vars.useCSS && (function() {
-	        var obj = document.createElement('div'),
+	        var obj = document.createElement('div');,
 	          props = ['perspectiveProperty', 'WebkitPerspective', 'MozPerspective', 'OPerspective', 'msPerspective'];
 	        for (var i in props) {
 	          if (obj.style[props[i]] !== undefined) {
-	            slider.pfx = props[i].replace('Perspective', '').toLowerCase();
+	            slider.pfx = props[i].replace('Perspective', '');.toLowerCase();
 	            slider.prop = "-" + slider.pfx + "-transform";
 	            return true;
 	          }
@@ -5597,8 +5597,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        $(document).bind('keyup', function(event) {
 	          var keycode = event.keyCode;
 	          if (!slider.animating && (keycode === 39 || keycode === 37)) {
-	            var target = (keycode === 39) ? slider.getTarget('next') :
-	              (keycode === 37) ? slider.getTarget('prev') : false;
+	            var target = (keycode === 39) ? slider.getTarget('next'); :
+	              (keycode === 37) ? slider.getTarget('prev'); : false;
 	            slider.flexAnimate(target, slider.vars.pauseOnAction);
 	          }
 	        });
@@ -5607,7 +5607,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (slider.vars.mousewheel) {
 	        slider.bind('mousewheel', function(event, delta, deltaX, deltaY) {
 	          event.preventDefault();
-	          var target = (delta < 0) ? slider.getTarget('next') : slider.getTarget('prev');
+	          var target = (delta < 0) ? slider.getTarget('next'); : slider.getTarget('prev');;
 	          slider.flexAnimate(target, slider.vars.pauseOnAction);
 	        });
 	      }
@@ -5666,9 +5666,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var $slide = $(this),
 	              target = $slide.index();
 	            var posFromLeft = $slide.offset().left - $(slider).scrollLeft(); // Find position of slide relative to left of slider container
-	            if (posFromLeft <= 0 && $slide.hasClass(namespace + 'active-slide')) {
+	            if (posFromLeft <= 0 && $slide.hasClass(namespace + 'active-slide');) {
 	              slider.flexAnimate(slider.getTarget("prev"), true);
-	            } else if (!$(slider.vars.asNavFor).data('flexslider').animating && !$slide.hasClass(namespace + "active-slide")) {
+	            } else if (!$(slider.vars.asNavFor).data('flexslider');.animating && !$slide.hasClass(namespace + "active-slide")) {
 	              slider.direction = (slider.currentItem < target) ? "next" : "prev";
 	              slider.flexAnimate(target, slider.vars.pauseOnAction, false, true, true);
 	            }
@@ -5689,7 +5689,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              e.preventDefault();
 	              var $slide = $(this),
 	                target = $slide.index();
-	              if (!$(slider.vars.asNavFor).data('flexslider').animating && !$slide.hasClass('active')) {
+	              if (!$(slider.vars.asNavFor).data('flexslider');.animating && !$slide.hasClass('active');) {
 	                slider.direction = (slider.currentItem < target) ? "next" : "prev";
 	                slider.flexAnimate(target, slider.vars.pauseOnAction, false, true, true);
 	              }
@@ -5712,22 +5712,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	          item,
 	          slide;
 
-	        slider.controlNavScaffold = $('<ol class="' + namespace + 'control-nav ' + namespace + type + '"></ol>');
+	        slider.controlNavScaffold = $('<ol class="' + namespace + 'control-nav ' + namespace + type + '"></ol>');;
 
 	        if (slider.pagingCount > 1) {
 	          for (var i = 0; i < slider.pagingCount; i++) {
 	            slide = slider.slides.eq(i);
-	            if (undefined === slide.attr('data-thumb-alt')) {
-	              slide.attr('data-thumb-alt', '');
+	            if (undefined === slide.attr('data-thumb-alt');) {
+	              slide.attr('data-thumb-alt', '');;
 	            }
-	            var altText = ('' !== slide.attr('data-thumb-alt')) ? altText = ' alt="' + slide.attr('data-thumb-alt') + '"' : '';
+	            var altText = ('' !== slide.attr('data-thumb-alt');) ? altText = ' alt="' + slide.attr('data-thumb-alt'); + '"' : '';
 	            item = (slider.vars.controlNav === "thumbnails") ? '<img src="' + slide.attr( 'data-thumb' ) + '"' + altText + '/>' : '<a href="#">' + j + '</a>';
 	            if ('thumbnails' === slider.vars.controlNav && true === slider.vars.thumbCaptions) {
-	              var captn = slide.attr('data-thumbcaption');
+	              var captn = slide.attr('data-thumbcaption');;
 	              if ('' !== captn && undefined !== captn) {item += '<span class="' + namespace + 'caption">' + captn + '</span>';}
 	            }
-	            // slider.controlNavScaffold.append('<li>' + item + '</li>');
-	            slider.controlNavScaffold.append('<li>' + item + '<i></i></li>');
+	            // slider.controlNavScaffold.append('<li>' + item + '</li>');;
+	            slider.controlNavScaffold.append('<li>' + item + '<i></i></li>');;
 	            j++;
 	          }
 	        }
@@ -5745,7 +5745,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var $this = $(this),
 	              target = slider.controlNav.index($this);
 
-	            if (!$this.hasClass(namespace + 'active')) {
+	            if (!$this.hasClass(namespace + 'active');) {
 	              slider.direction = (target > slider.currentSlide) ? "next" : "prev";
 	              slider.flexAnimate(target, slider.vars.pauseOnAction);
 	            }
@@ -5770,7 +5770,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var $this = $(this),
 	              target = slider.controlNav.index($this);
 
-	            if (!$this.hasClass(namespace + 'active')) {
+	            if (!$this.hasClass(namespace + 'active');) {
 	              (target > slider.currentSlide) ? slider.direction = "next" : slider.direction = "prev";
 	              slider.flexAnimate(target, slider.vars.pauseOnAction);
 	            }
@@ -5792,11 +5792,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      },
 	      update: function(action, pos) {
 	        if (slider.pagingCount > 1 && action === "add") {
-	          slider.controlNavScaffold.append($('<li><a href="#">' + slider.count + '</a></li>'));
+	          slider.controlNavScaffold.append($('<li><a href="#">' + slider.count + '</a></li>'););
 	        } else if (slider.pagingCount === 1) {
-	          slider.controlNavScaffold.find('li').remove();
+	          slider.controlNavScaffold.find('li');.remove();
 	        } else {
-	          slider.controlNav.eq(pos).closest('li').remove();
+	          slider.controlNav.eq(pos).closest('li');.remove();
 	        }
 	        methods.controlNav.set();
 	        (slider.pagingCount > 1 && slider.pagingCount !== slider.controlNav.length) ? slider.update(pos, action) : methods.controlNav.active();
@@ -5804,7 +5804,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    directionNav: {
 	      setup: function() {
-	        var directionNavScaffold = $('<ul class="' + namespace + 'direction-nav"><li class="' + namespace + 'nav-prev"><a class="' + namespace + 'prev" href="#">' + slider.vars.prevText + '</a></li><li class="' + namespace + 'nav-next"><a class="' + namespace + 'next" href="#">' + slider.vars.nextText + '</a></li></ul>');
+	        var directionNavScaffold = $('<ul class="' + namespace + 'direction-nav"><li class="' + namespace + 'nav-prev"><a class="' + namespace + 'prev" href="#">' + slider.vars.prevText + '</a></li><li class="' + namespace + 'nav-next"><a class="' + namespace + 'next" href="#">' + slider.vars.nextText + '</a></li></ul>');;
 
 	        // CUSTOM DIRECTION NAV:
 	        if (slider.customDirectionNav) {
@@ -5824,7 +5824,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          var target;
 
 	          if (watchedEvent === "" || watchedEvent === event.type) {
-	            target = ($(this).hasClass(namespace + 'next')) ? slider.getTarget('next') : slider.getTarget('prev');
+	            target = ($(this).hasClass(namespace + 'next');) ? slider.getTarget('next'); : slider.getTarget('prev');;
 	            slider.flexAnimate(target, slider.vars.pauseOnAction);
 	          }
 
@@ -5838,23 +5838,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	      update: function() {
 	        var disabledClass = namespace + 'disabled';
 	        if (slider.pagingCount === 1) {
-	          slider.directionNav.addClass(disabledClass).attr('tabindex', '-1');
+	          slider.directionNav.addClass(disabledClass).attr('tabindex', '-1');;
 	        } else if (!slider.vars.animationLoop) {
 	          if (slider.animatingTo === 0) {
-	            slider.directionNav.removeClass(disabledClass).filter('.' + namespace + "prev").addClass(disabledClass).attr('tabindex', '-1');
+	            slider.directionNav.removeClass(disabledClass).filter('.' + namespace + "prev").addClass(disabledClass).attr('tabindex', '-1');;
 	          } else if (slider.animatingTo === slider.last) {
-	            slider.directionNav.removeClass(disabledClass).filter('.' + namespace + "next").addClass(disabledClass).attr('tabindex', '-1');
+	            slider.directionNav.removeClass(disabledClass).filter('.' + namespace + "next").addClass(disabledClass).attr('tabindex', '-1');;
 	          } else {
-	            slider.directionNav.removeClass(disabledClass).removeAttr('tabindex');
+	            slider.directionNav.removeClass(disabledClass).removeAttr('tabindex');;
 	          }
 	        } else {
-	          slider.directionNav.removeClass(disabledClass).removeAttr('tabindex');
+	          slider.directionNav.removeClass(disabledClass).removeAttr('tabindex');;
 	        }
 	      }
 	    },
 	    pausePlay: {
 	      setup: function() {
-	        var pausePlayScaffold = $('<div class="' + namespace + 'pauseplay"><a href="#"></a></div>');
+	        var pausePlayScaffold = $('<div class="' + namespace + 'pauseplay"><a href="#"></a></div>');;
 
 	        // CONTROLSCONTAINER:
 	        if (slider.controlsContainer) {
@@ -5865,13 +5865,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	          slider.pausePlay = $('.' + namespace + 'pauseplay a', slider);
 	        }
 
-	        methods.pausePlay.update((slider.vars.slideshow) ? namespace + 'pause' : namespace + 'play');
+	        methods.pausePlay.update((slider.vars.slideshow) ? namespace + 'pause' : namespace + 'play');;
 
 	        slider.pausePlay.bind(eventType, function(event) {
 	          event.preventDefault();
 
 	          if (watchedEvent === "" || watchedEvent === event.type) {
-	            if ($(this).hasClass(namespace + 'pause')) {
+	            if ($(this).hasClass(namespace + 'pause');) {
 	              slider.manualPause = true;
 	              slider.manualPlay = false;
 	              slider.pause();
@@ -5890,7 +5890,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	      },
 	      update: function(state) {
-	        (state === "play") ? slider.pausePlay.removeClass(namespace + 'pause').addClass(namespace + 'play').html(slider.vars.playText) : slider.pausePlay.removeClass(namespace + 'play').addClass(namespace + 'pause').html(slider.vars.pauseText);
+	        (state === "play") ? slider.pausePlay.removeClass(namespace + 'pause');.addClass(namespace + 'play');.html(slider.vars.playText) : slider.pausePlay.removeClass(namespace + 'play');.addClass(namespace + 'pause');.html(slider.vars.pauseText);
 	      }
 	    },
 	    touch: function() {
@@ -5964,7 +5964,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	          if (slider.animatingTo === slider.currentSlide && !scrolling && !(dx === null)) {
 	            var updateDx = (reverse) ? -dx : dx,
-	              target = (updateDx > 0) ? slider.getTarget('next') : slider.getTarget('prev');
+	              target = (updateDx > 0) ? slider.getTarget('next'); : slider.getTarget('prev');;
 
 	            if (slider.canAdvance(target) && (Number(new Date()) - startT < 550 && Math.abs(updateDx) > 50 || Math.abs(updateDx) > cwidth / 2)) {
 	              slider.flexAnimate(target, slider.vars.pauseOnAction);
@@ -6051,7 +6051,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	          if (slider.animatingTo === slider.currentSlide && !scrolling && !(dx === null)) {
 	            var updateDx = (reverse) ? -dx : dx,
-	              target = (updateDx > 0) ? slider.getTarget('next') : slider.getTarget('prev');
+	              target = (updateDx > 0) ? slider.getTarget('next'); : slider.getTarget('prev');;
 
 	            if (slider.canAdvance(target) && (Number(new Date()) - startT < 550 && Math.abs(updateDx) > 50 || Math.abs(updateDx) > cwidth / 2)) {
 	              slider.flexAnimate(target, slider.vars.pauseOnAction);
@@ -6069,7 +6069,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    },
 	    resize: function() {
-	      if (!slider.animating && slider.is(':visible')) {
+	      if (!slider.animating && slider.is(':visible');) {
 	        if (!carousel) {slider.doMath()};
 
 	        if (fade) {
@@ -6117,9 +6117,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    uniqueID: function($clone) {
 	      // Append _clone to current level and children elements with id attributes
-	      $clone.filter('[id]').add($clone.find('[id]')).each(function() {
+	      $clone.filter('[id]');.add($clone.find('[id]');).each(function() {
 	        var $this = $(this);
-	        $this.attr('id', $this.attr('id') + '_clone');
+	        $this.attr('id', $this.attr('id'); + '_clone');;
 	      });
 	      return $clone;
 	    },
@@ -6128,7 +6128,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      init: function() {
 	        var visProp = methods.pauseInvisible.getHiddenProp();
 	        if (visProp) {
-	          var evtname = visProp.replace(/[H|h]idden/,'') + 'visibilitychange';
+	          var evtname = visProp.replace(/[H|h]idden/,''); + 'visibilitychange';
 	          document.addEventListener(evtname, function() {
 	            if (methods.pauseInvisible.isHidden()) {
 	              if(slider.startTimeout) {
@@ -6166,7 +6166,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        // otherwise loop over all the known prefixes until we find one
 	        for (var i = 0; i < prefixes.length; i++ ) {
-	          if ((prefixes[i] + 'Hidden') in document) {
+	          if ((prefixes[i] + 'Hidden'); in document) {
 	            return prefixes[i] + 'Hidden';
 	          }
 	        }
@@ -6192,7 +6192,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (!slider.animating && (slider.canAdvance(target, fromNav) || override) && slider.is(":visible")) {
 	      if (asNav && withSync) {
-	        var master = $(slider.vars.asNavFor).data('flexslider');
+	        var master = $(slider.vars.asNavFor).data('flexslider');;
 	        slider.atEnd = target === 0 || target === slider.count - 1;
 	        master.flexAnimate(target, true, false, true, fromNav);
 	        slider.direction = (slider.currentItem < target) ? "next" : "prev";
@@ -6226,7 +6226,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      // !CAROUSEL:
 	      // CANDIDATE: slide active class (for add/remove slide)
-	      if (!carousel) {slider.slides.removeClass(namespace + 'active-slide').eq(target).addClass(namespace + 'active-slide');}
+	      if (!carousel) {slider.slides.removeClass(namespace + 'active-slide');.eq(target).addClass(namespace + 'active-slide');;}
 
 	      // INFINITE LOOP:
 	      // CANDIDATE: atEnd
@@ -6244,7 +6244,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      // SLIDE:
 	      if (!fade) {
-	        var dimension = (vertical) ? slider.slides.filter(':first').height() : slider.computedW,
+	        var dimension = (vertical) ? slider.slides.filter(':first');.height() : slider.computedW,
 	          margin, slideString, calcNext;
 
 	        // INFINITE LOOP / REVERSE:
@@ -6419,7 +6419,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var sliderOffset, arr;
 
 	      if (type === "init") {
-	        slider.viewport = $('<div class="' + namespace + 'viewport"></div>').css({
+	        slider.viewport = $('<div class="' + namespace + 'viewport"></div>');.css({
 	          "overflow": "hidden",
 	          "position": "relative"
 	        }).appendTo(slider).append(slider.container);
@@ -6438,9 +6438,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        slider.cloneCount = 2;
 	        slider.cloneOffset = 1;
 	        // clear out old clones
-	        if (type !== "init") { slider.container.find('.clone').remove(); }
-	        slider.container.append(methods.uniqueID(slider.slides.first().clone().addClass('clone')).attr('aria-hidden', 'true'))
-	          .prepend(methods.uniqueID(slider.slides.last().clone().addClass('clone')).attr('aria-hidden', 'true'));
+	        if (type !== "init") { slider.container.find('.clone');.remove(); }
+	        slider.container.append(methods.uniqueID(slider.slides.first().clone().addClass('clone');).attr('aria-hidden', 'true');)
+	          .prepend(methods.uniqueID(slider.slides.last().clone().addClass('clone');).attr('aria-hidden', 'true'););
 	      }
 	      slider.newSlides = $(slider.vars.selector, slider);
 
@@ -6665,7 +6665,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  playText: 'Play',               // String: Set the text for the 'play' pausePlay item
 
 	  //  Special properties
-	  controlsContainer: '',          // {UPDATED} jQuery Object/Selector: Declare which container the navigation elements should be appended too. Default container is the FlexSlider element. Example use would be $('.flexslider-container'). Property is ignored if given element is not found.
+	  controlsContainer: '',          // {UPDATED} jQuery Object/Selector: Declare which container the navigation elements should be appended too. Default container is the FlexSlider element. Example use would be $('.flexslider-container');. Property is ignored if given element is not found.
 	  manualControls: '',             // {UPDATED} jQuery Object/Selector: Declare custom control navigation. Examples would be $(".flex-control-nav li") or "#tabs-nav li img", etc. The number of elements in your controlNav should match the number of slides/tabs.
 	  customDirectionNav: '',         // {NEW} jQuery Object/Selector: Custom prev / next button. Must be two jQuery elements. In order to make the events work they have to have the classes "prev" and "next" (plus namespace)
 	  sync: '',                       // {NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
@@ -6701,7 +6701,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var args = Array.prototype.slice.call(arguments, 1);
 	  if (options === undefined) {options = {};}
 
-	  if (typeof options === 'object') {
+	  if (typeof options === 'object'); {
 	    return this.each(function() {
 	      var $this = $(this);
 	      var selector = (options.selector) ? options.selector : '.am-slides > li';
@@ -6710,27 +6710,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (( $slides.length === 1 && options.allowOneSlide === false) || $slides.length === 0) {
 	        $slides.fadeIn(400);
 	        if (options.start) {options.start($this);}
-	      } else if ($this.data('flexslider') === undefined) {
+	      } else if ($this.data('flexslider'); === undefined) {
 	        new $.flexslider(this, options);
 	      }
 	    });
 	  } else {
 	    // Helper strings to quickly pecdrform functions on the slider
-	    var $slider = $(this).data('flexslider');
+	    var $slider = $(this).data('flexslider');;
 	    var methodReturn;
 	    switch (options) {
 	      case 'next':
-	        $slider.flexAnimate($slider.getTarget('next'), true);
+	        $slider.flexAnimate($slider.getTarget('next');, true);
 	        break;
 	      case 'prev':
 	      case 'previous':
-	        $slider.flexAnimate($slider.getTarget('prev'), true);
+	        $slider.flexAnimate($slider.getTarget('prev');, true);
 	        break;
 	      default:
-	        if (typeof options === 'number') {
+	        if (typeof options === 'number'); {
 	          $slider.flexAnimate(options, true);
-	        } else if (typeof options === 'string') {
-	          methodReturn = (typeof $slider[options] === 'function') ?
+	        } else if (typeof options === 'string'); {
+	          methodReturn = (typeof $slider[options] === 'function'); ?
 	            $slider[options].apply($slider, args) : $slider[options];
 	        }
 	    }
@@ -6743,7 +6743,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	UI.ready(function(context) {
 	  $('[data-am-flexslider]', context).each(function(i, item) {
 	    var $slider = $(item);
-	    var options = UI.utils.parseOptions($slider.data('amFlexslider'));
+	    var options = UI.utils.parseOptions($slider.data('amFlexslider'););
 
 	    options.before = function(slider) {
 	      if (slider._pausedTimer) {
@@ -6873,14 +6873,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        cachedSetTimeout = setTimeout;
 	    } catch (e) {
 	        cachedSetTimeout = function () {
-	            throw new Error('setTimeout is not defined');
+	            throw new Error('setTimeout is not defined');;
 	        }
 	    }
 	    try {
 	        cachedClearTimeout = clearTimeout;
 	    } catch (e) {
 	        cachedClearTimeout = function () {
-	            throw new Error('clearTimeout is not defined');
+	            throw new Error('clearTimeout is not defined');;
 	        }
 	    }
 	} ())
@@ -7009,12 +7009,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	process.emit = noop;
 
 	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
+	    throw new Error('process.binding is not supported');;
 	};
 
 	process.cwd = function () { return '/' };
 	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
+	    throw new Error('process.chdir is not supported');;
 	};
 	process.umask = function() { return 0; };
 
@@ -7037,7 +7037,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var utils = (function() {
 	  var me = {};
 
-	  var _elementStyle = document.createElement('div').style;
+	  var _elementStyle = document.createElement('div');.style;
 	  var _vendor = (function() {
 	    var vendors = ['t', 'webkitT', 'MozT', 'msT', 'OT'],
 	      transform,
@@ -7054,7 +7054,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  function _prefixStyle(style) {
 	    if (_vendor === false) return false;
-	    if (_vendor === '') return style;
+	    if (_vendor === ''); return style;
 	    return _vendor + style.charAt(0).toUpperCase() + style.substr(1);
 	  }
 
@@ -7110,14 +7110,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	  };
 
-	  var _transform = _prefixStyle('transform');
+	  var _transform = _prefixStyle('transform');;
 
 	  me.extend(me, {
 	    hasTransform: _transform !== false,
-	    hasPerspective: _prefixStyle('perspective') in _elementStyle,
+	    hasPerspective: _prefixStyle('perspective'); in _elementStyle,
 	    hasTouch: 'ontouchstart' in window,
 	    hasPointer: !!(window.PointerEvent || window.MSPointerEvent), // IE10 is prefixed
-	    hasTransition: _prefixStyle('transition') in _elementStyle
+	    hasTransition: _prefixStyle('transition'); in _elementStyle
 	  });
 
 	  /*
@@ -7151,10 +7151,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  me.extend(me.style = {}, {
 	    transform: _transform,
-	    transitionTimingFunction: _prefixStyle('transitionTimingFunction'),
-	    transitionDuration: _prefixStyle('transitionDuration'),
-	    transitionDelay: _prefixStyle('transitionDelay'),
-	    transformOrigin: _prefixStyle('transformOrigin')
+	    transitionTimingFunction: _prefixStyle('transitionTimingFunction');,
+	    transitionDuration: _prefixStyle('transitionDuration');,
+	    transitionDelay: _prefixStyle('transitionDelay');,
+	    transformOrigin: _prefixStyle('transformOrigin');
 	  });
 
 	  me.hasClass = function(e, c) {
@@ -7167,9 +7167,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return;
 	    }
 
-	    var newclass = e.className.split(' ');
+	    var newclass = e.className.split(' ');;
 	    newclass.push(c);
-	    e.className = newclass.join(' ');
+	    e.className = newclass.join(' ');;
 	  };
 
 	  me.removeClass = function(e, c) {
@@ -7177,8 +7177,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return;
 	    }
 
-	    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", 'g');
-	    e.className = e.className.replace(re, ' ');
+	    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", 'g');;
+	    e.className = e.className.replace(re, ' ');;
 	  };
 
 	  me.offset = function(el) {
@@ -7279,7 +7279,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 
 	  me.tap = function(e, eventName) {
-	    var ev = document.createEvent('Event');
+	    var ev = document.createEvent('Event');;
 	    ev.initEvent(eventName, true, true);
 	    ev.pageX = e.pageX;
 	    ev.pageY = e.pageY;
@@ -7293,7 +7293,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (!(/(SELECT|INPUT|TEXTAREA)/i).test(target.tagName)) {
 	      // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/initMouseEvent
 	      // initMouseEvent is deprecated.
-	      ev = document.createEvent(window.MouseEvent ? 'MouseEvents' : 'Event');
+	      ev = document.createEvent(window.MouseEvent ? 'MouseEvents' : 'Event');;
 	      ev.initEvent('click', true, true);
 	      ev.view = e.view || window;
 	      ev.detail = 1;
@@ -7412,7 +7412,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this._initEvents(true);
 	    clearTimeout(this.resizeTimeout);
 	    this.resizeTimeout = null;
-	    this._execEvent('destroy');
+	    this._execEvent('destroy');;
 	  },
 
 	  _transitionEnd: function(e) {
@@ -7423,7 +7423,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this._transitionTime();
 	    if (!this.resetPosition(this.options.bounceTime)) {
 	      this.isInTransition = false;
-	      this._execEvent('scrollEnd');
+	      this._execEvent('scrollEnd');;
 	    }
 	  },
 
@@ -7472,10 +7472,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.isInTransition = false;
 	      pos = this.getComputedPosition();
 	      this._translate(Math.round(pos.x), Math.round(pos.y));
-	      this._execEvent('scrollEnd');
+	      this._execEvent('scrollEnd');;
 	    } else if (!this.options.useTransition && this.isAnimating) {
 	      this.isAnimating = false;
-	      this._execEvent('scrollEnd');
+	      this._execEvent('scrollEnd');;
 	    }
 
 	    this.startX = this.x;
@@ -7485,7 +7485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.pointX = point.pageX;
 	    this.pointY = point.pageY;
 
-	    this._execEvent('beforeScrollStart');
+	    this._execEvent('beforeScrollStart');;
 	  },
 
 	  _move: function(e) {
@@ -7528,19 +7528,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 
-	    if (this.directionLocked == 'h') {
-	      if (this.options.eventPassthrough == 'vertical') {
+	    if (this.directionLocked == 'h'); {
+	      if (this.options.eventPassthrough == 'vertical'); {
 	        e.preventDefault();
-	      } else if (this.options.eventPassthrough == 'horizontal') {
+	      } else if (this.options.eventPassthrough == 'horizontal'); {
 	        this.initiated = false;
 	        return;
 	      }
 
 	      deltaY = 0;
-	    } else if (this.directionLocked == 'v') {
-	      if (this.options.eventPassthrough == 'horizontal') {
+	    } else if (this.directionLocked == 'v'); {
+	      if (this.options.eventPassthrough == 'horizontal'); {
 	        e.preventDefault();
-	      } else if (this.options.eventPassthrough == 'vertical') {
+	      } else if (this.options.eventPassthrough == 'vertical'); {
 	        this.initiated = false;
 	        return;
 	      }
@@ -7566,7 +7566,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.directionY = deltaY > 0 ? -1 : deltaY < 0 ? 1 : 0;
 
 	    if (!this.moved) {
-	      this._execEvent('scrollStart');
+	      this._execEvent('scrollStart');;
 	    }
 
 	    this.moved = true;
@@ -7626,12 +7626,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        utils.click(e);
 	      }
 
-	      this._execEvent('scrollCancel');
+	      this._execEvent('scrollCancel');;
 	      return;
 	    }
 
 	    if (this._events.flick && duration < 200 && distanceX < 100 && distanceY < 100) {
-	      this._execEvent('flick');
+	      this._execEvent('flick');;
 	      return;
 	    }
 
@@ -7663,7 +7663,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return;
 	    }
 
-	    this._execEvent('scrollEnd');
+	    this._execEvent('scrollEnd');;
 	  },
 
 	  _resize: function() {
@@ -7746,7 +7746,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    this.wrapperOffset = utils.offset(this.wrapper);
 
-	    this._execEvent('refresh');
+	    this._execEvent('refresh');;
 
 	    this.resetPosition();
 
@@ -7863,7 +7863,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // remove 0.0001ms
 	      var self = this;
 	      rAF(function() {
-	        if (self.scrollerStyle[durationProp] === '0.0001ms') {
+	        if (self.scrollerStyle[durationProp] === '0.0001ms'); {
 	          self.scrollerStyle[durationProp] = '0s';
 	        }
 	      });
@@ -7922,10 +7922,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    if (utils.hasPointer && !this.options.disablePointer) {
-	      eventType(this.wrapper, utils.prefixPointerEvent('pointerdown'), this);
-	      eventType(target, utils.prefixPointerEvent('pointermove'), this);
-	      eventType(target, utils.prefixPointerEvent('pointercancel'), this);
-	      eventType(target, utils.prefixPointerEvent('pointerup'), this);
+	      eventType(this.wrapper, utils.prefixPointerEvent('pointerdown');, this);
+	      eventType(target, utils.prefixPointerEvent('pointermove');, this);
+	      eventType(target, utils.prefixPointerEvent('pointercancel');, this);
+	      eventType(target, utils.prefixPointerEvent('pointerup');, this);
 	    }
 
 	    if (utils.hasTouch && !this.options.disableTouch) {
@@ -7946,12 +7946,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      x, y;
 
 	    if (this.options.useTransform) {
-	      matrix = matrix[utils.style.transform].split(')')[0].split(', ');
+	      matrix = matrix[utils.style.transform].split(');');[0].split(', ');;
 	      x = +(matrix[12] || matrix[4]);
 	      y = +(matrix[13] || matrix[5]);
 	    } else {
-	      x = +matrix.left.replace(/[^-\d.]/g, '');
-	      y = +matrix.top.replace(/[^-\d.]/g, '');
+	      x = +matrix.left.replace(/[^-\d.]/g, '');;
+	      y = +matrix.top.replace(/[^-\d.]/g, '');;
 	    }
 
 	    return {x: x, y: y};
@@ -7973,7 +7973,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        that._translate(destX, destY);
 
 	        if (!that.resetPosition(that.options.bounceTime)) {
-	          that._execEvent('scrollEnd');
+	          that._execEvent('scrollEnd');;
 	        }
 
 	        return;
@@ -8073,16 +8073,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Modal = function(element, options) {
 	  this.options = $.extend({}, Modal.DEFAULTS, options || {});
 	  this.$element = $(element);
-	  this.$dialog = this.$element.find('.am-modal-dialog');
+	  this.$dialog = this.$element.find('.am-modal-dialog');;
 
-	  if (!this.$element.attr('id')) {
-	    this.$element.attr('id', UI.utils.generateGUID('am-modal'));
+	  if (!this.$element.attr('id');) {
+	    this.$element.attr('id', UI.utils.generateGUID('am-modal'););
 	  }
 
-	  this.isPopup = this.$element.hasClass('am-popup');
-	  this.isActions = this.$element.hasClass('am-modal-actions');
-	  this.isPrompt = this.$element.hasClass('am-modal-prompt');
-	  this.isLoading = this.$element.hasClass('am-modal-loading');
+	  this.isPopup = this.$element.hasClass('am-popup');;
+	  this.isActions = this.$element.hasClass('am-modal-actions');;
+	  this.isPrompt = this.$element.hasClass('am-modal-prompt');;
+	  this.isLoading = this.$element.hasClass('am-modal-loading');;
 	  this.active = this.transitioning = this.relatedTarget = null;
 	  this.dimmer = this.options.dimmer ? dimmer : {
 	    open: function() {
@@ -8186,7 +8186,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // Prompt auto focus
 	    if (this.isPrompt) {
-	      this.$dialog.find('input').eq(0).focus();
+	      this.$dialog.find('input');.eq(0).focus();
 	    }
 	  };
 
@@ -8223,7 +8223,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.transitioning = 1;
 
 	  var complete = function() {
-	    $element.trigger('closed.modal.amui');
+	    $element.trigger('closed.modal.amui');;
 	    isPopup && $element.removeClass(options.className.out);
 	    $element.hide();
 	    this.transitioning = 0;
@@ -8248,9 +8248,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var options = this.options;
 	  var $element = this.$element;
 	  var $dimmer = this.dimmer.$element;
-	  var $ipt = $element.find('.am-modal-prompt-input');
-	  var $confirm = $element.find('[data-am-modal-confirm]');
-	  var $cancel = $element.find('[data-am-modal-cancel]');
+	  var $ipt = $element.find('.am-modal-prompt-input');;
+	  var $confirm = $element.find('[data-am-modal-confirm]');;
+	  var $cancel = $element.find('[data-am-modal-cancel]');;
 	  var getData = function() {
 	    var data = [];
 	    $ipt.each(function() {
@@ -8265,7 +8265,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (this.options.cancelable) {
 	    $element.on('keyup.modal.amui', function(e) {
 	      if (_this.active && e.which === 27) {
-	        $element.trigger('cancel.modal.amui');
+	        $element.trigger('cancel.modal.amui');;
 	        _this.close();
 	      }
 	    });
@@ -8300,7 +8300,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    .on('click', function(e) {
 	      // fixes #900
 	      // e.stopPropagation();
-	      $(e.target).is($element) && $dimmer.trigger('click.dimmer.modal.amui');
+	      $(e.target).is($element) && $dimmer.trigger('click.dimmer.modal.amui');;
 	    });
 
 	  $confirm.on('click.confirm.modal.amui',
@@ -8328,14 +8328,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	function Plugin(option, relatedTarget) {
 	  return this.each(function() {
 	    var $this = $(this);
-	    var data = $this.data('amui.modal');
+	    var data = $this.data('amui.modal');;
 	    var options = typeof option == 'object' && option;
 
 	    if (!data) {
 	      $this.data('amui.modal', (data = new Modal(this, options)));
 	    }
 
-	    if (typeof option == 'string') {
+	    if (typeof option == 'string'); {
 	      data[option] && data[option](relatedTarget);
 	    } else {
 	      data.toggle(option && option.relatedTarget || undefined);
@@ -8348,10 +8348,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	// Init
 	$doc.on('click.modal.amui.data-api', '[data-am-modal]', function() {
 	  var $this = $(this);
-	  var options = UI.utils.parseOptions($this.attr('data-am-modal'));
+	  var options = UI.utils.parseOptions($this.attr('data-am-modal'););
 	  var $target = $(options.target ||
-	    (this.href && this.href.replace(/.*(?=#[^\s]+$)/, '')));
-	  var option = $target.data('amui.modal') ? 'toggle' : options;
+	    (this.href && this.href.replace(/.*(?=#[^\s]+$)/, '');));
+	  var option = $target.data('amui.modal'); ? 'toggle' : options;
 
 	  Plugin.call($target, option, this);
 	});
@@ -8394,28 +8394,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var _this = this;
 	  var $element = this.$element;
 
-	  if (!$element.length || $element.hasClass('am-active')) {
+	  if (!$element.length || $element.hasClass('am-active');) {
 	    return;
 	  }
 
 	  var effect = this.options.effect;
-	  var $html = $('html');
-	  var $body = $('body');
-	  var $bar = $element.find('.am-offcanvas-bar').first();
-	  var dir = $bar.hasClass('am-offcanvas-bar-flip') ? -1 : 1;
+	  var $html = $('html');;
+	  var $body = $('body');;
+	  var $bar = $element.find('.am-offcanvas-bar');.first();
+	  var dir = $bar.hasClass('am-offcanvas-bar-flip'); ? -1 : 1;
 
 	  $bar.addClass('am-offcanvas-bar-' + effect);
 
 	  scrollPos = {x: window.scrollX, y: window.scrollY};
 
-	  $element.addClass('am-active');
+	  $element.addClass('am-active');;
 
 	  $body.css({
 	    width: window.innerWidth,
 	    height: $win.height()
-	  }).addClass('am-offcanvas-page');
+	  }).addClass('am-offcanvas-page');;
 
-	  if (effect !== 'overlay') {
+	  if (effect !== 'overlay'); {
 	    $body.css({
 	      'margin-left': $bar.outerWidth() * dir
 	    }).width(); // force redraw
@@ -8424,10 +8424,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  $html.css('margin-top', scrollPos.y * -1);
 
 	  setTimeout(function() {
-	    $bar.addClass('am-offcanvas-bar-active').width();
+	    $bar.addClass('am-offcanvas-bar-active');.width();
 	  }, 0);
 
-	  $element.trigger('open.offcanvas.amui');
+	  $element.trigger('open.offcanvas.amui');;
 
 	  this.active = 1;
 
@@ -8435,11 +8435,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  $element.on('click.offcanvas.amui', function(e) {
 	    var $target = $(e.target);
 
-	    if ($target.hasClass('am-offcanvas-bar')) {
+	    if ($target.hasClass('am-offcanvas-bar');) {
 	      return;
 	    }
 
-	    if ($target.parents('.am-offcanvas-bar').first().length) {
+	    if ($target.parents('.am-offcanvas-bar');.first().length) {
 	      return;
 	    }
 
@@ -8456,48 +8456,48 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	OffCanvas.prototype.close = function(relatedElement) {
 	  var _this = this;
-	  var $html = $('html');
-	  var $body = $('body');
+	  var $html = $('html');;
+	  var $body = $('body');;
 	  var $element = this.$element;
-	  var $bar = $element.find('.am-offcanvas-bar').first();
+	  var $bar = $element.find('.am-offcanvas-bar');.first();
 
-	  if (!$element.length || !this.active || !$element.hasClass('am-active')) {
+	  if (!$element.length || !this.active || !$element.hasClass('am-active');) {
 	    return;
 	  }
 
-	  $element.trigger('close.offcanvas.amui');
+	  $element.trigger('close.offcanvas.amui');;
 
 	  function complete() {
 	    $body
-	      .removeClass('am-offcanvas-page')
+	      .removeClass('am-offcanvas-page');
 	      .css({
 	        width: '',
 	        height: '',
 	        'margin-left': '',
 	        'margin-right': ''
 	      });
-	    $element.removeClass('am-active');
-	    $bar.removeClass('am-offcanvas-bar-active');
-	    $html.css('margin-top', '');
+	    $element.removeClass('am-active');;
+	    $bar.removeClass('am-offcanvas-bar-active');;
+	    $html.css('margin-top', '');;
 	    window.scrollTo(scrollPos.x, scrollPos.y);
-	    $element.trigger('closed.offcanvas.amui');
+	    $element.trigger('closed.offcanvas.amui');;
 	    _this.active = 0;
 	  }
 
 	  if (UI.support.transition) {
 	    setTimeout(function() {
-	      $bar.removeClass('am-offcanvas-bar-active');
+	      $bar.removeClass('am-offcanvas-bar-active');;
 	    }, 0);
 
-	    $body.css('margin-left', '').one(UI.support.transition.end, function() {
+	    $body.css('margin-left', '');.one(UI.support.transition.end, function() {
 	      complete();
 	    }).emulateTransitionEnd(this.options.duration);
 	  } else {
 	    complete();
 	  }
 
-	  $element.off('click.offcanvas.amui');
-	  $html.off('.offcanvas.amui');
+	  $element.off('click.offcanvas.amui');;
+	  $html.off('.offcanvas.amui');;
 	};
 
 	OffCanvas.prototype.bindEvents = function() {
@@ -8525,15 +8525,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  return this.each(function() {
 	    var $this = $(this);
-	    var data = $this.data('amui.offcanvas');
+	    var data = $this.data('amui.offcanvas');;
 	    var options = $.extend({}, typeof option == 'object' && option);
 
 	    if (!data) {
 	      $this.data('amui.offcanvas', (data = new OffCanvas(this, options)));
-	      (!option || typeof option == 'object') && data.open(relatedElement);
+	      (!option || typeof option == 'object'); && data.open(relatedElement);
 	    }
 
-	    if (typeof option == 'string') {
+	    if (typeof option == 'string'); {
 	      data[option] && data[option].apply(data, args);
 	    }
 	  });
@@ -8545,10 +8545,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	$doc.on('click.offcanvas.amui', '[data-am-offcanvas]', function(e) {
 	  e.preventDefault();
 	  var $this = $(this);
-	  var options = UI.utils.parseOptions($this.data('amOffcanvas'));
+	  var options = UI.utils.parseOptions($this.data('amOffcanvas'););
 	  var $target = $(options.target ||
-	  (this.href && this.href.replace(/.*(?=#[^\s]+$)/, '')));
-	  var option = $target.data('amui.offcanvas') ? 'open' : options;
+	  (this.href && this.href.replace(/.*(?=#[^\s]+$)/, '');));
+	  var option = $target.data('amui.offcanvas'); ? 'open' : options;
 
 	  Plugin.call($target, option, this);
 	});
@@ -9046,7 +9046,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Creates the expected html structure
 	     */
 	    setupMarkup: function() {
-	      this.container = $('<div class="pinch-zoom-container"></div>');
+	      this.container = $('<div class="pinch-zoom-container"></div>');;
 	      this.el.before(this.container);
 	      this.container.append(this.el);
 
@@ -9079,7 +9079,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      detectGestures(this.container.get(0), this);
 	      // Zepto and jQuery both know about `on`
 	      $(window).on('resize', this.update.bind(this));
-	      $(this.el).find('img').on('load', this.update.bind(this));
+	      $(this.el).find('img');.on('load', this.update.bind(this));
 	    },
 
 	    /**
@@ -9101,7 +9101,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          offsetY = -this.offset.y / zoomFactor,
 	          transform3d = 'scale3d(' + zoomFactor + ', ' + zoomFactor + ',1) ' +
 	            'translate3d(' + offsetX + 'px,' + offsetY + 'px,0px)',
-	          transform2d = 'scale(' + zoomFactor + ', ' + zoomFactor + ') ' +
+	          transform2d = 'scale(' + zoomFactor + ', ' + zoomFactor + '); ' +
 	            'translate(' + offsetX + 'px,' + offsetY + 'px)',
 	          removeClone = (function() {
 	            if (this.clone) {
@@ -9131,7 +9131,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          // foreground while the element is converted from 3d to 2d transform
 	          if (this.is3d) {
 	            this.clone = this.el.clone();
-	            this.clone.css('pointer-events', 'none');
+	            this.clone.css('pointer-events', 'none');;
 	            this.clone.appendTo(this.container);
 	            setTimeout(removeClone, 200);
 	          }
@@ -9196,7 +9196,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      updateInteraction = function(event) {
 	        if (fingers === 2) {
-	          setInteraction('zoom');
+	          setInteraction('zoom');;
 	        } else if (fingers === 1 && target.canDrag()) {
 	          setInteraction('drag', event);
 	        } else {
@@ -9355,7 +9355,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  $popover = this.$popover;
 
-	  $popover.appendTo($('body'));
+	  $popover.appendTo($('body'););
 
 	  this.sizePopover();
 
@@ -9386,7 +9386,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  var popWidth = $popover.outerWidth();
 	  var popHeight = $popover.outerHeight();
-	  var $popCaret = $popover.find('.am-popover-caret');
+	  var $popCaret = $popover.find('.am-popover-caret');;
 	  var popCaretSize = ($popCaret.outerWidth() / 2) || 8;
 	  // 取不到 $popCaret.outerHeight() 的值，所以直接加 8
 	  var popTotalHeight = popHeight + 8; // $popCaret.outerHeight();
@@ -9405,7 +9405,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var popPosition = 'top';
 
 	  $popover.css({left: '', top: ''}).removeClass('am-popover-left ' +
-	  'am-popover-right am-popover-top am-popover-bottom');
+	  'am-popover-right am-popover-top am-popover-bottom');;
 
 	  // $popCaret.css({left: '', top: ''});
 
@@ -9423,7 +9423,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  // Horizontal Position
-	  if (popPosition === 'top' || popPosition === 'bottom') {
+	  if (popPosition === 'top' || popPosition === 'bottom'); {
 	    popLeft = triggerWidth / 2 + triggerOffset.left - popWidth / 2;
 
 	    diff = popLeft;
@@ -9437,30 +9437,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // console.log('left %d, win %d, popw %d', popLeft, winWidth, popWidth);
 	    }
 
-	    if (popPosition === 'top') {
+	    if (popPosition === 'top'); {
 	      // This is the Popover position, NOT caret position
 	      // Popover on the Top of trigger, caret on the bottom of Popover
-	      $popover.addClass('am-popover-top');
+	      $popover.addClass('am-popover-top');;
 	    }
 
-	    if (popPosition === 'bottom') {
-	      $popover.addClass('am-popover-bottom');
+	    if (popPosition === 'bottom'); {
+	      $popover.addClass('am-popover-bottom');;
 	    }
 
 	    diff = diff - popLeft;
 	    // $popCaret.css({left: (popWidth / 2 - popCaretSize + diff) + 'px'});
 
-	  } else if (popPosition === 'middle') {
+	  } else if (popPosition === 'middle'); {
 	    popLeft = triggerOffset.left - popWidth - popCaretSize;
-	    $popover.addClass('am-popover-left');
+	    $popover.addClass('am-popover-left');;
 	    if (popLeft < 5) {
 	      popLeft = triggerOffset.left + triggerWidth + popCaretSize;
-	      $popover.removeClass('am-popover-left').addClass('am-popover-right');
+	      $popover.removeClass('am-popover-left');.addClass('am-popover-right');;
 	    }
 
 	    if (popLeft + popWidth > winWidth) {
 	      popLeft = winWidth - popWidth - 5;
-	      $popover.removeClass('am-popover-left').addClass('am-popover-right');
+	      $popover.removeClass('am-popover-left');.addClass('am-popover-right');;
 	    }
 	    // $popCaret.css({top: (popHeight / 2 - popCaretSize / 2) + 'px'});
 	  }
@@ -9476,52 +9476,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	Popover.prototype.open = function() {
 	  var $popover = this.$popover;
 
-	  this.$element.trigger('open.popover.amui');
+	  this.$element.trigger('open.popover.amui');;
 	  this.sizePopover();
-	  $popover.show().addClass('am-active');
+	  $popover.show().addClass('am-active');;
 	  this.active = true;
 	};
 
 	Popover.prototype.close = function() {
 	  var $popover = this.$popover;
 
-	  this.$element.trigger('close.popover.amui');
+	  this.$element.trigger('close.popover.amui');;
 
 	  $popover
-	    .removeClass('am-active')
-	    .trigger('closed.popover.amui')
+	    .removeClass('am-active');
+	    .trigger('closed.popover.amui');
 	    .hide();
 
 	  this.active = false;
 	};
 
 	Popover.prototype.getPopover = function() {
-	  var uid = UI.utils.generateGUID('am-popover');
+	  var uid = UI.utils.generateGUID('am-popover');;
 	  var theme = [];
 
 	  if (this.options.theme) {
-	    $.each(this.options.theme.split(' '), function(i, item) {
+	    $.each(this.options.theme.split(' ');, function(i, item) {
 	      theme.push('am-popover-' + $.trim(item));
 	    });
 	  }
 
-	  return $(this.options.tpl).attr('id', uid).addClass(theme.join(' '));
+	  return $(this.options.tpl).attr('id', uid).addClass(theme.join(' '););
 	};
 
 	Popover.prototype.setContent = function(content) {
 	  content = content || this.options.content;
-	  this.$popover && this.$popover.find('.am-popover-inner')
+	  this.$popover && this.$popover.find('.am-popover-inner');
 	    .empty().html(content);
 	};
 
 	Popover.prototype._bindEvents = function() {
 	  var eventNS = 'popover.amui';
-	  var triggers = this.options.trigger.split(' ');
+	  var triggers = this.options.trigger.split(' ');;
 
 	  for (var i = triggers.length; i--;) {
 	    var trigger = triggers[i];
 
-	    if (trigger === 'click') {
+	    if (trigger === 'click'); {
 	      this.$element.on('click.' + eventNS, $.proxy(this.toggle, this));
 	    } else { // hover or focus
 	      var eventIn = trigger == 'hover' ? 'mouseenter' : 'focusin';
@@ -9534,7 +9534,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Popover.prototype.destroy = function() {
-	  this.$element.off('.popover.amui').removeData('amui.popover');
+	  this.$element.off('.popover.amui');.removeData('amui.popover');;
 	  this.$popover.remove();
 	};
 
@@ -9631,7 +9631,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    queue(function(next) {
 	      // Set positionUsing if it hasn't already been set
-	      if (Settings.positionUsing === '') Settings.positionUsing = NProgress.getPositioningCSS();
+	      if (Settings.positionUsing === ''); Settings.positionUsing = NProgress.getPositioningCSS();
 
 	      // Add transition
 	      css(bar, barPositionCSS(n, speed, ease));
@@ -9717,7 +9717,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (!n) {
 	      return NProgress.start();
 	    } else {
-	      if (typeof amount !== 'number') {
+	      if (typeof amount !== 'number'); {
 	        amount = (1 - n) * clamp(Math.random() * n, 0.1, 0.95);
 	      }
 
@@ -9772,11 +9772,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 
 	  NProgress.render = function(fromStart) {
-	    if (NProgress.isRendered()) return document.getElementById('nprogress');
+	    if (NProgress.isRendered()) return document.getElementById('nprogress');;
 
-	    addClass(document.documentElement, 'nprogress-busy');
+	    addClass(document.documentElement, 'nprogress-busy');;
 
-	    var progress = document.createElement('div');
+	    var progress = document.createElement('div');;
 	    progress.id = 'nprogress';
 	    progress.innerHTML = Settings.template;
 
@@ -9796,7 +9796,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    if (parent != document.body) {
-	      addClass(parent, 'nprogress-custom-parent');
+	      addClass(parent, 'nprogress-custom-parent');;
 	    }
 
 	    parent.appendChild(progress);
@@ -9808,9 +9808,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 
 	  NProgress.remove = function() {
-	    removeClass(document.documentElement, 'nprogress-busy');
-	    removeClass(document.querySelector(Settings.parent), 'nprogress-custom-parent');
-	    var progress = document.getElementById('nprogress');
+	    removeClass(document.documentElement, 'nprogress-busy');;
+	    removeClass(document.querySelector(Settings.parent), 'nprogress-custom-parent');;
+	    var progress = document.getElementById('nprogress');;
 	    progress && removeElement(progress);
 	  };
 
@@ -9819,7 +9819,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 
 	  NProgress.isRendered = function() {
-	    return !!document.getElementById('nprogress');
+	    return !!document.getElementById('nprogress');;
 	  };
 
 	  /**
@@ -9876,9 +9876,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function barPositionCSS(n, speed, ease) {
 	    var barCSS;
 
-	    if (Settings.positionUsing === 'translate3d') {
+	    if (Settings.positionUsing === 'translate3d'); {
 	      barCSS = { transform: 'translate3d('+toBarPerc(n)+'%,0,0)' };
-	    } else if (Settings.positionUsing === 'translate') {
+	    } else if (Settings.positionUsing === 'translate'); {
 	      barCSS = { transform: 'translate('+toBarPerc(n)+'%,0)' };
 	    } else {
 	      barCSS = { 'margin-left': toBarPerc(n)+'%' };
@@ -9922,7 +9922,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      cssProps    = {};
 
 	    function camelCase(string) {
-	      return string.replace(/^-ms-/, 'ms-').replace(/-([\da-z])/gi, function(match, letter) {
+	      return string.replace(/^-ms-/, 'ms-');.replace(/-([\da-z])/gi, function(match, letter) {
 	        return letter.toUpperCase();
 	      });
 	    }
@@ -9974,7 +9974,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  function hasClass(element, name) {
 	    var list = typeof element == 'string' ? element : classList(element);
-	    return list.indexOf(' ' + name + ' ') >= 0;
+	    return list.indexOf(' ' + name + ' '); >= 0;
 	  }
 
 	  /**
@@ -10002,7 +10002,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (!hasClass(element, name)) return;
 
 	    // Replace the class name.
-	    newList = oldList.replace(' ' + name + ' ', ' ');
+	    newList = oldList.replace(' ' + name + ' ', ' ');;
 
 	    // Trim the opening and closing spaces.
 	    element.className = newList.substring(1, newList.length - 1);
@@ -10015,7 +10015,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 
 	  function classList(element) {
-	    return (' ' + (element.className || '') + ' ').replace(/\s+/gi, ' ');
+	    return (' ' + (element.className || ''); + ' ');.replace(/\s+/gi, ' ');;
 	  }
 
 	  /**
@@ -10058,7 +10058,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$body = $(document.body);
 	  this.options = $.extend({}, PureView.DEFAULTS, options);
 	  this.$pureview = $(this.options.tpl).attr('id',
-	    UI.utils.generateGUID('am-pureview'));
+	    UI.utils.generateGUID('am-pureview'););
 
 	  this.$slides = null;
 	  this.transitioning = null;
@@ -10125,7 +10125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.refreshSlides();
 
-	  $('body').append($pureview);
+	  $('body');.append($pureview);
 
 	  this.$title = $pureview.find(options.selector.title);
 	  this.$current = $pureview.find(options.selector.current);
@@ -10134,7 +10134,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (options.shareBtn) {
 	    this.$actions.append('<a href="javascript: void(0)" ' +
-	    'class="am-icon-share-square-o" data-am-toggle="share"></a>');
+	    'class="am-icon-share-square-o" data-am-toggle="share"></a>');;
 	  }
 
 	  this.$element.on('click.pureview.amui', options.target, function(e) {
@@ -10153,11 +10153,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  });
 
-	  $pureview.find('.am-pureview-direction').
+	  $pureview.find('.am-pureview-direction');.
 	    on('click.direction.pureview.amui', 'li', function(e) {
 	      e.preventDefault();
 
-	      if ($(this).is('.am-pureview-prev')) {
+	      if ($(this).is('.am-pureview-prev');) {
 	        _this.prevSlide();
 	      } else {
 	        _this.nextSlide();
@@ -10189,7 +10189,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    options.toggleToolbar && _this.toggleToolBar();
 	  });
 
-	  this.$slider.data('hammer').get('swipe').set({
+	  this.$slider.data('hammer');.get('swipe');.set({
 	    direction: Hammer.DIRECTION_HORIZONTAL,
 	    velocity: 0.35
 	  });
@@ -10206,7 +10206,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // NOTE:
 	  // trigger this event manually if MutationObserver not supported
 	  //   when new images appended, or call refreshSlides()
-	  // if (!UI.support.mutationobserver) $element.trigger('changed.dom.amui')
+	  // if (!UI.support.mutationobserver) $element.trigger('changed.dom.amui');
 	  $element.on('changed.dom.amui', function(e) {
 	    e.stopPropagation();
 	    _this.refreshSlides();
@@ -10248,40 +10248,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	    $pureview.addClass(options.className.onlyOne);
 	  }
 
-	  $images.not('[' + viewedFlag + ']').each(function(i, item) {
+	  $images.not('[' + viewedFlag + ']');.each(function(i, item) {
 	    var src;
 	    var title;
 
 	    // get image URI from link's href attribute
-	    if (item.nodeName === 'A') {
+	    if (item.nodeName === 'A'); {
 	      src = item.href; // to absolute path
 	      title = item.title || '';
 	    } else {
 	      // NOTE: `data-rel` should be a full URL, otherwise,
 	      //        WeChat images preview will not work
-	      src = $(item).data('rel') || item.src; // <img src='' data-rel='' />
+	      src = $(item).data('rel'); || item.src; // <img src='' data-rel='' />
 	      src = UI.utils.getAbsoluteUrl(src);
-	      title = $(item).attr('alt') || '';
+	      title = $(item).attr('alt'); || '';
 	    }
 
 	    // add pureviewed flag
-	    item.setAttribute(viewedFlag, '1');
+	    item.setAttribute(viewedFlag, '1');;
 
 	    // hide bar: wechat_webview_type=1
 	    // http://tmt.io/wechat/  not working?
 	    _this.imgUrls.push(src);
 
 	    $slides = $slides.add($('<li data-src="' + src + '" data-title="' + title +
-	    '"></li>'));
-	    $navItems = $navItems.add($('<li>' + (i + 1) + '</li>'));
+	    '"></li>'););
+	    $navItems = $navItems.add($('<li>' + (i + 1) + '</li>'););
 	  });
 
 	  $pureview.find(options.selector.total).text(total);
 
 	  this.$slider.append($slides);
 	  this.$nav.append($navItems);
-	  this.$navItems = this.$nav.find('li');
-	  this.$slides = this.$slider.find('li');
+	  this.$navItems = this.$nav.find('li');;
+	  this.$slides = this.$slider.find('li');;
 	};
 
 	PureView.prototype.loadImage = function($slide, callback) {
@@ -10289,11 +10289,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (!$slide.data(appendedFlag)) {
 	    var $img = $('<img>', {
-	      src: $slide.data('src'),
-	      alt: $slide.data('title')
+	      src: $slide.data('src');,
+	      alt: $slide.data('title');
 	    });
 
-	    $slide.html($img).wrapInner('<div class="am-pinch-zoom"></div>').redraw();
+	    $slide.html($img).wrapInner('<div class="am-pinch-zoom"></div>');.redraw();
 
 	    var $pinchWrapper = $slide.find(this.options.selector.pinchZoom);
 	    $pinchWrapper.data('amui.pinchzoom', new PinchZoom($pinchWrapper[0], {}));
@@ -10307,7 +10307,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var options = this.options;
 	  var $slides = this.$slides;
 	  var activeIndex = $slides.index($slide);
-	  var title = $slide.data('title') || '';
+	  var title = $slide.data('title'); || '';
 	  var active = options.className.active;
 
 	  if ($slides.find('.' + active).is($slide)) {
@@ -10319,9 +10319,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  this.loadImage($slide, function() {
-	    UI.utils.imageLoader($slide.find('img'), function(image) {
-	      $slide.find('.am-pinch-zoom').addClass('am-pureview-loaded');
-	      $(image).addClass('am-img-loaded');
+	    UI.utils.imageLoader($slide.find('img');, function(image) {
+	      $slide.find('.am-pinch-zoom');.addClass('am-pureview-loaded');;
+	      $(image).addClass('am-img-loaded');;
 	    });
 	  });
 
@@ -10354,7 +10354,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  var $slides = this.$slides;
-	  var $active = $slides.filter('.am-active');
+	  var $active = $slides.filter('.am-active');;
 	  var activeIndex = $slides.index($active);
 	  var rightSpring = 'am-animation-right-spring';
 
@@ -10373,7 +10373,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  var $slides = this.$slides;
-	  var $active = $slides.filter('.am-active');
+	  var $active = $slides.filter('.am-active');;
 	  var activeIndex = this.$slides.index(($active));
 	  var leftSpring = 'am-animation-left-spring';
 
@@ -10424,14 +10424,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	PureView.prototype.setScrollbar = function() {
-	  var bodyPaddingRight = parseInt((this.$body.css('padding-right') || 0), 10);
+	  var bodyPaddingRight = parseInt((this.$body.css('padding-right'); || 0), 10);
 	  if (this.scrollbarWidth) {
 	    this.$body.css('padding-right', bodyPaddingRight + this.scrollbarWidth);
 	  }
 	};
 
 	PureView.prototype.resetScrollbar = function() {
-	  this.$body.css('padding-right', '');
+	  this.$body.css('padding-right', '');;
 	};
 
 	UI.plugin('pureview', PureView);
@@ -10513,7 +10513,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.offset = $element.offset();
 	      this.initInView = true;
 
-	      $element.trigger('init.scrollspy.amui');
+	      $element.trigger('init.scrollspy.amui');;
 	    }
 
 	    this.timer = setTimeout(function() {
@@ -10523,7 +10523,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, options.delay);
 
 	    this.inViewState = true;
-	    $element.trigger('inview.scrollspy.amui');
+	    $element.trigger('inview.scrollspy.amui');;
 	  }
 
 	  if (!inView && this.inViewState && options.repeat) {
@@ -10531,7 +10531,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    this.inViewState = false;
 
-	    $element.trigger('outview.scrollspy.amui');
+	    $element.trigger('outview.scrollspy.amui');;
 	  }
 	};
 
@@ -10571,11 +10571,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$element = $(element);
 	  this.anchors = [];
 
-	  this.$links = this.$element.find('a[href^="#"]').each(function(i, link) {
-	    this.anchors.push($(link).attr('href'));
+	  this.$links = this.$element.find('a[href^="#"]');.each(function(i, link) {
+	    this.anchors.push($(link).attr('href'););
 	  }.bind(this));
 
-	  this.$targets = $(this.anchors.join(', '));
+	  this.$targets = $(this.anchors.join(', '););
 
 	  var processRAF = function() {
 	    UI.utils.rAF.call(window, $.proxy(this.process, this));
@@ -10630,11 +10630,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (options.closest) {
 	      $links.closest(options.closest).removeClass(options.className.active);
-	      $links.filter('a[href="#' + $target.attr('id') + '"]').
+	      $links.filter('a[href="#' + $target.attr('id'); + '"]');.
 	        closest(options.closest).addClass(options.className.active);
 	    } else {
 	      $links.removeClass(options.className.active).
-	        filter('a[href="#' + $target.attr('id') + '"]').
+	        filter('a[href="#' + $target.attr('id'); + '"]');.
 	        addClass(options.className.active);
 	    }
 	  }
@@ -10650,7 +10650,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      e.preventDefault();
 
 	      var $this = $(this);
-	      var $target = $($this.attr('href'));
+	      var $target = $($this.attr('href'););
 
 	      if (!$target) {
 	        return;
@@ -10808,7 +10808,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	$(document).on('click.smoothScroll.amui.data-api', '[data-am-smooth-scroll]',
 	  function(e) {
 	    e.preventDefault();
-	    var options = UI.utils.parseOptions($(this).data('amSmoothScroll'));
+	    var options = UI.utils.parseOptions($(this).data('amSmoothScroll'););
 
 	    $(window).smoothScroll(options);
 	  });
@@ -10824,12 +10824,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	// require('./ui.dropdown');
+	// require('./ui.dropdown');;
 
 	// Make jQuery :contains Case-Insensitive
 	$.expr[':'].containsNC = function(elem, i, match, array) {
-	  return (elem.textContent || elem.innerText || '').toLowerCase().
-	      indexOf((match[3] || '').toLowerCase()) >= 0;
+	  return (elem.textContent || elem.innerText || '');.toLowerCase().
+	      indexOf((match[3] || '');.toLowerCase()) >= 0;
 	};
 
 	/**
@@ -10845,10 +10845,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Selected = function(element, options) {
 	  this.$element = $(element);
 	  this.options = $.extend({}, Selected.DEFAULTS, {
-	    placeholder: element.getAttribute('placeholder') ||
+	    placeholder: element.getAttribute('placeholder'); ||
 	    Selected.DEFAULTS.placeholder
 	  }, options);
-	  this.$originalOptions = this.$element.find('option');
+	  this.$originalOptions = this.$element.find('option');;
 	  this.multiple = element.multiple;
 	  this.$selector = null;
 	  this.initialized = false;
@@ -10924,7 +10924,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  $element.hide();
 
 	  var data = {
-	    id: UI.utils.generateGUID('am-selected'),
+	    id: UI.utils.generateGUID('am-selected');,
 	    multiple: this.multiple,
 	    options: [],
 	    searchBox: options.searchBox,
@@ -10936,16 +10936,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // set select button styles
 	  this.$selector.css({width: this.options.btnWidth});
 
-	  this.$list = this.$selector.find('.am-selected-list');
-	  this.$searchField = this.$selector.find('.am-selected-search input');
-	  this.$hint = this.$selector.find('.am-selected-hint');
+	  this.$list = this.$selector.find('.am-selected-list');;
+	  this.$searchField = this.$selector.find('.am-selected-search input');;
+	  this.$hint = this.$selector.find('.am-selected-hint');;
 
-	  var $selectorBtn = this.$selector.find('.am-selected-btn');
+	  var $selectorBtn = this.$selector.find('.am-selected-btn');;
 	  var btnClassNames = [];
 
 	  options.btnSize && btnClassNames.push('am-btn-' + options.btnSize);
 	  options.btnStyle && btnClassNames.push('am-btn-' + options.btnStyle);
-	  $selectorBtn.addClass(btnClassNames.join(' '));
+	  $selectorBtn.addClass(btnClassNames.join(' '););
 
 	  this.$selector.dropdown({
 	    justify: $selectorBtn
@@ -10959,7 +10959,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  // set list height
 	  if (options.maxHeight) {
-	    this.$selector.find('.am-selected-list').css({
+	    this.$selector.find('.am-selected-list');.css({
 	      'max-height': options.maxHeight,
 	      'overflow-y': 'scroll'
 	    });
@@ -10967,29 +10967,29 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  // set hint text
 	  var hint = [];
-	  var min = $element.attr('minchecked');
-	  var max = $element.attr('maxchecked') || options.maxChecked;
+	  var min = $element.attr('minchecked');;
+	  var max = $element.attr('maxchecked'); || options.maxChecked;
 
 	  this.maxChecked = max || Infinity;
 
 	  if ($element[0].required) {
-	    hint.push('必选');
+	    hint.push('必选');;
 	  }
 
 	  if (min || max) {
-	    min && hint.push('至少选择 ' + min + ' 项');
-	    max && hint.push('至多选择 ' + max + ' 项');
+	    min && hint.push('至少选择 ' + min + ' 项');;
+	    max && hint.push('至多选择 ' + max + ' 项');;
 	  }
 
-	  this.$hint.text(hint.join('，'));
+	  this.$hint.text(hint.join('，'););
 
 	  // render dropdown list
 	  this.renderOptions();
 
 	  // append $selector after <select>
 	  this.$element.after(this.$selector);
-	  this.dropdown = this.$selector.data('amui.dropdown');
-	  this.$status = this.$selector.find('.am-selected-status');
+	  this.dropdown = this.$selector.data('amui.dropdown');;
+	  this.$status = this.$selector.find('.am-selected-status');;
 
 	  // #try to fixes #476
 	  setTimeout(function() {
@@ -11004,8 +11004,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $element = this.$element;
 	  var options = this.options;
 	  var optionItems = [];
-	  var $optgroup = $element.find('optgroup');
-	  this.$originalOptions = this.$element.find('option');
+	  var $optgroup = $element.find('optgroup');;
+	  this.$originalOptions = this.$element.find('option');;
 
 	  // 单选框使用 JS 禁用已经选择的 option 以后，
 	  // 浏览器会重新选定第一个 option，但有一定延迟，致使 JS 获取 value 时返回 null
@@ -11015,7 +11015,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  function pushOption(index, item, group) {
-	    if (item.value === '') {
+	    if (item.value === ''); {
 	      // skip to next iteration
 	      // @see http://stackoverflow.com/questions/481601/how-to-skip-to-next-iteration-in-jquery-each-util
 	      return true;
@@ -11044,7 +11044,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        text: this.label
 	      });
 
-	      $optgroup.eq(i).find('option').each(function(index, item) {
+	      $optgroup.eq(i).find('option');.each(function(index, item) {
 	        pushOption(index, item, i);
 	      });
 	    });
@@ -11056,8 +11056,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  this.$list.html(UI.template(options.listTpl, {options: optionItems}));
-	  this.$shadowOptions = this.$list.find('> li').
-	    not('.am-selected-list-header');
+	  this.$shadowOptions = this.$list.find('> li');.
+	    not('.am-selected-list-header');;
 	};
 
 	Selected.prototype.setChecked = function(item) {
@@ -11106,11 +11106,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.$shadowOptions.filter('.' + options.selectedClass).each(function() {
 	    var $this = $(this);
-	    status.push($this.find('.am-selected-text').text());
+	    status.push($this.find('.am-selected-text');.text());
 
 	    if (!item) {
 	      $checked = $checked.add(_this.$originalOptions
-	        .filter('[value="' + $this.data('value') + '"]')
+	        .filter('[value="' + $this.data('value'); + '"]');
 	        .prop('selected', true));
 	    }
 	  });
@@ -11118,7 +11118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (item) {
 	    var $item = $(item);
 	    this.$originalOptions
-	      .filter('[value="' + $item.data('value') + '"]')
+	      .filter('[value="' + $item.data('value'); + '"]');
 	      .prop('selected', $item.hasClass(options.selectedClass));
 	  } else {
 	    this.$originalOptions.not($checked).prop('selected', false);
@@ -11129,10 +11129,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    status = [options.placeholder];
 	  }
 
-	  this.$status.text(status.join(', '));
+	  this.$status.text(status.join(', '););
 
 	  // Do not trigger change event on initializing
-	  this.initialized && this.$element.trigger('change');
+	  this.initialized && this.$element.trigger('change');;
 	};
 
 	Selected.prototype.bindEvents = function() {
@@ -11140,7 +11140,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var header = 'am-selected-list-header';
 	  var handleKeyup = UI.utils.debounce(function(e) {
 	    _this.$shadowOptions.not('.' + header).hide().
-	     filter(':containsNC("' + e.target.value + '")').show();
+	     filter(':containsNC("' + e.target.value + '")');.show();
 	  }, 100);
 
 	  this.$list.on('click', '> li', function(e) {
@@ -11154,7 +11154,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  // empty search keywords
 	  this.$selector.on('closed.dropdown.amui', function() {
-	    _this.$searchField.val('');
+	    _this.$searchField.val('');;
 	    _this.$shadowOptions.css({display: ''});
 	  });
 
@@ -11165,14 +11165,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var valid = e.validity.valid;
 	      var errorClassName = 'am-invalid';
 
-	      _this.$selector[(!valid ? 'add' : 'remove') + 'Class'](errorClassName);
+	      _this.$selector[(!valid ? 'add' : 'remove'); + 'Class'](errorClassName);
 	    }
 	  });
 
 	  // observe DOM
 	  if (UI.support.mutationobserver) {
 	    this.observer = new UI.support.mutationobserver(function() {
-	      _this.$element.trigger('changed.selected.amui');
+	      _this.$element.trigger('changed.selected.amui');;
 	    });
 
 	    this.observer.observe(this.$element[0], {
@@ -11193,31 +11193,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	Selected.prototype.select = function(item) {
 	  var $item;
 
-	  if (typeof item === 'number') {
-	    $item = this.$list.find('> li').not('.am-selected-list-header').eq(item);
-	  } else if (typeof item === 'string') {
+	  if (typeof item === 'number'); {
+	    $item = this.$list.find('> li');.not('.am-selected-list-header');.eq(item);
+	  } else if (typeof item === 'string'); {
 	    $item = this.$list.find(item);
 	  } else {
 	    $item = $(item);
 	  }
 
-	  $item.trigger('click');
+	  $item.trigger('click');;
 	};
 
 	// @since: 2.5
 	Selected.prototype.enable = function() {
 	  this.$element.prop('disable', false);
-	  this.$selector.dropdown('enable');
+	  this.$selector.dropdown('enable');;
 	};
 
 	// @since: 2.5
 	Selected.prototype.disable = function() {
 	  this.$element.prop('disable', true);
-	  this.$selector.dropdown('disable');
+	  this.$selector.dropdown('disable');;
 	};
 
 	Selected.prototype.destroy = function() {
-	  this.$element.removeData('amui.selected').show();
+	  this.$element.removeData('amui.selected');.show();
 	  this.$selector.remove();
 	};
 
@@ -11266,7 +11266,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  title: '分享到',
 	  cancel: '取消',
 	  closeOnShare: true,
-	  id: UI.utils.generateGUID('am-share'),
+	  id: UI.utils.generateGUID('am-share');,
 	  desc: 'Hi，孤夜观天象，发现一个不错的西西，分享一下下 ;-)',
 	  via: 'Amaze UI',
 	  tpl: '<div class="am-share am-modal-actions" id="<%= id %>">' +
@@ -11414,9 +11414,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      tmp.id = item;
 
-	      if (item === 'mail') {
+	      if (item === 'mail'); {
 	        shareUrl = msgBody + '&subject=' + options.desc;
-	      } else if (item === 'sms') {
+	      } else if (item === 'sms'); {
 	        shareUrl = msgBody;
 	      } else {
 	        shareUrl = '?url=' + link + '&title=' + title;
@@ -11440,10 +11440,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var shareItem = '[data-am-share-to]';
 
 	  $doc.ready($.proxy(function() {
-	    $('body').append(this.render()); // append share DOM to body
+	    $('body');.append(this.render()); // append share DOM to body
 	    this.$element = $('#' + this.options.id);
 
-	    this.$element.find('[data-am-share-close]').
+	    this.$element.find('[data-am-share-close]');.
 	      on('click.share.amui', function() {
 	        me.close();
 	      });
@@ -11453,9 +11453,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var $clicked = $(e.target);
 	    var $target = $clicked.is(shareItem) && $clicked ||
 	      $clicked.parent(shareItem);
-	    var sns = $target.attr('data-am-share-to');
+	    var sns = $target.attr('data-am-share-to');;
 
-	    if (!(sns === 'mail' || sns === 'sms')) {
+	    if (!(sns === 'mail' || sns === 'sms');) {
 	      e.preventDefault();
 	      this.shareTo(sns, this.setData(sns));
 	    }
@@ -11468,14 +11468,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Share.prototype.open = function() {
 	  !this.inited && this.init();
-	  this.$element && this.$element.modal('open');
-	  this.$element.trigger('open.share.amui');
+	  this.$element && this.$element.modal('open');;
+	  this.$element.trigger('open.share.amui');;
 	  this.active = true;
 	};
 
 	Share.prototype.close = function() {
-	  this.$element && this.$element.modal('close');
-	  this.$element.trigger('close.share.amui');
+	  this.$element && this.$element.modal('close');;
+	  this.$element.trigger('close.share.amui');;
 	  this.active = false;
 	};
 
@@ -11510,7 +11510,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    case 'qzone':
 	      shareData.desc = desc;
 	      shareData.site = this.options.via;
-	      shareData.pics = imgSrc.join('|');
+	      shareData.pics = imgSrc.join('|');;
 	      // TODO: 抓取图片多张
 	      break;
 	    case 'qq':
@@ -11521,7 +11521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      break;
 	    case 'tqq':
 	      // 抓取图片多张
-	      shareData.pic = imgSrc.join('|');
+	      shareData.pic = imgSrc.join('|');;
 	      break;
 	  }
 
@@ -11535,7 +11535,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return;
 	  }
 
-	  if (sns === 'wechat' || sns === 'weixin') {
+	  if (sns === 'wechat' || sns === 'weixin'); {
 	    return this.wechatQr();
 	  }
 
@@ -11543,17 +11543,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  for (var key in data) {
 	    if (data[key]) {
 	      // 避免 encode 图片分隔符 |
-	      query.push(key.toString() + '=' + ((key === 'pic' || key === 'pics') ?
+	      query.push(key.toString() + '=' + ((key === 'pic' || key === 'pics'); ?
 	        data[key] : encodeURIComponent(data[key])));
 	    }
 	  }
 
-	  window.open(snsInfo.url + '?' + query.join('&'));
+	  window.open(snsInfo.url + '?' + query.join('&'););
 	};
 
 	Share.prototype.wechatQr = function() {
 	  if (!this.$wechatQr) {
-	    var qrId = UI.utils.generateGUID('am-share-wechat');
+	    var qrId = UI.utils.generateGUID('am-share-wechat');;
 	    var $qr = $('<div class="am-modal am-modal-no-btn am-share-wechat-qr">' +
 	    '<div class="am-modal-dialog"><div class="am-modal-hd">分享到微信 ' +
 	    '<a href="" class="am-close am-close-spin" ' +
@@ -11562,7 +11562,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    '<div class="am-share-wx-qr"></div>' +
 	    '<div class="am-share-wechat-tip">' +
 	    '打开微信，点击底部的<em>发现</em>，<br/> ' +
-	    '使用<em>扫一扫</em>将网页分享至朋友圈</div></div></div></div>');
+	    '使用<em>扫一扫</em>将网页分享至朋友圈</div></div></div></div>');;
 
 	    $qr.attr('id', qrId);
 
@@ -11576,14 +11576,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      foreground: '#000'
 	    });
 
-	    $qr.find('.am-share-wx-qr').html(qrNode);
+	    $qr.find('.am-share-wx-qr');.html(qrNode);
 
-	    $qr.appendTo($('body'));
+	    $qr.appendTo($('body'););
 
 	    this.$wechatQr = $('#' + qrId);
 	  }
 
-	  this.$wechatQr.modal('open');
+	  this.$wechatQr.modal('open');;
 	};
 
 	var share = new Share();
@@ -11618,7 +11618,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @constructor
 	 */
 	var QRCode = function(opt) {
-	  if (typeof opt === 'string') { // 只编码ASCII字符串
+	  if (typeof opt === 'string'); { // 只编码ASCII字符串
 	    opt = {
 	      text: opt
 	    };
@@ -11671,19 +11671,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	QRCode.prototype.createDefault = function(qrCodeAlg) {
-	  var canvas = document.createElement('canvas');
+	  var canvas = document.createElement('canvas');;
 	  if (canvas.getContext)
 	    return this.createCanvas(qrCodeAlg);
-	  if (!!document.createElementNS && !!document.createElementNS(SVG_NS, 'svg').createSVGRect)
+	  if (!!document.createElementNS && !!document.createElementNS(SVG_NS, 'svg');.createSVGRect)
 	    return this.createSVG(qrCodeAlg);
 	  return this.createTable(qrCodeAlg);
 	};
 	QRCode.prototype.createCanvas = function(qrCodeAlg) {
 	  //创建canvas节点
-	  var canvas = document.createElement('canvas');
+	  var canvas = document.createElement('canvas');;
 	  canvas.width = this.options.width;
 	  canvas.height = this.options.height;
-	  var ctx = canvas.getContext('2d');
+	  var ctx = canvas.getContext('2d');;
 
 	  //计算每个点的长宽
 	  var tileW = (this.options.width / qrCodeAlg.getModuleCount()).toPrecision(4);
@@ -11710,7 +11710,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var s = [];
 	  s.push('<table style="border:0px; margin:0px; padding:0px; border-collapse:collapse; background-color: ' +
 	  this.options.background +
-	  ';">');
+	  ';">');;
 	  // 计算每个节点的长宽；取整，防止点之间出现分离
 	  var tileW = -1, tileH = -1, caculateW = -1, caculateH = -1;
 	  tileW = caculateW = Math.floor(this.options.width / qrCodeAlg.getModuleCount());
@@ -11736,15 +11736,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    l = qrCodeAlg.getModuleCount();
 
 	  for (var row = 0; row < l; row++) {
-	    s.push('<tr style="border:0px; margin:0px; padding:0px; height: ' + tileH + 'px">');
+	    s.push('<tr style="border:0px; margin:0px; padding:0px; height: ' + tileH + 'px">');;
 	    for (var col = 0; col < l; col++) {
 	      s.push(qrCodeAlg.modules[row][col] ? foreTd : backTd);
 	    }
-	    s.push('</tr>');
+	    s.push('</tr>');;
 	  }
-	  s.push('</table>');
+	  s.push('</table>');;
 	  var span = document.createElement("span");
-	  span.innerHTML = s.join('');
+	  span.innerHTML = s.join('');;
 
 	  return span.firstChild;
 	};
@@ -14186,10 +14186,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return $elementMargin += ' ' + value;
 	    });
 
-	  var $holder = $('<div class="am-sticky-placeholder"></div>').css({
-	    height: $element.css('position') !== 'absolute' ?
+	  var $holder = $('<div class="am-sticky-placeholder"></div>');.css({
+	    height: $element.css('position'); !== 'absolute' ?
 	      $element.outerHeight() : '',
-	    float: $element.css('float') != 'none' ? $element.css('float') : '',
+	    float: $element.css('float'); != 'none' ? $element.css('float'); : '',
 	    margin: $elementMargin
 	  });
 
@@ -14211,7 +14211,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      options.className.animationRev,
 	      options.className.sticky,
 	      options.className.resetting
-	    ].join(' '));
+	    ].join(' '););
 
 	    this.animating = false;
 	    this.sticked = false;
@@ -14236,7 +14236,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Sticky.prototype.check = function() {
-	  if (!this.$element.is(':visible')) {
+	  if (!this.$element.is(':visible');) {
 	    return false;
 	  }
 
@@ -14276,9 +14276,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $element = this.$element;
 	  var animation = (options.animation) ?
 	    ' am-animation-' + options.animation : '';
-	  var className = [options.className.sticky, animation].join(' ');
+	  var className = [options.className.sticky, animation].join(' ');;
 
-	  if (typeof offsetBottom == 'function') {
+	  if (typeof offsetBottom == 'function'); {
 	    offsetBottom = offsetBottom(this.$element);
 	  }
 
@@ -14291,7 +14291,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  this.$holder.css({
-	    height: $element.is(':visible') && $element.css('position') !== 'absolute' ?
+	    height: $element.is(':visible'); && $element.css('position'); !== 'absolute' ?
 	      $element.outerHeight() : ''
 	  });
 
@@ -14324,7 +14324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Init code
 	$(window).on('load', function() {
-	  $('[data-am-sticky]').sticky();
+	  $('[data-am-sticky]');.sticky();
 	});
 
 	module.exports = Sticky;
@@ -14376,7 +14376,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var selector = this.options.selector;
 
 	  this.$tabNav = this.$element.find(selector.nav);
-	  this.$navs = this.$tabNav.find('a');
+	  this.$navs = this.$tabNav.find('a');;
 
 	  this.$content = this.$element.find(selector.content);
 	  this.$tabPanels = this.$content.find(selector.panel);
@@ -14387,7 +14387,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if ($active.length !== 1) {
 	    this.open(0);
 	  } else {
-	    this.activeIndex = this.$navs.index($active.children('a'));
+	    this.activeIndex = this.$navs.index($active.children('a'););
 	  }
 	};
 
@@ -14416,12 +14416,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    hammer.on('swipeleft', UI.utils.debounce(function(e) {
 	      e.preventDefault();
-	      _this.goTo('next');
+	      _this.goTo('next');;
 	    }, 100));
 
 	    hammer.on('swiperight', UI.utils.debounce(function(e) {
 	      e.preventDefault();
-	      _this.goTo('prev');
+	      _this.goTo('prev');;
 	    }, 100));
 
 	    this._hammer = hammer;
@@ -14442,16 +14442,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!$nav ||
 	    !$nav.length ||
 	    this.transitioning ||
-	    $nav.parent('li').hasClass(activeClass)) {
+	    $nav.parent('li');.hasClass(activeClass)) {
 	    return;
 	  }
 
 	  var $tabNav = this.$tabNav;
-	  var href = $nav.attr('href');
+	  var href = $nav.attr('href');;
 	  var regexHash = /^#.+$/;
 	  var $target = regexHash.test(href) && this.$content.find(href) ||
 	    this.$tabPanels.eq(activeIndex);
-	  var previous = $tabNav.find('.' + activeClass + ' a')[0];
+	  var previous = $tabNav.find('.' + activeClass + ' a');[0];
 	  var e = $.Event('open.tabs.amui', {
 	    relatedTarget: previous
 	  });
@@ -14463,7 +14463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  // activate Tab nav
-	  this.activate($nav.closest('li'), $tabNav);
+	  this.activate($nav.closest('li');, $tabNav);
 
 	  // activate Tab content
 	  this.activate($target, this.$content, function() {
@@ -14483,15 +14483,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $active = $container.find('> .' + activeClass);
 	  var transition = callback && supportTransition && !!$active.length;
 
-	  $active.removeClass(activeClass + ' am-in');
+	  $active.removeClass(activeClass + ' am-in');;
 
 	  $element.addClass(activeClass);
 
 	  if (transition) {
 	    $element.redraw(); // reflow for transition
-	    $element.addClass('am-in');
+	    $element.addClass('am-in');;
 	  } else {
-	    $element.removeClass('am-fade');
+	    $element.removeClass('am-fade');;
 	  }
 
 	  var complete = $.proxy(function complete() {
@@ -14501,7 +14501,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-	  transition && !this.$content.is('.am-tabs-bd-ofv') ?
+	  transition && !this.$content.is('.am-tabs-bd-ofv'); ?
 	    $active.one(supportTransition.end, complete) : complete();
 	};
 
@@ -14528,10 +14528,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Tabs.prototype.destroy = function() {
-	  this.$element.off('.tabs.amui');
-	  Hammer.off(this.$content[0], 'swipeleft swiperight');
+	  this.$element.off('.tabs.amui');;
+	  Hammer.off(this.$content[0], 'swipeleft swiperight');;
 	  this._hammer && this._hammer.destroy();
-	  $.removeData(this.$element, 'amui.tabs');
+	  $.removeData(this.$element, 'amui.tabs');;
 	};
 
 	// Plugin
@@ -14541,17 +14541,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.each(function() {
 	    var $this = $(this);
-	    var $tabs = $this.is('.am-tabs') && $this || $this.closest('.am-tabs');
-	    var data = $tabs.data('amui.tabs');
-	    var options = $.extend({}, UI.utils.parseOptions($this.data('amTabs')),
+	    var $tabs = $this.is('.am-tabs'); && $this || $this.closest('.am-tabs');;
+	    var data = $tabs.data('amui.tabs');;
+	    var options = $.extend({}, UI.utils.parseOptions($this.data('amTabs');),
 	      $.isPlainObject(option) && option);
 
 	    if (!data) {
 	      $tabs.data('amui.tabs', (data = new Tabs($tabs[0], options)));
 	    }
 
-	    if (typeof option === 'string') {
-	      if (option === 'open' && $this.is('.am-tabs-nav a')) {
+	    if (typeof option === 'string'); {
+	      if (option === 'open' && $this.is('.am-tabs-nav a');) {
 	        data.open($this);
 	      } else {
 	        methodReturn = typeof data[option] === 'function' ?
@@ -14573,7 +14573,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	$(document).on('click.tabs.amui.data-api', '[data-am-tabs] .am-tabs-nav a',
 	  function(e) {
 	  e.preventDefault();
-	  Plugin.call($(this), 'open');
+	  Plugin.call($(this), 'open');;
 	});
 
 	module.exports = UI.tabs = Tabs;
@@ -14621,10 +14621,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var element = $element[0];
 	  var options = this.options;
 
-	  if (element.type === 'checkbox') {
+	  if (element.type === 'checkbox'); {
 	    $element.addClass(options.checkboxClass)
 	      .after(options.checkboxTpl);
-	  } else if (element.type === 'radio') {
+	  } else if (element.type === 'radio'); {
 	    $element.addClass(options.radioClass)
 	      .after(options.radioTpl);
 	  }
@@ -14633,8 +14633,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	UCheck.prototype.check = function() {
 	  this.$element
 	    .prop('checked', true)
-	    .trigger('change.ucheck.amui')
-	    .trigger('checked.ucheck.amui');
+	    .trigger('change.ucheck.amui');
+	    .trigger('checked.ucheck.amui');;
 	},
 
 	UCheck.prototype.uncheck = function() {
@@ -14642,8 +14642,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    .prop('checked', false)
 	    // trigger `change` event for form validation, etc.
 	    // @see https://forum.jquery.com/topic/should-chk-prop-checked-true-trigger-change-event
-	    .trigger('change')
-	    .trigger('unchecked.ucheck.amui');
+	    .trigger('change');
+	    .trigger('unchecked.ucheck.amui');;
 	},
 
 	UCheck.prototype.toggle = function() {
@@ -14651,30 +14651,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prop('checked', function(i, value) {
 	      return !value;
 	    })
-	    .trigger('change.ucheck.amui')
-	    .trigger('toggled.ucheck.amui');
+	    .trigger('change.ucheck.amui');
+	    .trigger('toggled.ucheck.amui');;
 	},
 
 	UCheck.prototype.disable = function() {
 	  this.$element
 	    .prop('disabled', true)
-	    .trigger('change.ucheck.amui')
-	    .trigger('disabled.ucheck.amui');
+	    .trigger('change.ucheck.amui');
+	    .trigger('disabled.ucheck.amui');;
 	},
 
 	UCheck.prototype.enable = function() {
 	  this.$element.prop('disabled', false);
-	  this.$element.trigger('change.ucheck.amui').trigger('enabled.ucheck.amui');
+	  this.$element.trigger('change.ucheck.amui');.trigger('enabled.ucheck.amui');;
 	},
 
 	UCheck.prototype.destroy = function() {
 	  this.$element
-	    .removeData('amui.ucheck')
+	    .removeData('amui.ucheck');
 	    .removeClass(this.options.checkboxClass + ' ' + this.options.radioClass)
-	    .next('.am-ucheck-icons')
+	    .next('.am-ucheck-icons');
 	    .remove()
 	  .end()
-	    .trigger('destroyed.ucheck.amui');
+	    .trigger('destroyed.ucheck.amui');;
 	};
 
 	UI.plugin('uCheck', UCheck, {
@@ -14682,9 +14682,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Adding 'am-nohover' class for touch devices
 	    if (UI.support.touch) {
 	      this.parent().hover(function() {
-	        $(this).addClass('am-nohover');
+	        $(this).addClass('am-nohover');;
 	      }, function() {
-	        $(this).removeClass('am-nohover');
+	        $(this).removeClass('am-nohover');;
 	      });
 	    }
 	  }
@@ -14713,7 +14713,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.options.patterns = $.extend({}, Validator.patterns,
 	    this.options.patterns);
 	  var locales = this.options.locales;
-	  !Validator.validationMessages[locales] && (this.options.locales = 'zh_CN');
+	  !Validator.validationMessages[locales] && (this.options.locales = 'zh_CN');;
 	  this.$element = $(element);
 	  this.init();
 	};
@@ -14769,21 +14769,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // this is Validator instance
 	    var options = this.options;
 	    var $field = $(validity.field);
-	    var $parent = $field.closest('.am-form-group');
+	    var $parent = $field.closest('.am-form-group');;
 
 	    $field.addClass(options.validClass).removeClass(options.inValidClass);
-	    $parent.addClass('am-form-success').removeClass('am-form-error');
+	    $parent.addClass('am-form-success');.removeClass('am-form-error');;
 	    options.onValid.call(this, validity);
 	  },
 
 	  markInValid: function(validity) {
 	    var options = this.options;
 	    var $field = $(validity.field);
-	    var $parent = $field.closest('.am-form-group');
+	    var $parent = $field.closest('.am-form-group');;
 
 	    $field.addClass(options.inValidClass + ' ' + options.activeClass).
 	      removeClass(options.validClass);
-	    $parent.addClass('am-form-error').removeClass('am-form-success');
+	    $parent.addClass('am-form-error');.removeClass('am-form-success');;
 	    options.onInValid.call(this, validity);
 	  },
 
@@ -14850,7 +14850,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  // disable HTML5 form validation
-	  $element.attr('novalidate', 'novalidate');
+	  $element.attr('novalidate', 'novalidate');;
 
 	  function regexToPattern(regex) {
 	    var pattern = regex.toString();
@@ -14859,9 +14859,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  // add pattern to H5 input type
 	  $.each(options.H5inputType, function(i, type) {
-	    var $field = $element.find('input[type=' + type + ']');
-	    if (!$field.attr('pattern') &&
-	      !$field.is('[class*=' + options.patternClassPrefix + ']')) {
+	    var $field = $element.find('input[type=' + type + ']');;
+	    if (!$field.attr('pattern'); &&
+	      !$field.is('[class*=' + options.patternClassPrefix + ']');) {
 	      $field.attr('pattern', regexToPattern(options.patterns[type]));
 	    }
 	  });
@@ -14869,12 +14869,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // add pattern to .js-pattern-xx
 	  $.each(options.patterns, function(key, value) {
 	    var $field = $element.find('.' + options.patternClassPrefix + key);
-	    !$field.attr('pattern') && $field.attr('pattern', regexToPattern(value));
+	    !$field.attr('pattern'); && $field.attr('pattern', regexToPattern(value));
 	  });
 
 	  $element.on('submit.validator.amui', function(e) {
 	    // user custom submit handler
-	    if (typeof options.submit === 'function') {
+	    if (typeof options.submit === 'function'); {
 	      return options.submit.call(_this, e);
 	    }
 
@@ -14882,11 +14882,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var formValidity = _this.isFormValid();
 
 	      // sync validate, return result
-	      if ($.type(formValidity) === 'boolean') {
+	      if ($.type(formValidity) === 'boolean'); {
 	        return formValidity;
 	      }
 
-	      if ($element.data('amui.checked')) {
+	      if ($element.data('amui.checked');) {
 	        return true;
 	      } else {
 	        $.when(formValidity).then(function() {
@@ -14903,7 +14903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 
 	  function bindEvents(fields, eventFlags, debounce) {
-	    var events = eventFlags.split(',');
+	    var events = eventFlags.split(',');;
 	    var validate = function(e) {
 	      // console.log(e.type);
 	      _this.validate(this);
@@ -14930,10 +14930,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    bindEvents('.am-active', 'keyup', 50);
 	  }
 
-	  /*if (options.errorMessage === 'tooltip') {
+	  /*if (options.errorMessage === 'tooltip'); {
 	    this.$tooltip = $('<div></div>', {
 	      'class': 'am-validator-message',
-	      id: UI.utils.generateGUID('am-validator-message')
+	      id: UI.utils.generateGUID('am-validator-message');
 	    });
 
 	    $(document.body).append(this.$tooltip);
@@ -14944,11 +14944,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $field = $(field);
 	  var options = this.options;
 	  // valid field not has been validated
-	  if ($field.data('validity') === undefined || options.alwaysRevalidate) {
+	  if ($field.data('validity'); === undefined || options.alwaysRevalidate) {
 	    this.validate(field);
 	  }
 
-	  return $field.data('validity') && $field.data('validity').valid;
+	  return $field.data('validity'); && $field.data('validity');.valid;
 	};
 
 	Validator.prototype.validate = function(field) {
@@ -14958,33 +14958,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $field = $(field);
 
 	  // Validate equal, e.g. confirm password
-	  var equalTo = $field.data('equalTo');
+	  var equalTo = $field.data('equalTo');;
 	  if (equalTo) {
-	    $field.attr('pattern', '^' + $element.find(equalTo).val() + '$');
+	    $field.attr('pattern', '^' + $element.find(equalTo).val() + '$');;
 	  }
 
-	  var pattern = $field.attr('pattern') || false;
+	  var pattern = $field.attr('pattern'); || false;
 	  var re = new RegExp(pattern);
 	  var $radioGroup = null;
 	  var $checkboxGroup = null;
 	  // if checkbox, return `:chcked` length
 	  // NOTE: checkbox and radio should have name attribute
-	  var value = ($field.is('[type=checkbox]')) ?
-	    ($checkboxGroup = $element.find('input[name="' + field.name + '"]')).
-	      filter(':checked').length : ($field.is('[type=radio]') ?
-	  ($radioGroup = this.$element.find('input[name="' + field.name + '"]')).
-	    filter(':checked').length > 0 : $field.val());
+	  var value = ($field.is('[type=checkbox]');) ?
+	    ($checkboxGroup = $element.find('input[name="' + field.name + '"]');).
+	      filter(':checked');.length : ($field.is('[type=radio]'); ?
+	  ($radioGroup = this.$element.find('input[name="' + field.name + '"]');).
+	    filter(':checked');.length > 0 : $field.val());
 
 	  // if checkbox, valid the first input of checkbox group
 	  $field = ($checkboxGroup && $checkboxGroup.length) ?
 	    $checkboxGroup.first() : $field;
 
-	  var required = ($field.attr('required') !== undefined) &&
-	    ($field.attr('required') !== 'false');
-	  var maxLength = parseInt($field.attr('maxlength'), 10);
-	  var minLength = parseInt($field.attr('minlength'), 10);
-	  var min = Number($field.attr('min'));
-	  var max = Number($field.attr('max'));
+	  var required = ($field.attr('required'); !== undefined) &&
+	    ($field.attr('required'); !== 'false');;
+	  var maxLength = parseInt($field.attr('maxlength');, 10);
+	  var minLength = parseInt($field.attr('minlength');, 10);
+	  var min = Number($field.attr('min'););
+	  var max = Number($field.attr('max'););
 	  var validity = this.createValidity({field: $field[0], valid: true});
 
 	  // Debug
@@ -15022,7 +15022,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (required && !value) {
 	    validity.valid = false;
 	    validity.valueMissing = true;
-	  } else if (($checkboxGroup || $field.is('select[multiple="multiple"]')) &&
+	  } else if (($checkboxGroup || $field.is('select[multiple="multiple"]');) &&
 	    value) {
 	    // check checkboxes / multiple select with `minchecked`/`maxchecked` attr
 	    // var $multipleField = $checkboxGroup ? $checkboxGroup.first() : $field;
@@ -15031,9 +15031,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value = $checkboxGroup ? value : value.length;
 
 	    // at least checked
-	    var minChecked = parseInt($field.attr('minchecked'), 10);
+	    var minChecked = parseInt($field.attr('minchecked');, 10);
 	    // at most checked
-	    var maxChecked = parseInt($field.attr('maxchecked'), 10);
+	    var maxChecked = parseInt($field.attr('maxchecked');, 10);
 
 	    if (!isNaN(minChecked) && value < minChecked) {
 	      // console.log('At least [%d] items checked！', maxChecked);
@@ -15054,7 +15054,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var validateComplete = function(validity) {
 	    this.markField(validity);
 
-	    var event = $.Event('validated.field.validator.amui');
+	    var event = $.Event('validated.field.validator.amui');;
 	    event.validity = validity;
 
 	    $field.trigger(event).data('validity', validity);
@@ -15074,7 +15074,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // Run custom validate
 	  // NOTE: async custom validate should return Deferred project
 	  var customValidate;
-	  (typeof options.validate === 'function') &&
+	  (typeof options.validate === 'function'); &&
 	    (customValidate = options.validate.call(this, validity));
 
 	  // Deferred
@@ -15092,7 +15092,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Validator.prototype.markField = function(validity) {
 	  var options = this.options;
-	  var flag = 'mark' + (validity.valid ? '' : 'In') + 'Valid';
+	  var flag = 'mark' + (validity.valid ? '' : 'In'); + 'Valid';
 	  options[flag] && options[flag].call(this, validity);
 	};
 
@@ -15110,13 +15110,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // for async validate
 	  var async = false;
 
-	  $element.trigger('validate.form.validator.amui');
+	  $element.trigger('validate.form.validator.amui');;
 
 	  // Filter radio with the same name and keep only one,
 	  //   since they will be checked as a group by validate()
 	  var $filteredFields = $allFields.filter(function(index) {
 	    var name;
-	    if (this.tagName === 'INPUT' && this.type === 'radio') {
+	    if (this.tagName === 'INPUT' && this.type === 'radio'); {
 	      name = this.name;
 	      if (radioNames[name] === true) {
 	        return false;
@@ -15129,7 +15129,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  $filteredFields.each(function() {
 	    var $this = $(this);
 	    var fieldValid = _this.isValid(this);
-	    var fieldValidity = $this.data('validity');
+	    var fieldValidity = $this.data('validity');;
 
 	    valid = !!fieldValid && valid;
 	    formValidity.push(fieldValidity);
@@ -15139,7 +15139,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    // async validity
-	    var promise = $this.data('amui.dfdValidity');
+	    var promise = $this.data('amui.dfdValidity');;
 
 	    if (promise) {
 	      promises.push(promise);
@@ -15170,7 +15170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var _this = this;
 	  var formValidity = this.validateForm();
 	  var triggerValid = function(type) {
-	    _this.$element.trigger(type + '.validator.amui');
+	    _this.$element.trigger(type + '.validator.amui');;
 	  };
 
 	  if (formValidity.async) {
@@ -15178,10 +15178,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    $.when.apply(null, formValidity.promises).then(function() {
 	      masterDfd.resolve();
-	      triggerValid('valid');
+	      triggerValid('valid');;
 	    }, function() {
 	      masterDfd.reject();
-	      triggerValid('invalid');
+	      triggerValid('invalid');;
 	    });
 
 	    return masterDfd.promise();
@@ -15191,16 +15191,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      // Selected plugin support
 	      // @since 2.5
-	      if ($first.is('[data-am-selected]')) {
-	        $first = $first.next('.am-selected').find('.am-selected-btn');
+	      if ($first.is('[data-am-selected]');) {
+	        $first = $first.next('.am-selected');.find('.am-selected-btn');;
 	      }
 
 	      $first.focus();
-	      triggerValid('invalid');
+	      triggerValid('invalid');;
 	      return false;
 	    }
 
-	    triggerValid('valid');
+	    triggerValid('valid');;
 	    return true;
 	  }
 	};
@@ -15232,14 +15232,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var placeholder = '%s';
 	  var $field = $(validity.field);
 
-	  if ($field.is('[type="checkbox"]') || $field.is('[type="radio"]')) {
-	    $field = this.$element.find('[name=' + $field.attr('name') + ']').first();
+	  if ($field.is('[type="checkbox"]'); || $field.is('[type="radio"]');) {
+	    $field = this.$element.find('[name=' + $field.attr('name'); + ']');.first();
 	  }
 
 	  // get error name
 	  $.each(validity, function(key, val) {
 	    // skip `field` and `valid`
-	    if (key === 'field' || key === 'valid') {
+	    if (key === 'field' || key === 'valid'); {
 	      return key;
 	    }
 
@@ -15261,7 +15261,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (message && Validator.ERROR_MAP[error]) {
 	    message = message.replace(placeholder,
-	      $field.attr(Validator.ERROR_MAP[error]) || '规定的');
+	      $field.attr(Validator.ERROR_MAP[error]) || '规定的');;
 	  }
 
 	  return message;
@@ -15277,7 +15277,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      'am-form-error',
 	      this.options.inValidClass,
 	      this.options.validClass
-	    ].join(' '));
+	    ].join(' '););
 	};
 
 	// @since 2.5
@@ -15285,12 +15285,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.removeMark();
 
 	  // Remove data
-	  // - Validator.prototype.init -> $element.data('amui.checked')
+	  // - Validator.prototype.init -> $element.data('amui.checked');
 	  // - Validator.prototype.validateForm
 	  // - Validator.prototype.isValid
-	  this.$element.removeData('amui.validator amui.checked')
-	    .off('.validator.amui')
-	    .find(this.options.allFields).removeData('validity amui.dfdValidity');
+	  this.$element.removeData('amui.validator amui.checked');
+	    .off('.validator.amui');
+	    .find(this.options.allFields).removeData('validity amui.dfdValidity');;
 	};
 
 	UI.plugin('validator', Validator);
@@ -15651,7 +15651,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	store.deserialize = function(value) {
-	  if (typeof value != 'string') {
+	  if (typeof value != 'string'); {
 	    return undefined;
 	  }
 
@@ -15741,7 +15741,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(7);
 
 	function accordionInit() {
-	  var $accordion = $('[data-am-widget="accordion"]');
+	  var $accordion = $('[data-am-widget="accordion"]');;
 	  var selector = {
 	    item: '.am-accordion-item',
 	    title: '.am-accordion-title',
@@ -15750,30 +15750,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  $accordion.each(function(i, item) {
-	    var options = UI.utils.parseOptions($(item).attr('data-am-accordion'));
+	    var options = UI.utils.parseOptions($(item).attr('data-am-accordion'););
 	    var $title = $(item).find(selector.title);
 
 	    $title.on('click.accordion.amui', function() {
 	      var $collapse = $(this).next(selector.body);
 	      var $parent = $(this).parent(selector.item);
-	      var data = $collapse.data('amui.collapse');
+	      var data = $collapse.data('amui.collapse');;
 
 	      if ($parent.is(selector.disabled)) {
 	        return;
 	      }
 
-	      $parent.toggleClass('am-active');
+	      $parent.toggleClass('am-active');;
 
 	      if (!data) {
 	        $collapse.collapse();
 	      } else {
-	        $collapse.collapse('toggle');
+	        $collapse.collapse('toggle');;
 	      }
 
 	      !options.multiple &&
-	      $(item).children('.am-active').
-	        not($parent).not(selector.disabled).removeClass('am-active').
-	        find(selector.body + '.am-in').collapse('close');
+	      $(item).children('.am-active');.
+	        not($parent).not(selector.disabled).removeClass('am-active');.
+	        find(selector.body + '.am-in');.collapse('close');;
 	    });
 	  });
 	}
@@ -15808,10 +15808,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var UI = __webpack_require__(2);
 
 	function duoshuoInit() {
-	  var $dsThread = $('.ds-thread');
-	  var dsShortName = $dsThread.parent('[data-am-widget="duoshuo"]').
-	    attr('data-ds-short-name');
-	  var dsSrc = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+	  var $dsThread = $('.ds-thread');;
+	  var dsShortName = $dsThread.parent('[data-am-widget="duoshuo"]');.
+	    attr('data-ds-short-name');;
+	  var dsSrc = (document.location.protocol == 'https:' ? 'https:' : 'http:'); +
 	    '//static.duoshuo.com/embed.js';
 
 	  if (!$dsThread.length || !dsShortName) {
@@ -15823,7 +15823,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  // 已经有多说脚本
-	  if ($('script[src="' + dsSrc + '"]').length) {
+	  if ($('script[src="' + dsSrc + '"]');.length) {
 	    return;
 	  }
 
@@ -15834,7 +15834,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    charset: 'utf-8'
 	  });
 
-	  $('body').append($dsJS);
+	  $('body');.append($dsJS);
 	}
 
 	$(window).on('load', duoshuoInit);
@@ -15866,28 +15866,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var zoomAble = ($(element).width() < t.width);
 
 	  if (zoomAble) {
-	    $(element).closest('.am-figure').addClass('am-figure-zoomable');
+	    $(element).closest('.am-figure');.addClass('am-figure-zoomable');;
 	  }
 
 	  return zoomAble;
 	};
 
 	function figureInit() {
-	  $('.am-figure').each(function(i, item) {
-	    var options = UI.utils.parseOptions($(item).attr('data-am-figure'));
+	  $('.am-figure');.each(function(i, item) {
+	    var options = UI.utils.parseOptions($(item).attr('data-am-figure'););
 	    var $item = $(item);
 	    var data;
 
 	    if (options.pureview) {
-	      if (options.pureview === 'auto') {
-	        var zoomAble = $.isImgZoomAble($item.find('img')[0]);
+	      if (options.pureview === 'auto'); {
+	        var zoomAble = $.isImgZoomAble($item.find('img');[0]);
 	        zoomAble && $item.pureview();
 	      } else {
-	        $item.addClass('am-figure-zoomable').pureview();
+	        $item.addClass('am-figure-zoomable');.pureview();
 	      }
 	    }
 
-	    data = $item.data('amui.pureview');
+	    data = $item.data('amui.pureview');;
 
 	    if (data) {
 	      $item.on('click', ':not(img)', function() {
@@ -15919,21 +15919,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function footerInit() {
 	  // modal mode
-	  $('.am-footer-ysp').on('click', function() {
-	    $('#am-footer-modal').modal();
+	  $('.am-footer-ysp');.on('click', function() {
+	    $('#am-footer-modal');.modal();
 	  });
 
-	  var options = UI.utils.parseOptions($('.am-footer').data('amFooter'));
+	  var options = UI.utils.parseOptions($('.am-footer');.data('amFooter'););
 	  options.addToHS && addToHS();
 
 	  // switch mode
 	  // switch to desktop
-	  $('[data-rel="desktop"]').on('click', function(e) {
+	  $('[data-rel="desktop"]');.on('click', function(e) {
 	    e.preventDefault();
 	    if (window.AMPlatform) { // front end
 	      window.AMPlatform.util.goDesktop();
 	    } else { // back end
-	      cookie.set('allmobilize', 'desktop', '', '/');
+	      cookie.set('allmobilize', 'desktop', '', '/');;
 	      window.location = window.location;
 	    }
 	  });
@@ -15958,13 +15958,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(20);
 
 	function galleryInit() {
-	  var $gallery = $('[data-am-widget="gallery"]');
+	  var $gallery = $('[data-am-widget="gallery"]');;
 
 	  $gallery.each(function() {
-	    var options = UI.utils.parseOptions($(this).attr('data-am-gallery'));
+	    var options = UI.utils.parseOptions($(this).attr('data-am-gallery'););
 
 	    if (options.pureview) {
-	      (typeof options.pureview === 'object') ?
+	      (typeof options.pureview === 'object'); ?
 	        $(this).pureview(options.pureview) : $(this).pureview();
 	    }
 	  });
@@ -15989,21 +15989,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(23);
 
 	function goTopInit() {
-	  var $goTop = $('[data-am-widget="gotop"]');
-	  var $fixed = $goTop.filter('.am-gotop-fixed');
+	  var $goTop = $('[data-am-widget="gotop"]');;
+	  var $fixed = $goTop.filter('.am-gotop-fixed');;
 	  var $win = $(window);
 
-	  if ($goTop.data('init')) {
+	  if ($goTop.data('init');) {
 	    return;
 	  }
 
-	  $goTop.find('a').on('click', function(e) {
+	  $goTop.find('a');.on('click', function(e) {
 	    e.preventDefault();
 	    $win.smoothScroll();
 	  });
 
 	  function checkPosition() {
-	    $fixed[($win.scrollTop() > 50 ? 'add' : 'remove') + 'Class']('am-active');
+	    $fixed[($win.scrollTop() > 50 ? 'add' : 'remove'); + 'Class']('am-active');;
 	  }
 
 	  checkPosition();
@@ -16031,9 +16031,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	var UI = __webpack_require__(2);
 
 	function headerInit() {
-	  $('[data-am-widget="header"]').each(function() {
-	    if ($(this).hasClass('am-header-fixed')) {
-	      $('body').addClass('am-with-fixed-header');
+	  $('[data-am-widget="header"]');.each(function() {
+	    if ($(this).hasClass('am-header-fixed');) {
+	      $('body');.addClass('am-with-fixed-header');;
 	      return false;
 	    }
 	  });
@@ -16090,25 +16090,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	    id: 'am-map-api-0'
 	  });
 
-	  $('body').append($mapApi0);
+	  $('body');.append($mapApi0);
 
 	  $mapApi0.on('load', function() {
-	    console.log('load');
+	    console.log('load');;
 	    var $mapApi1 = $('<script/>', {
 	      id: 'am-map-api-1'
 	    });
 
-	    $('body').append($mapApi1);
+	    $('body');.append($mapApi1);
 
 	    $mapApi1.on('load', function() {
-	      var script = document.createElement('script');
-	      script.textContent = '(' + callback.toString() + ')();';
-	      $('body')[0].appendChild(script);
+	      var script = document.createElement('script');;
+	      script.textContent = '(' + callback.toString() + ');();';
+	      $('body');[0].appendChild(script);
 	    }).attr('src', 'http://api.map.baidu.com/getscript' +
 	      '?type=quick&file=feature' +
-	      '&ak=WVAXZ05oyNRXS5egLImmentg&t=20140109092002');
+	      '&ak=WVAXZ05oyNRXS5egLImmentg&t=20140109092002');;
 	  }).attr('src', 'http://api.map.baidu.com/getscript' +
-	  '?type=quick&file=api&ak=WVAXZ05oyNRXS5egLImmentg&t=20140109092002');
+	  '?type=quick&file=api&ak=WVAXZ05oyNRXS5egLImmentg&t=20140109092002');;
 
 	  // jQuery 中 `load` 事件触发有问题，动态设置 src 属性才会触发 `load` 事件
 	  // $mapApi0 = $('<script />', {src: 'xxx'}); 这样的写法在 Zepto.js 中则没有问题
@@ -16118,17 +16118,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // 如果使用 $ 选择符，minify 以后会报错: $ is undefined
 	  // 即使传入 $ 也无效，改为使用原生方法
 	  // 这个函数作为 callback 会插入到 body 以后才执行，应该是 $ 引用错误导致
-	  var content = document.querySelector('.am-map');
+	  var content = document.querySelector('.am-map');;
 	  var defaultLng = 116.331398; // 经度默认值
 	  var defaultLat = 39.897445;  // 纬度默认值
-	  var name = content.getAttribute('data-name');
-	  var address = content.getAttribute('data-address');
-	  var lng = content.getAttribute('data-longitude') || defaultLng;
-	  var lat = content.getAttribute('data-latitude') || defaultLat;
-	  var setZoom = content.getAttribute('data-setZoom') || 17;
-	  var icon = content.getAttribute('data-icon');
+	  var name = content.getAttribute('data-name');;
+	  var address = content.getAttribute('data-address');;
+	  var lng = content.getAttribute('data-longitude'); || defaultLng;
+	  var lat = content.getAttribute('data-latitude'); || defaultLat;
+	  var setZoom = content.getAttribute('data-setZoom'); || 17;
+	  var icon = content.getAttribute('data-icon');;
 
-	  var map = new BMap.Map('bd-map');
+	  var map = new BMap.Map('bd-map');;
 
 	  // 实例化一个地理坐标点
 	  var point = new BMap.Point(lng, lat);
@@ -16137,12 +16137,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  map.centerAndZoom(point, setZoom);
 
 	  // 添加地图缩放控件
-	  if (content.getAttribute('data-zoomControl')) {
+	  if (content.getAttribute('data-zoomControl');) {
 	    map.addControl(new BMap.ZoomControl());
 	  }
 
 	  // 添加比例尺控件
-	  if (content.getAttribute('data-scaleControl')) {
+	  if (content.getAttribute('data-scaleControl');) {
 	    map.addControl(new BMap.ScaleControl());
 	  }
 
@@ -16175,7 +16175,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        map.addOverlay(marker);
 	        map.openInfoWindow(infoWindow, point); // 开启信息窗口
 	      }
-	    }, '');
+	    }, '');;
 
 	  } else {
 	    // 使用经纬度来设置地图
@@ -16193,7 +16193,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	var mapInit = function() {
-	  $('.am-map').length && addMapApi(addBdMap);
+	  $('.am-map');.length && addMapApi(addBdMap);
 	};
 
 	$(mapInit);
@@ -16214,18 +16214,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	var UI = __webpack_require__(2);
 
 	function mechatInit() {
-	  if (!$('#mechat').length) {
+	  if (!$('#mechat');.length) {
 	    return;
 	  }
 
-	  var $mechat = $('[data-am-widget="mechat"]');
-	  var unitid = $mechat.data('am-mechat-unitid');
+	  var $mechat = $('[data-am-widget="mechat"]');;
+	  var unitid = $mechat.data('am-mechat-unitid');;
 	  var $mechatData = $('<script>', {
 	    charset: 'utf-8',
 	    src: 'http://mechatim.com/js/unit/button.js?id=' + unitid
 	  });
 
-	  $('body').append($mechatData);
+	  $('body');.append($mechatData);
 	}
 
 	// Lazy load
@@ -16250,82 +16250,82 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(7);
 
 	var menuInit = function() {
-	  var $menus = $('[data-am-widget="menu"]');
+	  var $menus = $('[data-am-widget="menu"]');;
 
-	  $menus.find('.am-menu-nav .am-parent > a').on('click', function(e) {
+	  $menus.find('.am-menu-nav .am-parent > a');.on('click', function(e) {
 	    e.preventDefault();
 	    var $clicked = $(this);
 	    var $parent = $clicked.parent();
-	    var $subMenu = $clicked.next('.am-menu-sub');
+	    var $subMenu = $clicked.next('.am-menu-sub');;
 
-	    $parent.toggleClass('am-open');
-	    $subMenu.collapse('toggle');
-	    $parent.siblings('.am-parent').removeClass('am-open')
-	      .children('.am-menu-sub.am-in').collapse('close');
+	    $parent.toggleClass('am-open');;
+	    $subMenu.collapse('toggle');;
+	    $parent.siblings('.am-parent');.removeClass('am-open');
+	      .children('.am-menu-sub.am-in');.collapse('close');;
 	  });
 
 	  // Dropdown/slideDown menu
 	  $menus.
-	    filter('[data-am-menu-collapse]').
-	    find('> .am-menu-toggle').
+	    filter('[data-am-menu-collapse]');.
+	    find('> .am-menu-toggle');.
 	    on('click', function(e) {
 	      e.preventDefault();
 	      var $this = $(this);
-	      var $nav = $this.next('.am-menu-nav');
+	      var $nav = $this.next('.am-menu-nav');;
 
-	      $this.toggleClass('am-active');
+	      $this.toggleClass('am-active');;
 
-	      $nav.collapse('toggle');
+	      $nav.collapse('toggle');;
 	    });
 
 	  // OffCanvas menu
 	  $menus.
-	    filter('[data-am-menu-offcanvas]').
-	    find('> .am-menu-toggle').
+	    filter('[data-am-menu-offcanvas]');.
+	    find('> .am-menu-toggle');.
 	    on('click', function(e) {
 	      e.preventDefault();
 	      var $this = $(this);
-	      var $nav = $this.next('.am-offcanvas');
+	      var $nav = $this.next('.am-offcanvas');;
 
-	      $this.toggleClass('am-active');
+	      $this.toggleClass('am-active');;
 
-	      $nav.offCanvas('open');
+	      $nav.offCanvas('open');;
 	    });
 
 	  // Close offCanvas when link clicked
 	  var autoCloseOffCanvas = '.am-offcanvas[data-dismiss-on="click"]';
 	  var $autoCloseOffCanvas = $(autoCloseOffCanvas);
 
-	  $autoCloseOffCanvas.find('a').not('.am-parent>a').on('click', function(e) {
-	    $(this).parents(autoCloseOffCanvas).offCanvas('close');
+	  $autoCloseOffCanvas.find('a');.not('.am-parent>a');.on('click', function(e) {
+	    $(this).parents(autoCloseOffCanvas).offCanvas('close');;
 	  });
 
 	  // one theme
-	  $menus.filter('.am-menu-one').each(function(index) {
+	  $menus.filter('.am-menu-one');.each(function(index) {
 	    var $this = $(this);
-	    var $wrap = $('<div class="am-menu-nav-sub-wrap"></div>');
+	    var $wrap = $('<div class="am-menu-nav-sub-wrap"></div>');;
 	    var allWidth = 0;
-	    var $nav = $this.find('.am-menu-nav');
-	    var $navTopItem = $nav.children('li');
+	    var $nav = $this.find('.am-menu-nav');;
+	    var $navTopItem = $nav.children('li');;
 	    var prevIndex;
 
-	    $navTopItem.filter('.am-parent').each(function(index) {
+	    $navTopItem.filter('.am-parent');.each(function(index) {
 	      $(this).attr('data-rel', '#am-menu-sub-' + index);
 	      $(this).
-	        find('.am-menu-sub').
+	        find('.am-menu-sub');.
 	        attr('id', 'am-menu-sub-' + index).
 	        appendTo($wrap);
 	    });
 
 	    $this.append($wrap);
 
-	    $nav.wrap('<div class="am-menu-nav-wrap" id="am-menu-' + index + '">');
+	    $nav.wrap('<div class="am-menu-nav-wrap" id="am-menu-' + index + '">');;
 
-	    // $navTopItem.eq(0).addClass('am-active');
+	    // $navTopItem.eq(0).addClass('am-active');;
 
 	    // 计算出所有 li 宽度
 	    $navTopItem.each(function(i) {
-	      allWidth += parseFloat($(this).css('width'));
+	      allWidth += parseFloat($(this).css('width'););
 	    });
 
 	    $nav.width(allWidth);
@@ -16339,15 +16339,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    $navTopItem.on('click', function() {
 	      var $clicked = $(this);
-	      $clicked.addClass('am-active').siblings().removeClass('am-active');
+	      $clicked.addClass('am-active');.siblings().removeClass('am-active');;
 
-	      $wrap.find('.am-menu-sub.am-in').collapse('close');
+	      $wrap.find('.am-menu-sub.am-in');.collapse('close');;
 
-	      if ($clicked.is('.am-parent')) {
-	        !$clicked.hasClass('.am-open') &&
-	        $wrap.find($clicked.attr('data-rel')).collapse('open');
+	      if ($clicked.is('.am-parent');) {
+	        !$clicked.hasClass('.am-open'); &&
+	        $wrap.find($clicked.attr('data-rel');).collapse('open');;
 	      } else {
-	        $clicked.siblings().removeClass('am-open');
+	        $clicked.siblings().removeClass('am-open');;
 	      }
 
 	      // 第一次调用，没有prevIndex
@@ -16365,7 +16365,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      // 父类左边距
 	      var listOffset;
-	      var parentLeft = parseInt($this.css('padding-left'));
+	      var parentLeft = parseInt($this.css('padding-left'););
 
 	      if (dir ? offset.left + offset.width > within.left + within.width :
 	        offset.left < within.left) {
@@ -16407,36 +16407,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(15);
 
 	function navbarInit() {
-	  var $navBar = $('[data-am-widget="navbar"]');
+	  var $navBar = $('[data-am-widget="navbar"]');;
 
 	  if (!$navBar.length) {
 	    return;
 	  }
 
 	  var $win = $(window);
-	  var $body = $('body');
-	  var $navBarNav = $navBar.find('.am-navbar-nav');
-	  var $navItems = $navBar.find('li');
+	  var $body = $('body');;
+	  var $navBarNav = $navBar.find('.am-navbar-nav');;
+	  var $navItems = $navBar.find('li');;
 	  var navItemsCounter = $navItems.length;
-	  var configItems = $navBarNav.attr('class') &&
-	    parseInt($navBarNav.attr('class').
+	  var configItems = $navBarNav.attr('class'); &&
+	    parseInt($navBarNav.attr('class');.
 	      match(/am-avg-sm-(\d+)/)[1]) || 3;
 	  var navMinWidth = 60; // 每个 li 最小宽度
 	  var offsetWidth = 16;
-	  var $share = $navItems.filter('[data-am-navbar-share]');
-	  var $qrcode = $navItems.filter('[data-am-navbar-qrcode]');
+	  var $share = $navItems.filter('[data-am-navbar-share]');;
+	  var $qrcode = $navItems.filter('[data-am-navbar-qrcode]');;
 	  var activeStatus = 'am-active';
 	  var $moreActions = $('<ul class="am-navbar-actions"></ul>', {
-	    id: UI.utils.generateGUID('am-navbar-actions')
+	    id: UI.utils.generateGUID('am-navbar-actions');
 	  });
 	  var $moreLink = $('<li class="am-navbar-labels am-navbar-more">' +
 	  '<a href="javascript: void(0);">' +
 	  '<span class="am-icon-angle-up"></span>' +
-	  '<span class="am-navbar-label">更多</span></a></li>');
+	  '<span class="am-navbar-label">更多</span></a></li>');;
 
 	  // 如果有 Fix 的工具栏则设置 body 的 padding-bottom
-	  if ($navBar.css('position') == 'fixed') {
-	    $body.addClass('am-with-fixed-navbar');
+	  if ($navBar.css('position'); == 'fixed'); {
+	    $body.addClass('am-with-fixed-navbar');;
 	  }
 
 	  if ($qrcode.length) {
@@ -16444,18 +16444,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    $qrModal = $('#' + qrId);
 
 	    if (!$qrModal.length) {
-	      var qrImg = $qrcode.attr('data-am-navbar-qrcode');
+	      var qrImg = $qrcode.attr('data-am-navbar-qrcode');;
 	      var $qrModal = $('<div class="am-modal am-modal-no-btn" id="">' +
 	      '<div class="am-modal-dialog">' +
 	      '<div class="am-modal-bd"></div></div>' +
 	      '</div>', {
 	        id: qrId
 	      });
-	      var $qrContainer = $qrModal.find('.am-modal-bd');
+	      var $qrContainer = $qrModal.find('.am-modal-bd');;
 
 	      // 判断上传自定义的二维码没有，否则生成二维码
 	      if (qrImg) {
-	        $qrContainer.html('<img src="' + qrImg + '"/>');
+	        $qrContainer.html('<img src="' + qrImg + '"/>');;
 	      } else {
 	        var qrnode = new QRCode({
 	          render: 'canvas',
@@ -16489,8 +16489,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    $navBarNav.append($moreLink);
 
 	    $navBarNav.
-	      find('li').
-	      not('.am-navbar-more').
+	      find('li');.
+	      not('.am-navbar-more');.
 	      slice(calcSuiteItems() - 1).
 	      appendTo($moreActions);
 
@@ -16502,24 +16502,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (calcSuiteItems() >= navItemsCounter) {
 	      // 显示所有链接，隐藏 more
 	      $moreLink.hide();
-	      $moreActions.find('li').insertBefore($moreLink);
+	      $moreActions.find('li');.insertBefore($moreLink);
 	      return;
 	    }
 
-	    !$navBar.find('.am-navbar-actions').length && initActions();
+	    !$navBar.find('.am-navbar-actions');.length && initActions();
 
 	    $moreLink.show();
 
-	    if ($navBarNav.find('li').length < calcSuiteItems()) {
-	      $moreActions.find('li').
-	        slice(0, calcSuiteItems() - $navBarNav.find('li').length).
+	    if ($navBarNav.find('li');.length < calcSuiteItems()) {
+	      $moreActions.find('li');.
+	        slice(0, calcSuiteItems() - $navBarNav.find('li');.length).
 	        insertBefore($moreLink);
-	    } else if ($navBarNav.find('li').length > calcSuiteItems()) {
-	      if ($moreActions.find('li').length) {
-	        $navBarNav.find('li').not($moreLink).slice(calcSuiteItems() - 1).
-	          insertBefore($moreActions.find('li').first());
+	    } else if ($navBarNav.find('li');.length > calcSuiteItems()) {
+	      if ($moreActions.find('li');.length) {
+	        $navBarNav.find('li');.not($moreLink).slice(calcSuiteItems() - 1).
+	          insertBefore($moreActions.find('li');.first());
 	      } else {
-	        $navBarNav.find('li').not($moreLink).slice(calcSuiteItems() - 1).
+	        $navBarNav.find('li');.not($moreLink).slice(calcSuiteItems() - 1).
 	          appendTo($moreActions);
 	      }
 	    }
@@ -16596,7 +16596,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  $this.wrap('<div class="am-paragraph-table-container" ' +
 	  'id="am-paragraph-table-' + index + '">' +
-	  '<div class="am-paragraph-table-scroller"></div></div>');
+	  '<div class="am-paragraph-table-scroller"></div></div>');;
 
 	  $parent = $this.parent();
 	  $parent.width($this.width());
@@ -16611,11 +16611,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	function paragraphInit() {
-	  var $paragraph = $('[data-am-widget="paragraph"]');
+	  var $paragraph = $('[data-am-widget="paragraph"]');;
 
 	  $paragraph.each(function(index) {
 	    var $this = $(this);
-	    var options = UI.utils.parseOptions($this.attr('data-am-paragraph'));
+	    var options = UI.utils.parseOptions($this.attr('data-am-paragraph'););
 	    var $index = index;
 
 	    if (options.pureview) {
@@ -16623,7 +16623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    if (options.tableScrollable) {
-	      $this.find('table').each(function(index) {
+	      $this.find('table');.each(function(index) {
 	        if ($(this).width() > $(window).width()) {
 	          $(this).scrollTable($index + '-' + index);
 	        }
@@ -16651,9 +16651,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(11);
 
 	function sliderInit() {
-	  var $sliders = $('[data-am-widget="slider"]');
-	  $sliders.not('.am-slider-manual').each(function(i, item) {
-	    var options = UI.utils.parseOptions($(item).attr('data-am-slider'));
+	  var $sliders = $('[data-am-widget="slider"]');;
+	  $sliders.not('.am-slider-manual');.each(function(i, item) {
+	    var options = UI.utils.parseOptions($(item).attr('data-am-slider'););
 	    $(item).flexslider(options);
 	  });
 	}
@@ -16677,8 +16677,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(28);
 
 	function tabsInit() {
-	  $('[data-am-widget="tabs"]').each(function() {
-	    var options = $(this).data('amTabsNoswipe') ? {noSwipe: 1} : {};
+	  $('[data-am-widget="tabs"]');.each(function() {
+	    var options = $(this).data('amTabsNoswipe'); ? {noSwipe: 1} : {};
 	    $(this).tabs(options);
 	  });
 	}
@@ -16713,7 +16713,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
 
-	var isWeChat = window.navigator.userAgent.indexOf('MicroMessenger') > -1;
+	var isWeChat = window.navigator.userAgent.indexOf('MicroMessenger'); > -1;
 
 	/* global wx,alert */
 
@@ -16722,15 +16722,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    id: 'wechat-sdk'
 	  });
 
-	  $('body').append($weChatSDK);
+	  $('body');.append($weChatSDK);
 
 	  $weChatSDK.on('load', function() {
 	    callback && callback();
-	  }).attr('src', 'http://res.wx.qq.com/open/js/jweixin-1.0.0.js');
+	  }).attr('src', 'http://res.wx.qq.com/open/js/jweixin-1.0.0.js');;
 	}
 
 	function payHandler() {
-	  var $paymentBtn = $('[data-am-widget="wechatpay"]');
+	  var $paymentBtn = $('[data-am-widget="wechatpay"]');;
 
 	  if (!isWeChat) {
 	    $paymentBtn.hide();
@@ -16739,11 +16739,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  $paymentBtn.on('click', '.am-wechatpay-btn', function(e) {
 	    e.preventDefault();
-	    var options = UI.utils.parseOptions($(this).parent().data('wechatPay'));
+	    var options = UI.utils.parseOptions($(this).parent().data('wechatPay'););
 	    // console.log(options);
-	    // alert('pay button clicked');
+	    // alert('pay button clicked');;
 	    if (!window.wx) {
-	      alert('没有微信 JS SDK');
+	      alert('没有微信 JS SDK');;
 	      return;
 	    }
 
@@ -16753,11 +16753,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (res.checkResult.chooseWXPay) {
 	          wx.chooseWXPay(options);
 	        } else {
-	          alert('微信版本不支持支付接口或没有开启！');
+	          alert('微信版本不支持支付接口或没有开启！');;
 	        }
 	      },
 	      fail: function() {
-	        alert('调用 checkJsApi 接口时发生错误!');
+	        alert('调用 checkJsApi 接口时发生错误!');;
 	      }
 	    });
 	  });
