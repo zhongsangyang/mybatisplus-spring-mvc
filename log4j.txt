@@ -2,3 +2,8 @@ https://blog.csdn.net/sinat_30185177/article/details/73550377  很多%c %f %l啥
 
 https://blog.csdn.net/Dr_Guo/article/details/50718063 配置到mysql数据库的配置
 
+
+http://www.jb51.net/article/71692.html配置到mysql数据库的配置
+
+https://logback.qos.ch/manual/appenders.html官网配置logback
+
