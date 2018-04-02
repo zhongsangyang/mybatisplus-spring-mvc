@@ -1,0 +1,4 @@
+https://blog.csdn.net/sinat_30185177/article/details/73550377  很多%c %f %l啥的详解
+
+https://blog.csdn.net/Dr_Guo/article/details/50718063 配置到mysql数据库的配置
+
