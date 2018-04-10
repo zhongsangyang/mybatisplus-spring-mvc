@@ -1,19 +1,32 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2018/4/7
+  Time: 12:01
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+  String path=request.getContextPath();
+%>
 <!doctype html>
 <html class="no-js">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Amaze UI Admin user Examples</title>
-  <meta name="description" content="这是一个 user 页面">
-  <meta name="keywords" content="user">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="icon" type="image/png" href="../assets/i/favicon.png">
-  <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
-  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-  <link rel="stylesheet" href="../assets/css/amazeui.min.css"/>
-  <link rel="stylesheet" href="../assets/css/admin.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin user Examples</title>
+    <meta name="description" content="这是一个 user 页面">
+    <meta name="keywords" content="user">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <script src="../assets/js/jquery-2.2.3.min.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -56,7 +69,7 @@
         <li class="admin-parent">
           <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 页面模块 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
           <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 个人资料<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-user.jsp" class="am-cf"><span class="am-icon-check"></span> 个人资料<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
             <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 帮助页</a></li>
             <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 相册页面<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
             <li><a href="admin-log.html"><span class="am-icon-calendar"></span> 系统日志</a></li>
@@ -138,58 +151,77 @@
         </div>
 
         <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-          <form class="am-form am-form-horizontal">
-            <div class="am-form-group">
-              <label for="user-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
-              <div class="am-u-sm-9">
-                <input type="text" id="user-name" placeholder="姓名 / Name">
-                <small>输入你的名字，让我们记住你。</small>
-              </div>
-            </div>
+          <c:if test="${myUser==null}">
+            <h1>我是空的</h1>
+          </c:if>
+          <c:choose>
+            <c:when test="${myUser!=null}">
+              <h1>我不是空的</h1>
+            </c:when>
+          </c:choose>
+            <form class="am-form am-form-horizontal" id="mainForm" method="post" action="<%=path%>/myUser/login">
+                <input type="hidden" name="id" value="7"/>
 
-            <div class="am-form-group">
-              <label for="user-email" class="am-u-sm-3 am-form-label">电子邮件 / Email</label>
-              <div class="am-u-sm-9">
-                <input type="email" id="user-email" placeholder="输入你的电子邮件 / Email">
-                <small>邮箱你懂得...</small>
-              </div>
-            </div>
+                <div class="am-form-group">
+                  <label for="user-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
+                  <div class="am-u-sm-9">
 
-            <div class="am-form-group">
-              <label for="user-phone" class="am-u-sm-3 am-form-label">电话 / Telephone</label>
-              <div class="am-u-sm-9">
-                <input type="tel" id="user-phone" placeholder="输入你的电话号码 / Telephone">
-              </div>
-            </div>
+                    <input type="text" id="user-name" name="userName" placeholder="姓名 / Name">
+                    <input type="text"  value="${myUser.userName}" aceholder="姓名 / Name">
+                    <small>输入你的名字，让我们记住你。</small>
+                  </div>
+                </div>
 
-            <div class="am-form-group">
-              <label for="user-QQ" class="am-u-sm-3 am-form-label">QQ</label>
-              <div class="am-u-sm-9">
-                <input type="number" pattern="[0-9]*" id="user-QQ" placeholder="输入你的QQ号码">
-              </div>
-            </div>
+                <div class="am-form-group">
+                  <label for="user-email" class="am-u-sm-3 am-form-label">电子邮件 / Email</label>
+                  <div class="am-u-sm-9">
+                    <input type="email" id="user-email" name="emai" placeholder="输入你的电子邮件 / Email">
+                    <input type="email" value="${myUser.emai}"  placeholder="输入你的电子邮件 / Email">
+                    <small>邮箱你懂得...</small>
+                  </div>
+                </div>
 
-            <div class="am-form-group">
-              <label for="user-weibo" class="am-u-sm-3 am-form-label">微博 / Twitter</label>
-              <div class="am-u-sm-9">
-                <input type="text" id="user-weibo" placeholder="输入你的微博 / Twitter">
-              </div>
-            </div>
+                <div class="am-form-group">
+                  <label for="user-phone" class="am-u-sm-3 am-form-label">电话 / Telephone</label>
+                  <div class="am-u-sm-9">
+                    <input type="tel" id="user-phone"  name="phone" placeholder="输入你的电话号码 / Telephone">
+                    <input type="tel" value="${myUser.phone}"  placeholder="输入你的电话号码 / Telephone">
+                  </div>
+                </div>
 
-            <div class="am-form-group">
-              <label for="user-intro" class="am-u-sm-3 am-form-label">简介 / Intro</label>
-              <div class="am-u-sm-9">
-                <textarea class="" rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
-                <small>250字以内写出你的一生...</small>
-              </div>
-            </div>
+                <div class="am-form-group">
+                  <label for="user-QQ" class="am-u-sm-3 am-form-label">QQ</label>
+                  <div class="am-u-sm-9">
+                    <input type="number" name="qqNumber" pattern="[0-9]*" id="user-QQ" placeholder="输入你的QQ号码">
+                    <input type="number" value="${myUser.qqNumber}" pattern="[0-9]*"  placeholder="输入你的QQ号码">
+                  </div>
+                </div>
 
-            <div class="am-form-group">
-              <div class="am-u-sm-9 am-u-sm-push-3">
-                <button type="button" class="am-btn am-btn-primary">保存修改</button>
-              </div>
-            </div>
-          </form>
+                <div class="am-form-group">
+                  <label for="user-weibo" class="am-u-sm-3 am-form-label">微博 / Twitter</label>
+                  <div class="am-u-sm-9">
+                    <input type="text" id="user-weibo" name="weiBo" placeholder="输入你的微博 / Twitter">
+                    <input type="text" value="${myUser.weiBo}"  placeholder="输入你的微博 / Twitter">
+                  </div>
+                </div>
+
+                <div class="am-form-group">
+                  <label for="user-intro" class="am-u-sm-3 am-form-label">简介 / Intro</label>
+                  <div class="am-u-sm-9">
+                    <textarea class="" name="introductSelf" rows="5"  placeholder="输入个人简介"></textarea>
+                    <textarea class="" value="${myUser.introductSelf}"  rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
+                    <small>250字以内写出你的一生...</small>
+                  </div>
+                </div>
+
+                <div class="am-form-group">
+                  <div class="am-u-sm-9 am-u-sm-push-3">
+                    <button type="submit" id="btnSave" class="am-btn am-btn-primary"  >保存修改</button>
+                  </div>
+                </div>
+            </form>
+
+
         </div>
       </div>
     </div>
@@ -218,7 +250,7 @@
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.min.js"></script>
+
 <!--<![endif]-->
 <script src="../assets/js/amazeui.min.js"></script>
 

@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Component
 public class SpringScheduledTest {
-    @Scheduled(cron = "0/5 * * * * ?")
+//    @Scheduled(cron = "0/5 * * * * ?")
     public void schTest1() {
         Date date = new Date();
         SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

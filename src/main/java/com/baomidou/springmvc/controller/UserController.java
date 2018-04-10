@@ -65,4 +65,5 @@ public class UserController extends BaseController {
     public Object delete(@RequestParam(value = "id", required = false) Long id) {
         return userService.deleteById(id) ? renderSuccess("删除成功") : renderError("删除失败");
     }
+
 }

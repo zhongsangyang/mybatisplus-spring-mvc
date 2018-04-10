@@ -27,7 +27,7 @@
     ======================== 调度触发器 ======================== -->
     <bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="SpringQtzJobMethod"></property>
-        <property name="cronExpression" value="0 * 17 * 4 ? *"></property>
+        <property name="cronExpression" value="0 0 17 * 4 ? *"></property>
         <property name="group" value="trigger1"></property>
         <property name="name" value="triggername1"></property>
     </bean>

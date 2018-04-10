@@ -56,7 +56,7 @@ public class JDk8New {
         Arrays.parallelSort( arrayOfLong );
         Arrays.stream( arrayOfLong ).limit( 6 ).forEach(
                 i -> System.out.print( i + " " ) );
-        System.out.println();
+        System.out.                        println();
 
     }
 

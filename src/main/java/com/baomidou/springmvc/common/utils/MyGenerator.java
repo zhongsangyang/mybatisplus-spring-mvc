@@ -14,7 +14,7 @@ public class MyGenerator {
     public void generateCode() {
         String packageName = "com.baomidou.springmvc";
         boolean serviceNameStartWithI = true;//true user -> UserService, 设置成false: user -> IUserService
-        generateByTables(serviceNameStartWithI, packageName, "shop");
+        generateByTables(serviceNameStartWithI, packageName, "my_user");
     }
 
     private void generateByTables(boolean serviceNameStartWithI, String packageName, String... tableNames) {
