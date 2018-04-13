@@ -9,3 +9,4 @@ CREATE TABLE my_user
     introduct_self TEXT
 )engine=INNODB charset 'utf8' comment ='后台用户表';
 ALTER TABLE my_user ADD user_name VARCHAR(10) NULL;
+ALTER TABLE my_user ADD password VARCHAR(10) NULL;

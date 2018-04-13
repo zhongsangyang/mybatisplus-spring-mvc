@@ -1,3 +1,8 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path=request.getContextPath();
+%>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -35,6 +40,7 @@
 <div class="am-g">
   <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
     <h3>登录</h3>
+    <span>${message}</span>
     <hr>
     <div class="am-btn-group">
       <a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> Github</a>
@@ -43,23 +49,23 @@
     </div>
     <br>
     <br>
-
-    <form method="post" class="am-form">
-      <label for="email">邮箱:</label>
-      <input type="email" name="" id="email" value="">
+    <form method="post" class="am-form" action="<%=path%>/myUser/login">
+      <label >用户名:</label>
+      <input type="text" name="username" />
       <br>
-      <label for="password">密码:</label>
-      <input type="password" name="" id="password" value="">
+      <label >密码:</label>
+      <input type="password" name="password" />
       <br>
-      <label for="remember-me">
-        <input id="remember-me" type="checkbox">
+      <label >
+        <input  type="checkbox">
         记住密码
       </label>
       <br />
       <div class="am-cf">
-        <input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
+        <input type="submit"  value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
         <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr">
       </div>
+
     </form>
     <hr>
     <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
