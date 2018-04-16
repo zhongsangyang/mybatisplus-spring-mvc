@@ -13,13 +13,13 @@ public class MyGenerator {
     @Test
     public void generateCode() {
         String packageName = "com.baomidou.springmvc";
-        boolean serviceNameStartWithI = true;//true user -> UserService, 设置成false: user -> IUserService
-        generateByTables(serviceNameStartWithI, packageName, "my_user");
+        boolean serviceNameStartWithI = false;//user -> UserService, 设置成true: user -> IUserService
+        generateByTables(serviceNameStartWithI, packageName, "t_customer", "t_ticket");
     }
 
     private void generateByTables(boolean serviceNameStartWithI, String packageName, String... tableNames) {
         GlobalConfig config = new GlobalConfig();
-        String dbUrl = "jdbc:mysql://localhost:3306/mybatis-plus";
+        String dbUrl = "jdbc:mysql://localhost:3306/shujuguanxi";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)
                 .setUrl(dbUrl)
@@ -35,11 +35,11 @@ public class MyGenerator {
                 .setInclude(tableNames);//修改替换成你需要的表名，多个表名传数组
         config.setActiveRecord(false)
                 .setAuthor("zsy带你飞")
-                .setOutputDir("F:\\zip\\mybatisplus-spring-mvc\\src\\main\\java")
+                .setOutputDir("E:\\IdeaWork\\mybatis-plus-ssm-master\\src\\main\\java")
                 .setFileOverride(true);
         if (!serviceNameStartWithI) {
             config.setServiceName("%sService");
-            config.setMapperName("%sMapper");
+            config.setMapperName("%sDao");
             config.setEnableCache(false);
             config.setBaseResultMap(true);
         }
@@ -54,7 +54,7 @@ public class MyGenerator {
 //                                .setModuleName("test")
                                 .setMapper("mapper.system")
                                 .setService("service.system")
-                                .setServiceImpl("service.system.impl")
+                                .setServiceImpl("service.impl")
                 ).execute();
     }
 

@@ -43,9 +43,8 @@
 
     <script type="text/javascript" src="<%=path%>/resources/bootstrap/js/jquery-2.0.3.min.js"></script>
     <link rel="stylesheet" href="<%=path%>/baiduImageUpload/css/webuploader.css"/>
-
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="<%=path%>/baiduImageUpload/js/webuploader.js"></script>
-
 </head>
 <body>
 
@@ -62,64 +61,21 @@
 
         <br>
         <br>
-        <form  id="defaultForm" method="post" class="am-form">
-            <label for="username">用户名称:</label>
-            <input type="text" name="username" id="username" required data-bv-notempty-message="The username is required and cannot be empty"/>
-            <br>
-            <label for="password">密码:</label>
-            <input type="password" name="password" id="password" required data-bv-hexcolor-message="The input is not a valid color code">
 
-            <br>
-            <label for="email">电子邮件 / Email</label>
-            <input type="email"  id="email" placeholder="输入你的电子邮件 / Email">
+    <!--用来存放item-->
+        <!--dom结构部分-->
+        <div id="uploader-demo">
+            <!--用来存放item-->
+            <div id="fileList" class="uploader-list"></div>
+            <div id="filePicker">选择图片</div>
+            <form method="post" enctype="multipart/form-data" action="<%=path%>/myUser/upload">
+                <input type="file" name="file" value="选择图片"/>
+                <input type="submit" value="提交"/>
+            </form>
+        </div>
+        <span>${message}</span>
 
-            <br>
-            <label for="phone">电话 / Telephone</label>
-            <input type="tel"  id="phone" name="phone" placeholder="输入你的电话号码 / Telephone">
-            <br>
-            <label for="qq">QQ</label>
-            <input type="number"  name="qq" id="qq" pattern="[0-9]*"  placeholder="输入你的QQ号码" required>
-            <br>
-            <label for="weibo">微博 / Twitter</label>
-            <input type="text"   name="weibo" id="weibo" placeholder="输入你的微博 / Twitter">
-            <br>
-            <label for="introductSelf">简介 / Intro</label>
-            <textarea class=""  rows="5"  placeholder="输入个人简介" id="introductSelf" name="introductSelf"></textarea>
-            <small>250字以内写出你的一生...</small>
-            <br>
-            <label for="remember-me" class="am-u-lg-5 am-u-sm-5 am-u-md-5">
-                <input id="remember-me" type="checkbox">
-                记住密码
-            </label>
-            <br>
-
-
-
-            <br />
-            <div >
-                <div id="fileList"></div>
-                <div id="filePicker">
-                    选择图片
-                </div>
-                <div id="quxiao" style="width:100px;height: 30px;background-color:#2b83ba;border-radius:3px 3px 3px 3px;color: white;font-size: small;padding-left: 10px">
-                    取消这个图片
-                </div>
-            </div>
-            <br>
-            <div class="am-u-md-6">
-                <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr">
-                <input type="submit" id="btnSave" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
-            </div>
-            <c:if test="${message}!=null">
-                <span>${message}</span>
-            </c:if>
-             <c:choose>
-                 <c:when test="${message}==null">
-                    <span>未登录</span>
-                 </c:when>
-             </c:choose>
-        </form>
-
+    </div>
     </div>
 </div>
 
@@ -130,56 +86,45 @@
 <script src="<%=path%>/assets/js/jquery-2.2.3.min.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
-<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
 <script src="<%=path%>/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 <script src="<%=path%>/assets/js/amazeui.min.js"></script>
-<script>
-    var fileId;
-
-
-
+<script type="text/javascript">
+    // 初始化Web Uploader
     var uploader = WebUploader.create({
-        //auto : true,
-        auto:false,
-        swf : '<%=path%>/baiduImageUpload/Uploader.swf',
+
+        // 选完文件后，是否自动上传。
+        auto: true,
+
+        // swf文件路径
+        swf: '<%=path%>/baiduImageUpload/Uploader.swf',
 
         // 文件接收服务端。
-        server : '<%=path%>/myUser/regSter',
+        server: '<%=path%>/myUser/upload',
 
         // 选择文件的按钮。可选。
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-        pick : {id : '#filePicker',
-            //只能选择一个文件上传
-            multiple: false},
+        pick: '#filePicker',
 
-        //限制只能上传一个文件
-        fileNumLimit: 1,
-        method:'POST',
-        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
-        resize : false,
-        // 只允许选择excel表格文件。
-
-
+        // 只允许选择图片文件。
+        accept: {
+            title: 'Images',
+            extensions: 'gif,jpg,jpeg,bmp,png',
+            mimeTypes: 'image/*'
+        }
     });
-    $("#quxiao").click(function () {
-        console.log(fileId+"我进来了");
-        $('#'+fileId).empty();
-        uploader.reset();
-    })
     // 当有文件添加进来的时候
     uploader.on( 'fileQueued', function( file ) {
-
-        fileId= file.id;
         var $li = $(
             '<div id="' + file.id + '" class="file-item thumbnail">' +
             '<img>' +
             '<div class="info">' + file.name + '</div>' +
             '</div>'
             ),
-
             $img = $li.find('img');
+
 
         // $list为容器jQuery实例
         $("#fileList").append( $li );
@@ -188,7 +133,6 @@
         // 如果为非图片文件，可以不用调用此方法。
         // thumbnailWidth x thumbnailHeight 为 100 x 100
         uploader.makeThumb( file, function( error, src ) {
-
             if ( error ) {
                 $img.replaceWith('<span>不能预览</span>');
                 return;
@@ -204,7 +148,7 @@
 
         // 避免重复创建
         if ( !$percent.length ) {
-            $percent = $('<p class="progress"><span>正在上传</span></p>')
+            $percent = $('<p class="progress"><span></span></p>')
                 .appendTo( $li )
                 .find('span');
         }
@@ -215,16 +159,13 @@
     // 文件上传成功，给item添加成功class, 用样式标记上传成功。
     uploader.on( 'uploadSuccess', function( file ) {
         $( '#'+file.id ).addClass('upload-state-done');
-        console.log("上传成功了");
     });
-
 
     // 文件上传失败，显示上传出错。
     uploader.on( 'uploadError', function( file ) {
         var $li = $( '#'+file.id ),
-
             $error = $li.find('div.error');
-        console.log($li);
+
         // 避免重复创建
         if ( !$error.length ) {
             $error = $('<div class="error"></div>').appendTo( $li );
@@ -238,20 +179,9 @@
         $( '#'+file.id ).find('.progress').remove();
     });
     $("#btnSave").click(function () {
-        try{
-            uploader.getFile(fileId).name
-        }catch (e) {
-            console.log(e);
-            alert("请选择头像");
-            $("#filePicker").focus();
-            return;
-        }
-        if( uploader.getFile(fileId).name!=undefined){
-            uploader.upload();
-        }
+        console.log("进来了");
+        uploader.upload();
     })
-
 </script>
-
 
 </html>
